@@ -1,0 +1,5 @@
+include README.rst
+include LICENSE
+include requirements.txt
+graft sqlalchemyexample
+recursive-exclude * *.py[co]

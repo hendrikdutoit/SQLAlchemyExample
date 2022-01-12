@@ -1,0 +1,19 @@
+version: 2
+
+sphinx:
+  configuration: docs/source/conf.py
+  builder: html
+
+formats: all
+
+python:
+  version: 3.8
+  install:
+    - method: pip
+      path: .
+      extra_requirements:
+        - all
+    - requirements: docs/requirements_docs.txt
+
+submodules:
+  include: all
