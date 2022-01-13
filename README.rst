@@ -37,9 +37,9 @@
 .. image:: https://img.shields.io/pypi/v/SQLAlchemyExample
     :alt: PyPi
 
-Project Short Description (default ini)
+Example for exploring SQLAlchemy
 
-    Project long description or extended summary goes in here (default ini)
+    This project provide code how to use AQLAlchemy. THis idea is to build an example sequentially in steps to give new users the idea on where to start and how to progress. Along the way some principles will be exhibited. The code should be self-explanatory without as little as possible documentation, else the project is failing. This example illustrate the following: -------------------------------------- 1. Establis a link to a MySQL or SQLite database 2. Create tables 3. Populate the tables 4. Configure a many--to-may relationship 5. Query the tables References ---------- - https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_orm_many_to_many_relationships.htm - https://docs.sqlalchemy.org/en/13/orm/tutorial.html#building-a-relationship - https://cyruslab.net/2020/07/16/pythoncreate-database-if-not-exists-with-sqlalchemy/
 
 =======
 Testing
