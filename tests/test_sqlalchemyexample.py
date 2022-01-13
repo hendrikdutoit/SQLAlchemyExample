@@ -1,4 +1,3 @@
-
 '''Testing sqlalchemyexample__init__()'''
 
 from pathlib import Path
@@ -26,12 +25,15 @@ class TestSQLAlchemyExample:
         assert t_sqlalchemyexample.success
         pass
 
-    def test_method_1(self, env_setup_self_destruct):
+    def step_01(self, env_setup_self_destruct):
         """Assert class __init__"""
         env_setup = env_setup_self_destruct
-        t_sqlalchemyexample = sqlalchemyexample.SQLAlchemyExample("SQLAlchemyExample", env_setup.dir)
+        t_sqlalchemyexample = sqlalchemyexample.SQLAlchemyExample(
+            "SQLAlchemyExample", env_setup.dir
+        )
 
         assert t_sqlalchemyexample.method_1()
         pass
+
 
 del b_tls

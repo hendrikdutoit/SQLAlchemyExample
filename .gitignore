@@ -1,6 +1,9 @@
 #PyCharm stuff:
 .idea/
 
+# sqlite stuff
+*.sqlite
+
 # Active State
 .komodotools/
 *.komodoproject
