@@ -6,7 +6,7 @@
 # D:\Dropbox\Projects\SQLAlchemyExample\.packageit\packageit.ini
 #===================================================================
 argparse
-configparserext
+beetools
 Path
 sqlalchemy
 sqlalchemy_utils

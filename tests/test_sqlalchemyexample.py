@@ -1,19 +1,6 @@
 '''Testing sqlalchemyexample__init__()'''
 
-from pathlib import Path
-from beetools.beearchiver import Archiver
-import sqlalchemyexample
-
-
-_PROJ_DESC = __doc__.split('\n')[0]
-_PROJ_PATH = Path(__file__)
-
-
-def project_desc():
-    return _PROJ_DESC
-
-
-b_tls = Archiver(_PROJ_DESC, _PROJ_PATH)
+from src import sqlalchemyexample
 
 
 class TestSQLAlchemyExample:
@@ -34,6 +21,3 @@ class TestSQLAlchemyExample:
 
         assert t_sqlalchemyexample.method_1()
         pass
-
-
-del b_tls
