@@ -6,9 +6,15 @@ labels:
   - bugfix
 ---
 
-**What happened**:
+**Describe the problem**:
+`
+**Command executed**:
 
-**What you expected to happen**:
+```bash
+
+```
+
+**List the source code file(s) and line number where you think the error is (if known)**
 
 **Minimal Complete Verifiable Example**:
 
@@ -17,8 +23,6 @@ labels:
 ```python
 # Put your MCVE code here
 ```
-
-**Anything else we need to know?**:
 
 **Environment**:
 
