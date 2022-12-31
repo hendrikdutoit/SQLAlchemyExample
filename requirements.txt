@@ -6,7 +6,7 @@
 # D:\Dropbox\Projects\SQLAlchemyExample\.packageit\packageit.ini
 #===================================================================
 argparse
-Path
-beetools
 configparserext
-termcolor
+Path
+sqlalchemy
+sqlalchemy_utils

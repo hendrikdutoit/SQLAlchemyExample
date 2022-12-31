@@ -5,14 +5,5 @@
 # packageit\pipp.ini and
 # D:\Dropbox\Projects\SQLAlchemyExample\.packageit\packageit.ini
 #===================================================================
-pip
-beetools
-configparserext
-pre-commit
-pygithub
 pytest
-pytest-cov
-sphinx
-sphinx-autobuild
-sphinx-rtd-theme
-sqlalchemy
+git-it

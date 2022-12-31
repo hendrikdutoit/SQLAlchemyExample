@@ -1,6 +1,6 @@
 """Example for exploring SQLAlchemy
 
-This project provide code how to use AQLAlchemy.  THis idea is to build an
+This project provide code how to use AQLAlchemy.  This idea is to build an
 example sequentially in steps to give new users the idea on where to start
 and how to progress.  Along the way some principles will be exhibited.  The
 code should be self-explanatory without as little as possible documentation,
@@ -32,10 +32,6 @@ import argparse
 import configparserext
 import logging
 from pathlib import Path
-
-# from sqlalchemy import create_engine, Column, Integer, String
-# from sqlalchemy.orm import declarative_base
-# from sqlalchemy_utils import database_exists, create_database, drop_database
 
 from sqlalchemy.orm import declarative_base
 from beetools import beeutils, beearchiver, msg_info, msg_milestone
@@ -77,8 +73,11 @@ class Country(Base):
 
     # many to many Country<->Currency
     currencies = relationship(
-        'Currency', secondary="country_currency", viewonly=True
-    )  # , overlaps="currencies")
+        'Currency',
+        secondary="country_currency",
+        viewonly=True,
+        # cascade="all, delete, delete-orphan"
+    )
 
     def __init__(self, cca2, cca3, name_common):
         self.cca2 = cca2
@@ -182,10 +181,12 @@ class SQLAlchemyExample:
         for country in self.sess.query(Country).order_by(Country.cca2):
             print(country.cca2, country.cca3, country.name_common)
         print()
+
         print(msg_milestone('- Currency table'))
         for currency in self.sess.query(Currency).order_by(Currency.curr_iso):
             print(currency.curr_iso, currency.name, currency.symbol)
         print()
+
         print(msg_milestone('- Country <-> Currency table'))
         for x in (
             self.sess.query(Country, Currency)
@@ -199,7 +200,8 @@ class SQLAlchemyExample:
             print(f"Country: {x.Country.name_common} Currency: {x.Currency.curr_iso}")
             pass
 
-    def step_05(self):
+    def step_05_delete_records(self):
+        print(msg_info('Step 5: Delete records...'))
         pass
 
     def step_06(self):
@@ -211,7 +213,7 @@ class SQLAlchemyExample:
         self.step_02_create_the_db()
         self.step_03_populate_the_db()
         self.step_04_display_data()
-        self.step_05()
+        self.step_05_delete_records()
         self.step_06()
         pass
 
