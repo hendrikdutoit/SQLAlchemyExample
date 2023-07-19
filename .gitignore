@@ -1,7 +1,7 @@
 #PyCharm stuff:
 .idea/
 
-# sqlite stuff
+# dbsqlite stuff
 *.sqlite
 
 # Active State
@@ -15,6 +15,7 @@ Archive/
 .git/
 .idea/
 tmp/
+
 
 
 # Byte-compiled / optimized / DLL files
