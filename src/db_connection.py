@@ -1,12 +1,7 @@
 from os import environ
-from pathlib import Path
-
 from sqlalchemy import create_engine, engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
-
-# from beetools import beevenv, beescript
-# import pytest
 
 url = engine.URL.create(
     "mysql+mysqlconnector",
@@ -20,6 +15,7 @@ url = engine.URL.create(
 engine = create_engine(url, echo=False)
 Session = sessionmaker(bind=engine)
 session = Session()
+# metadata = MetaData(bind=engine,schema=environ.get("MYSQL_DB_NAME"))
+# Base = declarative_base(bind=engine, metadata=metadata)
 Base = declarative_base(bind=engine)
-project_dir: Path = Path(environ.get("PROJECTS_BASE_DIR"), "BEE", "SQLAlchemyExample")
-venv_base_dir: Path = Path(environ.get("VENV_BASE_DIR"))
+pass
