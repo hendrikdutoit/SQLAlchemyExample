@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Python tests for test_delete_table.TestDeleteTable" type="tests" factoryName="Autodetect" nameIsGenerated="true">
+  <configuration default="false" name="Python tests for test_one_to_many_uni_single_table_inheritance.TestOTMUniSTI.test_one_to_many_uni_child_with_parent" type="tests" factoryName="Autodetect" nameIsGenerated="true">
     <module name="SQLAlchemyExample" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
@@ -11,7 +11,7 @@
       <env name="SQLALCHEMY_SILENCE_UBER_WARNING" value="1" />
     </envs>
     <option name="SDK_HOME" value="" />
-    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
     <option name="IS_MODULE_SDK" value="true" />
     <option name="ADD_CONTENT_ROOTS" value="true" />
     <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -26,7 +26,7 @@
       </ENTRIES>
     </EXTENSION>
     <option name="_new_additionalArguments" value="&quot;&quot;" />
-    <option name="_new_target" value="&quot;test_delete_table.TestDeleteTable&quot;" />
+    <option name="_new_target" value="&quot;test_one_to_many_uni_single_table_inheritance.TestOTMUniSTI.test_one_to_many_uni_child_with_parent&quot;" />
     <option name="_new_targetType" value="&quot;PYTHON&quot;" />
     <method v="2" />
   </configuration>

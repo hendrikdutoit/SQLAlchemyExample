@@ -1,19 +1,19 @@
 import pytest
 from sqlalchemy import inspect
-import default_tables as dt
+import simple_tables as tab_cfg
 
 
 class TestDeleteTable:
-    def test_table_creation(self, setup_db):
-        engine, session, base = setup_db
+    def test_table_creation(self, setup_db_st):
+        engine, session, base = setup_db_st
         inspector = inspect(engine)
 
         assert 'parent' in inspector.get_table_names()
         assert 'child' in inspector.get_table_names()
         pass
 
-    def test_parent_table_deletion(self, setup_db):
-        engine, session, base = setup_db
+    def test_parent_table_deletion(self, setup_db_st):
+        engine, session, base = setup_db_st
         base.metadata.tables['parent'].drop()
         inspector = inspect(engine)
 
@@ -22,13 +22,16 @@ class TestDeleteTable:
         pass
 
     @pytest.mark.select
-    def test_parent_assign_data(self, setup_db):
-        engine, session, base = setup_db
-        parent_list = [dt.Parent(name='John Doe'), dt.Parent(name='Jane Smith')]
+    def test_parent_assign_data(self, setup_db_st):
+        engine, session, base = setup_db_st
+        parent_list = [
+            tab_cfg.Parent(name='John Doe'),
+            tab_cfg.Parent(name='Jane Smith'),
+        ]
         session.add_all(parent_list)
         session.commit()
 
-        qry = session.query(dt.Parent).all()
+        qry = session.query(tab_cfg.Parent).all()
         assert len(qry) > 0
         for i, x in enumerate(qry):
             assert x.name == parent_list[i].name
@@ -36,13 +39,16 @@ class TestDeleteTable:
         pass
 
     @pytest.mark.select
-    def test_parent_assign_data_dup(self, setup_db):
-        engine, session, base = setup_db
-        parent_list = [dt.Parent(name='John Doe'), dt.Parent(name='Jane Smith')]
+    def test_parent_assign_data_dup(self, setup_db_st):
+        engine, session, base = setup_db_st
+        parent_list = [
+            tab_cfg.Parent(name='John Doe'),
+            tab_cfg.Parent(name='Jane Smith'),
+        ]
         session.add_all(parent_list)
         session.commit()
 
-        qry = session.query(dt.Parent).all()
+        qry = session.query(tab_cfg.Parent).all()
         assert len(qry) > 0
         for i, x in enumerate(qry):
             assert x.name == parent_list[i].name
