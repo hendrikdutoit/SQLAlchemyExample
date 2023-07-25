@@ -1,0 +1,50 @@
+name: BEE Example WorkFlow
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install pre-commit
+        run: pip install pre-commit
+
+      - name: Run pre-commit checks
+        uses: pre-commit/action@v2.0.0
+
+  pytest:
+    needs: pre-commit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest
+          pip install pytest-cov
+          pip install codecov
+
+      - name: Run pytest
+        run: pytest --cov=./
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
