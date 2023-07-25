@@ -15,7 +15,4 @@ url = engine.URL.create(
 engine = create_engine(url, echo=False)
 Session = sessionmaker(bind=engine)
 session = Session()
-# metadata = MetaData(bind=engine,schema=environ.get("MYSQL_DB_NAME"))
-# Base = declarative_base(bind=engine, metadata=metadata)
 Base = declarative_base(bind=engine)
-pass

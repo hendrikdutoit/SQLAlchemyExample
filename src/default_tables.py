@@ -1,8 +1,13 @@
 from sqlalchemy import Column, Integer, String
-import db_connection as dbc
+import db_connection
 
 
-class Parent(dbc.Base):
+Base = db_connection.Base
+engine = db_connection.engine
+session = db_connection.session
+
+
+class Parent(Base):
     __tablename__ = 'parent'
     id = Column(Integer, primary_key=True)
     name = Column(String(45))
@@ -21,7 +26,7 @@ class Parent(dbc.Base):
         return f"{self.name}"
 
 
-class Child(dbc.Base):
+class Child(Base):
     __tablename__ = 'child'
     id = Column(Integer, primary_key=True)
     name = Column(String(45))
