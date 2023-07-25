@@ -14,7 +14,7 @@ engine = dbc.engine
 session = dbc.session
 
 
-class Parent(Base):
+class ParentOTMBi(Base):
     __tablename__ = 'parent_otm_bi'
     id = Column(Integer, primary_key=True)
     name = Column(String(45))
@@ -27,13 +27,13 @@ class Parent(Base):
     pass
 
     def __repr__(self):
-        return f"<Parent(id={self.id} name={self.name})>"
+        return f"<ParentOTMBi(id={self.id} name={self.name})>"
 
     def __str__(self):
         return f"{self.name}"
 
 
-class Child(Base):
+class ChildOTMBi(Base):
     __tablename__ = 'child_otm_bi'
     id = Column(Integer, primary_key=True)
     name = Column(String(45))
@@ -46,25 +46,27 @@ class Child(Base):
     pass
 
     def __repr__(self):
-        return f"<Child(id={self.id} name={self.name}>"
+        return f"<ChildOTMBi(id={self.id} name={self.name}>"
 
     def __str__(self):
         return f"{self.name}"
 
 
-class ParentOTMBi(Parent):
+class ParentOTMBiSTI(ParentOTMBi):
     __mapper_args__ = {
-        "polymorphic_identity": "parent_onetomany_bi",
+        "polymorphic_identity": "parent_otm_bi_sti",
     }
-    children = relationship("ChildOTMBi", back_populates="parent")
+    children = relationship("ChildOTMBiSTI", back_populates="parent")
 
 
-class ChildOTMBi(Child):
-    parent_id2 = Column(Integer, ForeignKey("parent_otm_bi.id"))
-    parent = relationship("ParentOTMBi", back_populates="children")
+class ChildOTMBiSTI(ChildOTMBi):
+    parent_id = Column(Integer, ForeignKey("parent_otm_bi.id"))
+    parent = relationship("ParentOTMBiSTI", back_populates="children")
     __mapper_args__ = {
-        "polymorphic_identity": "child_onetomany_bi",
+        "polymorphic_identity": "child_otm_bi_sti",
     }
 
     def __repr__(self):
-        return f"<Child(id={self.id} name={self.name} parent_id={self.parent_id2})>"
+        return (
+            f"<ChildOTMBiSTI(id={self.id} name={self.name} parent_id={self.parent_id})>"
+        )

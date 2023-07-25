@@ -14,7 +14,7 @@ engine = dbc.engine
 session = dbc.session
 
 
-class Parent(Base):
+class ParentOTMUni(Base):
     __tablename__ = 'parent_otm_uni'
     id = Column(Integer, primary_key=True)
     name = Column(String(45))
@@ -22,48 +22,48 @@ class Parent(Base):
 
     __mapper_args__ = {
         "polymorphic_on": type,
-        "polymorphic_identity": "parent_otm_bi",
+        "polymorphic_identity": "parent_otm_uni",
     }
     pass
 
     def __repr__(self):
-        return f"<Parent(id={self.id} name={self.name})>"
+        return f"<ParentOTMUni(id={self.id} name={self.name})>"
 
     def __str__(self):
         return f"{self.name}"
 
 
-class Child(Base):
-    __tablename__ = 'child_otm_ubi'
+class ChildOTMUni(Base):
+    __tablename__ = 'child_otm_uni'
     id = Column(Integer, primary_key=True)
     name = Column(String(45))
     type = Column(String(20))
 
     __mapper_args__ = {
         "polymorphic_on": type,
-        "polymorphic_identity": "child_otm_bi",
+        "polymorphic_identity": "child_otm_uni",
     }
     pass
 
     def __repr__(self):
-        return f"<Child(id={self.id} name={self.name}>"
+        return f"<ChildOTMUni(id={self.id} name={self.name}>"
 
     def __str__(self):
         return f"{self.name}"
 
 
-class ParentOTMUni(Parent):
+class ParentOTMUniSTI(ParentOTMUni):
     __mapper_args__ = {
-        "polymorphic_identity": "parent_onetomany_uni",
+        "polymorphic_identity": "parent_otm_uni_sti",
     }
-    children = relationship("ChildOTMUni")
+    children = relationship("ChildOTMUniSTI")
 
 
-class ChildOTMUni(Child):
+class ChildOTMUniSTI(ChildOTMUni):
     parent_id = Column(Integer, ForeignKey("parent_otm_uni.id"))
     __mapper_args__ = {
-        "polymorphic_identity": "child_onetomany_uni",
+        "polymorphic_identity": "child_otm_uni_sti",
     }
 
     def __repr__(self):
-        return f"<Child(id={self.id} name={self.name} parent_id={self.parent_id})>"
+        return f"<ChildOTMUniSTI(id={self.id} name={self.name} parent_id={self.parent_id})>"
