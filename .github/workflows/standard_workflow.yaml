@@ -60,9 +60,7 @@ jobs:
 
       - name: Wait for MySQL
         run: |
-          while ! mysqladmin ping -h"localhost" --silent; do
-              sleep 1
-          done
+          sleep 10
 
       - name: Initialize MySQL Database
         run: |

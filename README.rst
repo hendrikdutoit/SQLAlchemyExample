@@ -39,7 +39,33 @@
 
 Example for exploring SQLAlchemy
 
-    This project provide code how to use AQLAlchemy. THis idea is to build an example sequentially in steps to give new users the idea on where to start and how to progress. Along the way some principles will be exhibited. The code should be self-explanatory without as little as possible documentation, else the project is failing. This example illustrate the following: -------------------------------------- 1. Establis a link to a MySQL or SQLite database 2. Create tables 3. Populate the tables 4. Configure a many--to-may relationship 5. Query the tables References ---------- - https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_orm_many_to_many_relationships.htm - https://docs.sqlalchemy.org/en/13/orm/tutorial.html#building-a-relationship - https://cyruslab.net/2020/07/16/pythoncreate-database-if-not-exists-with-sqlalchemy/
+    This project provide a sandbox to experiment with SQLAlchemy. This idea is to build an example sequentially in steps to give new users the idea on where to start and how to progress.
+
+    Along the way some principles will be exhibited. The code should be self-explanatory.
+
+    The source code in ``src`` by itself does not do much, it basically only defines the tables and some setup code.  The "examples" are in the the ``pytest's`` since we are experimenting to see howe it works and if it was successfull.
+
+
+    References:
+
+    - https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_orm_many_to_many_relationships.htm
+    - https://docs.sqlalchemy.org/en/14/orm/tutorial.html#building-a-relationship
+    - https://cyruslab.net/2020/07/16/pythoncreate-database-if-not-exists-with-sqlalchemy/
+
+==================
+Get Up-and-Running
+==================
+
+    1. Set the following environment variables:
+::
+
+$ SET XYZ=DEF
+$
+
+    2. Start Docker.  The ``docker-rebuild.bat`` script will git docker up and running.
+    3. dasd
+
+``pytest``
 
 =======
 Testing
@@ -49,9 +75,12 @@ This project uses ``pytest`` to run tests and also to test docstring examples.
 
 Install the test dependencies.
 
-.. code-block:: bash
+.. code-block::bash
 
     $ pip install -r requirements_test.txt
+
+
+
 
 Run the tests.
 
@@ -63,6 +92,7 @@ Run the tests.
 ==========
 Developing
 ==========
+    The setup and installation is for Windows.  Feel free to add contribute to get it running on Linux as well.
 
 This project uses ``black`` to format code and ``flake8`` for linting. We also support ``pre-commit`` to ensure these have been run. To configure your local environment please install these development dependencies and set up the commit hooks.
 
@@ -81,11 +111,10 @@ Releases are published automatically when a tag is pushed to GitHub.
 
     # Set next version number
     export RELEASE = x.x.x
-    
+
     # Create tags
     git commit --allow -empty -m "Release $RELEASE"
     git tag -a $RELEASE -m "Version $RELEASE"
-    
+
     # Push
     git push upstream --tags
-
