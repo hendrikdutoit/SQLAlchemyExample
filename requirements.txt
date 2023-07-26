@@ -12,5 +12,7 @@ beetools
 git-it
 mysql-connector-python
 pytest
+pytest-cov
+codecov
 sqlalchemy < 2.0.0
 sqlalchemy_utils
