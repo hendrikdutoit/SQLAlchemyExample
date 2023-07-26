@@ -1,7 +1,7 @@
 """Testing sqlalchemyexample__init__()"""
 import pytest
 from sqlalchemy import inspect
-import otm_uni_single_table_inheritance as tab_cfg
+import otm_uni_single_table_inherit as tab_cfg
 
 
 class TestOTMUniSTI:

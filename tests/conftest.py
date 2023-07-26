@@ -15,7 +15,7 @@ def setup_db_st():
 
 @pytest.fixture
 def setup_db_otm_bi_sti():
-    import otm_bi_single_table_inheritance as tab_cfg
+    import otm_bi_single_table_inherit as tab_cfg
 
     tab_cfg.Base.metadata.drop_all()
     tab_cfg.Base.metadata.create_all()
@@ -26,7 +26,7 @@ def setup_db_otm_bi_sti():
 
 @pytest.fixture
 def setup_db_otm_uni_sti():
-    import otm_uni_single_table_inheritance as tab_cfg
+    import otm_uni_single_table_inherit as tab_cfg
 
     tab_cfg.Base.metadata.drop_all()
     tab_cfg.Base.metadata.create_all()
