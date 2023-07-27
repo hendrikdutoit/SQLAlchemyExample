@@ -44,6 +44,9 @@ jobs:
 #          MYSQL_TCP_PORT_EXAMPLES: 50002
 #          SQLALCHEMY_SILENCE_UBER_WARNING: 1
 #          MYSQL_TCP_PORT: 50002
+    env:
+      MYSQL_DB_NAME: SQLAlchemyExample
+
     steps:
       - name: Check out code
         uses: actions/checkout@v3
