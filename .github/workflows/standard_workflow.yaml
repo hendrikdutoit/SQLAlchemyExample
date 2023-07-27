@@ -36,12 +36,14 @@ jobs:
         env:
 #          MYSQL_ALLOW_EMPTY_PASSWORD: yes
           MYSQL_DATABASE: SQLAlchemyExample
-#          MYSQL_DB_NAME: SQLAlchemyExample
-#          MYSQL_HOST: localhost
+          MYSQL_DB_NAME: SQLAlchemyExample
+          MYSQL_HOST: localhost
           MYSQL_ROOT_PASSWORD: N0tS0S3curePassw0rd
           MYSQL_PASSWORD: N0tS0S3curePassw0rd
+          MYSQL_PWD: N0tS0S3curePassw0rd
 #          MYSQL_TCP_PORT_EXAMPLES: 50002
 #          SQLALCHEMY_SILENCE_UBER_WARNING: 1
+          MYSQL_TCP_PORT: 50002
     steps:
       - name: Check out code
         uses: actions/checkout@v3
