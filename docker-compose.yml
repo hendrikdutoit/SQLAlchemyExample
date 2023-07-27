@@ -17,3 +17,7 @@ services:
 
 #    volumes:
 #      - ./tests/db:/docker-entrypoint-initdb.d/:ro
+
+networks:
+  sqlalchemyexample_default:
+    driver: bridge
