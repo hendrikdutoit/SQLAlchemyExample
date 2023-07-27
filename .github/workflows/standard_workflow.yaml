@@ -50,10 +50,10 @@ jobs:
 
       - name: Build Docker image
         uses: docker/build-push-action@v4
-        with:
-          context: .
-          push: true
-          tags: your-docker-image-tag
+#        with:
+#          context: .
+#          push: true
+#          tags: your-docker-image-tag
 
       - name: Copy init.sql to the Docker context
         run: cp init.sql .github/workflows/
