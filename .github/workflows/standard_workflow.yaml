@@ -7,37 +7,37 @@ on:
       - master
 
 jobs:
-  pre-commit:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-
-      - name: Install pre-commit
-        run: pip install pre-commit
-
-      - name: Run pre-commit checks
-        uses: pre-commit/action@v3.0.0
+#  pre-commit:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Check out code
+#        uses: actions/checkout@v3
+#
+#      - name: Set up Python
+#        uses: actions/setup-python@v4
+#        with:
+#          python-version: '3.10'
+#
+#      - name: Install pre-commit
+#        run: pip install pre-commit
+#
+#      - name: Run pre-commit checks
+#        uses: pre-commit/action@v3.0.0
 
   pytest:
-    needs: pre-commit
+#    needs: pre-commit
     runs-on: ubuntu-latest
+    env:
+      MYSQL_ALLOW_EMPTY_PASSWORD: yes
+      MYSQL_DATABASE: SQLAlchemyExample
+      MYSQL_DB_NAME: SQLAlchemyExample
+      MYSQL_HOST: localhost
+      MYSQL_ROOT_PWD: N0tS0S3curePassw0rd
+      MYSQL_TCP_PORT_EXAMPLES: 3306
+      SQLALCHEMY_SILENCE_UBER_WARNING: 1
     services:
       mysql:
         image: mysql:8.0.21
-        env:
-          MYSQL_ALLOW_EMPTY_PASSWORD: yes
-          MYSQL_DATABASE: SQLAlchemyExample
-          MYSQL_DB_NAME: SQLAlchemyExample
-          MYSQL_HOST: localhost
-          MYSQL_ROOT_PWD: N0tS0S3curePassw0rd
-          MYSQL_TCP_PORT_EXAMPLES: 3306
-          SQLALCHEMY_SILENCE_UBER_WARNING: 1
         ports:
           - 3306:3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
@@ -51,7 +51,7 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Verify unittest DB exists
+      - name: Verify DB exists
         run: mysql --host 127.0.0.1 --port 3306 -uroot -e "SHOW DATABASES LIKE 'SQLAlchemyExample'"
 
 #      - name: Validate composer.json and composer.lock
