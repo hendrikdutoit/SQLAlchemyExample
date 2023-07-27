@@ -48,9 +48,11 @@ jobs:
 #      - name: Install dependencies
 #        run: docker-compose install --prefer-dist --no-progress
 
-      - name: Create docker containers
+      - name: Create Docker Containers
         run: docker-compose create && docker-compose start
 
+      - name: Start Docker Containers
+        run: docker-compose start
 
 #      - name: Set up QEMU
 #        uses: docker/setup-qemu-action@v2
