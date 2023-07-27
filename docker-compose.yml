@@ -12,8 +12,8 @@ services:
       MYSQL_DATABASE: ${MYSQL_DB_NAME}
     ports:
       - "${MYSQL_TCP_PORT_EXAMPLES}:3306"
-    networks:
-      - sqlalchemyexample_default
+#    networks:
+#      - sqlalchemyexample_default
 
 #    volumes:
 #      - ./tests/db:/docker-entrypoint-initdb.d/:ro
