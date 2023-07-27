@@ -45,8 +45,8 @@ jobs:
 #      - name: Validate composer.json and composer.lock
 #        run: composer validate --strict
 
-      - name: Install dependencies
-        run: docker-compose install --prefer-dist --no-progress
+#      - name: Install dependencies
+#        run: docker-compose install --prefer-dist --no-progress
 
       - name: Create docker containers
         run: docker-compose create && docker-compose start
