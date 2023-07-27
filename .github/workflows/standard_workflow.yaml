@@ -54,7 +54,7 @@ jobs:
           python-version: '3.10'
 
       - name: Verify DB exists
-        run: mysql --host 127.0.0.1 --port 50002 -uroot -e MYSQL_ROOT_PASSWORD=N0tS0S3curePassw0rd "SHOW DATABASES LIKE 'SQLAlchemyExample'"
+        run: mysql --host 127.0.0.1 --port 50002 -uroot -e "SHOW DATABASES LIKE 'SQLAlchemyExample'"
 
 #      - name: Validate composer.json and composer.lock
 #        run: composer validate --strict
