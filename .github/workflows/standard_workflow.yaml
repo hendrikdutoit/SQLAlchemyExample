@@ -42,30 +42,39 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
+      - name: Validate composer.json and composer.lock
+        run: composer validate --strict
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress
 
-      - name: Build Docker image
-        uses: docker/build-push-action@v4
+      - name: Create docker containers
+        run: docker-compose up db
+
+#      - name: Set up QEMU
+#        uses: docker/setup-qemu-action@v2
+
+#      - name: Set up Docker Buildx
+#        uses: docker/setup-buildx-action@v2
+
+#      - name: Build Docker image
+#        uses: docker/build-push-action@v4
 #        with:
 #          context: .
 #          push: true
 #          tags: your-docker-image-tag
 
-      - name: Copy init.sql to the Docker context
-        run: cp init.sql .github/workflows/
+#      - name: Copy init.sql to the Docker context
+#        run: cp init.sql .github/workflows/
 
-      - name: Run MySQL container with custom init script
-        run: |
-          docker run -d \
-            --name mysql-container \
-            -p 50002:3306 \
-            -e MYSQL_ROOT_PASSWORD=N0tS0S3curePassw0rd \
-            -v ${{ github.workspace }}/.github/workflows/init.sql:/docker-entrypoint-initdb.d/init.sql \
-            your-docker-image-tag
+#      - name: Run MySQL container with custom init script
+#        run: |
+#          docker run -d \
+#            --name mysql-container \
+#            -p 50002:3306 \
+#            -e MYSQL_ROOT_PASSWORD=N0tS0S3curePassw0rd \
+#            -v ${{ github.workspace }}/.github/workflows/init.sql:/docker-entrypoint-initdb.d/init.sql \
+#            your-docker-image-tag
 
 
       - name: Install dependencies
@@ -76,13 +85,13 @@ jobs:
       - name: Install editable package
         run: pip install -e .
 
-      - name: Wait for MySQL
-        run: |
-          sleep 10
+#      - name: Wait for MySQL
+#        run: |
+#          sleep 10
 
-      - name: Initialize MySQL Database
-        run: |
-          mysql -h localhost -P 50002 -uroot -pN0tS0S3curePassw0rd -e 'CREATE DATABASE IF NOT EXISTS SQLAlchemyExample;'
+#      - name: Initialize MySQL Database
+#        run: |
+#          mysql -h localhost -P 50002 -uroot -pN0tS0S3curePassw0rd -e 'CREATE DATABASE IF NOT EXISTS SQLAlchemyExample;'
 
       - name: Run pytest
         run: pytest --cov=./
