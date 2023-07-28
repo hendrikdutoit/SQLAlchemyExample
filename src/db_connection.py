@@ -16,3 +16,8 @@ engine = create_engine(url, echo=False)
 Session = sessionmaker(bind=engine)
 session = Session()
 Base = declarative_base(bind=engine)
+print(
+    f'''\nusername=root\npassword={environ.get("MYSQL_ROOT_PWD")}\n
+    host={environ.get("MYSQL_HOST")}\nport={environ.get("MYSQL_TCP_PORT_EXAMPLES")}\n
+    database={environ.get("MYSQL_DB_NAME")}'''
+)
