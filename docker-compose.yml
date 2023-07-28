@@ -11,6 +11,6 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_PWD}
       MYSQL_DATABASE: ${MYSQL_DB_NAME}
     ports:
-      - ${MYSQL_TCP_PORT_EXAMPLES}:3306
+      - "${MYSQL_TCP_PORT_EXAMPLES}:3306"
 #    volumes:
 #      - ./tests/db:/docker-entrypoint-initdb.d/:ro
