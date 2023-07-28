@@ -16,6 +16,7 @@ jobs:
       MYSQL_HOST: localhost
       MYSQL_PASSWORD: N0tS0S3curePassw0rd
       MYSQL_PWD: $MYSQL_PASSWORD
+      MYSQL_ROOT_PWD: $MYSQL_PASSWORD
       MYSQL_TCP_PORT_EXAMPLES: 50002
       MYSQL_TCP_PORT: 50002
       SQLALCHEMY_SILENCE_UBER_WARNING: 1
@@ -48,7 +49,7 @@ jobs:
 
       - name: Verify DB exists
 #        run: mysql --host 127.0.0.1 --port 50002 -uroot -e "SHOW DATABASES LIKE 'SQLAlchemyExample'"
-        run: mysql --host 127.0.0.1 -uroot -p${{env.MYSQL_PASSWORD}} -e "SHOW DATABASES LIKE 'SQLAlchemyExample'"
+        run: mysql --host 127.0.0.1 -uroot -p${{env.MYSQL_PASSWORD}} -e "SHOW DATABASES" # LIKE 'SQLAlchemyExample'"
 
       - name: Install dependencies
         run: |
