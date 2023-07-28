@@ -19,22 +19,22 @@ jobs:
         python-version: ['3.10']
     env:
       MYSQL_DB_NAME: SQLAlchemyExample
-      MYSQL_DATABASE: ${{ env.MYSQL_DB_NAME }}
+      MYSQL_DATABASE: ${{env.MYSQL_DB_NAME}}
       MYSQL_HOST: localhost
       MYSQL_PASSWORD: N0tS0S3curePassw0rd
-      MYSQL_PWD: ${{ env.MYSQL_PASSWORD }}
+      MYSQL_PWD: ${{env.MYSQL_PASSWORD}}
       MYSQL_TCP_PORT_EXAMPLES: 50002
       SQLALCHEMY_SILENCE_UBER_WARNING: 1
-      MYSQL_TCP_PORT: ${{ env.MYSQL_TCP_PORT_EXAMPLES }}
+      MYSQL_TCP_PORT: ${{env.MYSQL_TCP_PORT_EXAMPLES}}
     services:
       mysql:
         image: mysql:8.0.21
         ports:
-          - ${{ env.MYSQL_TCP_PORT_EXAMPLES }}::3306
+          - ${{env.MYSQL_TCP_PORT_EXAMPLES}}::3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
         env:
 #          MYSQL_ALLOW_EMPTY_PASSWORD: yes
-          MYSQL_ROOT_PASSWORD: ${{ env.MYSQL_PASSWORD }}
+          MYSQL_ROOT_PASSWORD: ${{env.MYSQL_PASSWORD}}
 
     steps:
       - name: Check out code
