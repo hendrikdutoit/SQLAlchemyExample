@@ -24,8 +24,8 @@ jobs:
       MYSQL_PASSWORD: N0tS0S3curePassw0rd
       MYSQL_PWD: $MYSQL_PASSWORD
       MYSQL_TCP_PORT_EXAMPLES: 50002
+      MYSQL_TCP_PORT: 50002
       SQLALCHEMY_SILENCE_UBER_WARNING: 1
-      MYSQL_TCP_PORT: $MYSQL_TCP_PORT_EXAMPLES
     services:
       mysql:
         image: mysql:8.0.21
