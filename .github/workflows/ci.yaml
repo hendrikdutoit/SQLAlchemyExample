@@ -12,7 +12,7 @@ jobs:
     runs-on: ${{matrix.os}}
     env:
       MYSQL_DB_NAME: SQLAlchemyExample
-      MYSQL_DATABASE: $MYSQL_DB_NAME
+      MYSQL_DATABASE: ${{MYSQL_DB_NAME}}
       MYSQL_HOST: localhost
       MYSQL_PASSWORD: N0tS0S3curePassw0rd
       MYSQL_PWD: $MYSQL_PASSWORD
