@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, Identity
 import db_connection
 
 
@@ -9,7 +9,7 @@ session = db_connection.session
 
 class Parent(Base):
     __tablename__ = 'parent'
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, Identity(start=1), primary_key=True)
     name = Column(String(45))
     type = Column(String(20))
 
@@ -28,7 +28,7 @@ class Parent(Base):
 
 class Child(Base):
     __tablename__ = 'child'
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, Identity(start=1), primary_key=True)
     name = Column(String(45))
     type = Column(String(20))
 

@@ -3,8 +3,8 @@ from sqlalchemy import inspect
 import simple_tables as tab_cfg
 
 
-class TestDeleteTable:
-    def test_table_creation(self, setup_db_st):
+class TestSimpleTable:
+    def test_table_exist(self, setup_db_st):
         engine, session, base = setup_db_st
         inspector = inspect(engine)
 
@@ -39,18 +39,7 @@ class TestDeleteTable:
         pass
 
     @pytest.mark.select
-    def test_parent_assign_data_dup(self, setup_db_st):
-        engine, session, base = setup_db_st
-        parent_list = [
-            tab_cfg.Parent(name='John Doe'),
-            tab_cfg.Parent(name='Jane Smith'),
-        ]
-        session.add_all(parent_list)
-        session.commit()
-
-        qry = session.query(tab_cfg.Parent).all()
-        assert len(qry) > 0
-        for i, x in enumerate(qry):
-            assert x.name == parent_list[i].name
-            pass
+    def test_parent_table_dunder(self):
+        parent = tab_cfg.Parent(name='John')
+        assert repr(parent) == '<Parent(name=John)>'
         pass

@@ -6,10 +6,11 @@
 
 .. image:: https://img.shields.io/pypi/pyversions/SQLAlchemyExample
     :alt: PyPI - Python Version
-
-.. image:: https://img.shields.io/github/v/release/hendrikdutoit/SQLAlchemyExample
+..
+ .. image:: https://img.shields.io/github/v/release/hendrikdutoit/SQLAlchemyExample
     :alt: GitHub release (latest by date)
 
+..
 .. image:: https://img.shields.io/github/license/hendrikdutoit/SQLAlchemyExample
     :alt: License
 

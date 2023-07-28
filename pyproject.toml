@@ -8,8 +8,8 @@ extend-exclude = "/templates"
 
 
 [tool.pytest.ini_options]
-#addopts = ["--import-mode=importlib", '-v', '--disable-pytest-warnings']
-addopts = ["--import-mode=importlib", '-v', '--cov=./', '--ignore-glob=*\Archive', '--cov-report=html']
+addopts = ["--import-mode=importlib", '-v', '--ignore-glob=*\Archive', '--cov-report=html']
+#addopts = ["--import-mode=importlib", '-v', '--cov=./', '--ignore-glob=*\Archive', '--cov-report=html']
 #pythonpath = ["src", "tests" ]
 markers = [
     'select: Run a selection of tests',
