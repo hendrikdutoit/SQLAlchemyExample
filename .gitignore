@@ -1,22 +1,15 @@
 #PyCharm stuff:
 .idea/
+.run/
 
 # dbsqlite stuff
 *.sqlite
 
-# Active State
-.komodotools/
-*.komodoproject
-
 #Inhouse
 VersionArchive/
 Archive/
-#TestData/*_env/
 .git/
-.idea/
 tmp/
-
-
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

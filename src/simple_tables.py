@@ -39,7 +39,7 @@ class Child(Base):
     pass
 
     def __repr__(self):
-        return f"<Child(id={self.id} name={self.name}>"
+        return f"<Child(id={self.id} name={self.name})>"
 
     def __str__(self):
         return f"{self.name}"
