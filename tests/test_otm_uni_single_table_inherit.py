@@ -5,14 +5,6 @@ import otm_uni_single_table_inherit as tab_cfg
 
 
 class TestOTMUniSTI:
-    # def test_table_creation(self, setup_db_otm_uni_sti):
-    #     engine, session, base = setup_db_otm_uni_sti
-    #
-    #     inspector = inspect(engine)
-    #     assert 'parent' in inspector.get_table_names()
-    #     assert 'child' in inspector.get_table_names()
-    #     pass
-    #
     def test_otm_uni_parent(self, setup_db_otm_uni_sti):
         engine, session, base = setup_db_otm_uni_sti
 
@@ -61,4 +53,19 @@ class TestOTMUniSTI:
         with pytest.raises(Exception) as e_info:
             session.commit()
         assert e_info.typename == 'IntegrityError'
+        pass
+
+    def test_parentotmbi_table_dunder_repr_ok(self, setup_db_otm_uni_sti):
+        engine, session, base = setup_db_otm_uni_sti
+        parent = tab_cfg.ParentOTMUni(name='John')
+        session.add_all([parent])
+        session.commit()
+
+        assert repr(parent) == '<ParentOTMUni(id=1 name=John)>'
+        pass
+
+    def test_parentotmbi_table_dunder_str_ok(self):
+        parent = tab_cfg.ParentOTMUni(name='John')
+
+        assert str(parent) == 'John'
         pass

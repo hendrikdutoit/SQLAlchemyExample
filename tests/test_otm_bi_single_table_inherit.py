@@ -58,3 +58,18 @@ class TestOTMBiSTI:
             session.commit()
         assert e_info.typename == 'IntegrityError'
         pass
+
+    def test_parentotmbi_table_dunder_repr_ok(self, setup_db_otm_bi_sti):
+        engine, session, base = setup_db_otm_bi_sti
+        parent = tab_cfg.ParentOTMBi(name='John')
+        session.add_all([parent])
+        session.commit()
+
+        assert repr(parent) == '<ParentOTMBi(id=1 name=John)>'
+        pass
+
+    def test_parentotmbi_table_dunder_str_ok(self, setup_db_otm_bi_sti):
+        parent = tab_cfg.ParentOTMBi(name='John')
+
+        assert str(parent) == 'John'
+        pass

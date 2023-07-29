@@ -50,10 +50,7 @@ class TestSimpleTable:
 
     @pytest.mark.select
     def test_parent_table_dunder_str_ok(self, setup_db_st):
-        engine, session, base = setup_db_st
         parent = tab_cfg.Parent(name='John')
-        session.add_all([parent])
-        session.commit()
 
         assert str(parent) == 'John'
         pass
@@ -70,10 +67,7 @@ class TestSimpleTable:
 
     @pytest.mark.select
     def test_child_table_dunder_str_ok(self):
-        # engine, session, base = setup_db_st
         child = tab_cfg.Child(name='John')
-        # session.add_all([parent])
-        # session.commit()
 
         assert str(child) == 'John'
         pass
