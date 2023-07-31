@@ -1,8 +1,8 @@
 name: CI
 
 on:
-  pull_request:
-  push:
+#  pull_request:
+#  push:
   workflow_call:
 
 jobs:
@@ -47,7 +47,6 @@ jobs:
           architecture: x64
 
       - name: Verify DB exists
-#        run: mysql --host 127.0.0.1 --port 50002 -uroot -e "SHOW DATABASES LIKE 'SQLAlchemyExample'"
         run: mysql --host 127.0.0.1 -uroot -p${{env.MYSQL_PASSWORD}} -e "SHOW DATABASES" # LIKE 'SQLAlchemyExample'"
 
       - name: Install dependencies
