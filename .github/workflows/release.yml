@@ -2,7 +2,7 @@ name: Build Distribution
 
 on:
 #  pull_request:
-#  push:
+  push:
   workflow_call:
 
 jobs:
