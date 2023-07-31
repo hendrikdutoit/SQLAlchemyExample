@@ -54,11 +54,6 @@ Get Up-and-Running
 ==================
 
     1. Set the following environment variables:
-::
-
-$ SET XYZ=DEF
-$
-
     2. Start Docker.  The ``docker-rebuild.bat`` script will git docker up and running.
     3. dasd
 

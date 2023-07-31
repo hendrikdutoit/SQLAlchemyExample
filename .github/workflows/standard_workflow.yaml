@@ -12,6 +12,7 @@ jobs:
 
   CI:
     uses: .github/workflows/ci.yaml
+    needs: Pre-Commit
     secrets:
       token: ${{ secrets.token }}
 
