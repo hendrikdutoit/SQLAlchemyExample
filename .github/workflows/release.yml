@@ -6,7 +6,7 @@ on:
   workflow_call:
 
 jobs:
-  release-to-pypi:
+  Release-to-Pypi:
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: true

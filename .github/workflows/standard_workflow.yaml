@@ -10,10 +10,10 @@ jobs:
     secrets:
       token: ${{ secrets.token }}
 
-#  CI:
-#    uses: .github/workflows/ci.yaml
-#    secrets:
-#      token: ${{ secrets.token }}
+  CI:
+    uses: .github/workflows/ci.yaml
+    secrets:
+      token: ${{ secrets.token }}
 
   Release:
     uses: .github/workflows/release.yaml

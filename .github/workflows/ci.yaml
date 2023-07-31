@@ -6,7 +6,7 @@ on:
   workflow_call:
 
 jobs:
-  pytest:
+  CI:
     runs-on: ${{matrix.os}}
     env:
       MYSQL_DB_NAME: SQLAlchemyExample

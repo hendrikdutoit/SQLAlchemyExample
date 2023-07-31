@@ -6,7 +6,7 @@ on:
   workflow_call:
 
 jobs:
-  pre-commit:
+  Pre-Commit:
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: true
