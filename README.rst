@@ -6,11 +6,11 @@
 
 .. image:: https://img.shields.io/pypi/pyversions/SQLAlchemyExample
     :alt: PyPI - Python Version
-..
- .. image:: https://img.shields.io/github/v/release/hendrikdutoit/SQLAlchemyExample
-    :alt: GitHub release (latest by date)
 
 ..
+image:: https://img.shields.io/github/v/release/hendrikdutoit/SQLAlchemyExample
+    :alt: GitHub release (latest by date)
+
 .. image:: https://img.shields.io/github/license/hendrikdutoit/SQLAlchemyExample
     :alt: License
 
@@ -27,16 +27,26 @@
     :alt: CodeCov
     :target: https://app.codecov.io/gh/hendrikdutoit/SQLAlchemyExample
 
-.. image:: https://img.shields.io/github/workflow/status/hendrikdutoit/SQLAlchemyExample/Pre-Commit
+.. image:: https://github.com/hendrikdutoit/SQLAlchemyExample/actions/workflows/standard_workflow/badge.svg
+    :alt: GitHub Actions - Standard Workflow
+    :target: https://github.com/hendrikdutoit/SQLAlchemyExample/actions/workflows/standard_workflow.yaml
+
+.. image:: https://img.shields.io/github/ci/status/hendrikdutoit/SQLAlchemyExample/ci
+:   alt: GitHub Workflow Status (with event)
+
+..
+image:: https://img.shields.io/github/workflow/status/hendrikdutoit/SQLAlchemyExample/Pre-Commit
     :alt: GitHub Actions - Pre-Commit
     :target: https://github.com/hendrikdutoit/SQLAlchemyExample/actions/workflows/pre-commit.yaml
 
-.. image:: https://img.shields.io/github/workflow/status/hendrikdutoit/SQLAlchemyExample/CI
+
+.. image:: https://img.shields.io/github/actions/workflow/status/hendrikdutoit/SQLAlchemyExample/ci.yaml
     :alt: GitHub Actions - CI
     :target: https://github.com/hendrikdutoit/SQLAlchemyExample/actions/workflows/ci.yaml
 
 .. image:: https://img.shields.io/pypi/v/SQLAlchemyExample
     :alt: PyPi
+
 
 Example for exploring SQLAlchemy
 
