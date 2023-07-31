@@ -17,6 +17,7 @@ jobs:
       token: ${{ secrets.token }}
 
   Build and Publish Distribution:
+    needs: CI
     uses: .github/workflows/release.ymlmaster
     if: startsWith(github.ref, 'refs/tags/')
     secrets:
