@@ -1,8 +1,8 @@
-name: Build Distribution
+name: Build and Publish Distribution
 
 on:
 #  pull_request:
-  push:
+#  push:
   workflow_call:
 
 jobs:
