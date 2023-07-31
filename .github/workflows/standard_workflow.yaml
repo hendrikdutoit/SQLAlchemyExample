@@ -1,0 +1,23 @@
+name: BEE Default Workflow
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  Pre-Commit:
+    uses: .github/workflows/pre-commit.ymlmaster
+    secrets:
+      token: ${{ secrets.token }}
+
+  CI:
+    uses: .github/workflows/ci.yml@master
+    needs: Pre-Commit
+    secrets:
+      token: ${{ secrets.token }}
+
+  Build and Publish Distribution:
+    uses: .github/workflows/release.ymlmaster
+    if: startsWith(github.ref, 'refs/tags/')
+    secrets:
+      token: ${{ secrets.token }}

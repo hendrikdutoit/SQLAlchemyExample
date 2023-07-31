@@ -1,13 +1,12 @@
 name: Pre-Commit
 
 on:
-  pull_request:
+#  pull_request:
   push:
-    branches:
-      - main
+  workflow_call:
 
 jobs:
-  pre-commit:
+  Pre-Commit:
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: true

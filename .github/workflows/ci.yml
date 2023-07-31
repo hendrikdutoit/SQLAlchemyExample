@@ -1,14 +1,12 @@
 name: CI
 
-
 on:
-  pull_request:
+#  pull_request:
   push:
-    branches:
-      - master
+  workflow_call:
 
 jobs:
-  pytest:
+  CI:
     runs-on: ${{matrix.os}}
     env:
       MYSQL_DB_NAME: SQLAlchemyExample
@@ -49,7 +47,6 @@ jobs:
           architecture: x64
 
       - name: Verify DB exists
-#        run: mysql --host 127.0.0.1 --port 50002 -uroot -e "SHOW DATABASES LIKE 'SQLAlchemyExample'"
         run: mysql --host 127.0.0.1 -uroot -p${{env.MYSQL_PASSWORD}} -e "SHOW DATABASES" # LIKE 'SQLAlchemyExample'"
 
       - name: Install dependencies
@@ -64,4 +61,4 @@ jobs:
         run: pytest --cov=./
 
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@v3
