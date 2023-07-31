@@ -6,7 +6,7 @@ labels:
   - enhancement
 ---
 
-**Reason or Problem to Solve**:
+**Description of Feature or Improvement**:
 
 
 **Proposed Solution**:
