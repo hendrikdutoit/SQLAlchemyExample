@@ -6,7 +6,7 @@ on:
 
 jobs:
   Pre-Commit:
-    uses: .github/workflows/pre-commit.ymlmaster
+    uses: .github/workflows/pre-commit.yml@master
     secrets:
       token: ${{ secrets.token }}
 
@@ -16,9 +16,9 @@ jobs:
     secrets:
       token: ${{ secrets.token }}
 
-  Build and Publish Distribution:
+  Build-and-Release-to-Pypi:
     needs: CI
-    uses: .github/workflows/release.ymlmaster
+    uses: .github/workflows/build-and-release-to-pypi.yml@master
     if: startsWith(github.ref, 'refs/tags/')
     secrets:
       token: ${{ secrets.token }}
