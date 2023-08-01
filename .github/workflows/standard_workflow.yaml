@@ -20,5 +20,6 @@ jobs:
     needs: CI
     uses: ./.github/workflows/build-and-release-to-pypi.yml
     if: startsWith(github.ref, 'refs/tags/')
+#    if: github.repository == 'hendrikdutoit/PackageIt' && github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
 #    secrets:
 #      token: ${{ secrets.token }}
