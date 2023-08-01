@@ -24,10 +24,10 @@
     :target: https://app.codecov.io/gh/hendrikdutoit/SQLAlchemyExample
 
 .. image:: https://img.shields.io/github/actions/workflow/status/hendrikdutoit/SQLAlchemyExample/pre-commit.yaml?label=pre-commit
-    :alt: GitHub Workflow Status (with event)
+    :alt: Pre-Commit
 
 .. image:: https://img.shields.io/github/actions/workflow/status/hendrikdutoit/SQLAlchemyExample/ci.yaml?label=ci
-    :alt: GitHub Workflow Status (with event)
+    :alt: ci
 
 .. image:: https://img.shields.io/pypi/v/SQLAlchemyExample
     :alt: PyPi
