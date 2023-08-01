@@ -46,9 +46,9 @@ jobs:
           python-version: ${{ matrix.python-version }}
           architecture: x64
 
-#      - name: Verify DB exists
-#        run: mysql --host 127.0.0.1 -uroot -p${{env.MYSQL_PASSWORD}} -e "SHOW DATABASES" # LIKE 'SQLAlchemyExample'"
-#
+      - name: Verify DB exists
+        run: mysql --host 127.0.0.1 -uroot -p${{env.MYSQL_PASSWORD}} -e "SHOW DATABASES" # LIKE 'SQLAlchemyExample'"
+
 #      - name: Install dependencies
 #        run: |
 #          python -m pip install --upgrade pip
