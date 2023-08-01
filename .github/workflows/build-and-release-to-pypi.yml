@@ -1,4 +1,4 @@
-name: Build and Publish Distribution
+name: Build-and-Release-to-Pypi
 
 on:
 #  pull_request:
@@ -6,7 +6,7 @@ on:
   workflow_call:
 
 jobs:
-  Release-to-Pypi:
+  Build-and-Release-to-Pypi:
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: true

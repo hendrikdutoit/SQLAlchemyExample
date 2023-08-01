@@ -6,18 +6,20 @@ on:
 
 jobs:
   Pre-Commit:
-    uses: .github/workflows/pre-commit.ymlmaster
-    secrets:
-      token: ${{ secrets.token }}
+    uses: ./.github/workflows/pre-commit.yml
+#    secrets:
+#      token: ${{ secrets.token }}
 
   CI:
-    uses: .github/workflows/ci.yml@master
+    uses: ./.github/workflows/ci.yml
     needs: Pre-Commit
-    secrets:
-      token: ${{ secrets.token }}
+#    secrets:
+#      token: ${{ secrets.token }}
 
-  Build and Publish Distribution:
-    uses: .github/workflows/release.ymlmaster
+  Build-and-Release-to-Pypi:
+    needs: CI
+    uses: ./.github/workflows/build-and-release-to-pypi.yml
     if: startsWith(github.ref, 'refs/tags/')
-    secrets:
-      token: ${{ secrets.token }}
+#    if: github.repository == 'hendrikdutoit/PackageIt' && github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
+#    secrets:
+#      token: ${{ secrets.token }}
