@@ -53,7 +53,10 @@ jobs:
 
       - name: Push to master
         if: steps.merge.outcome == 'success'
-        run: git push origin master
+        run: |
+          git push origin master
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
 
       - name: Publish package to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
