@@ -42,7 +42,7 @@ jobs:
         run: |
           git checkout master
           git merge --no-ff $GITHUB_REF
-        continue-on-error: true
+        continue-on-error: false
 
       - name: Push to master
         if: steps.merge.outcome == 'success'
