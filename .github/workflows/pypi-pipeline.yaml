@@ -1,4 +1,4 @@
-name: BEE Default Workflow
+name: PyPI Pipeline
 
 on:
   pull_request:
