@@ -8,11 +8,17 @@ on:
 jobs:
   Build-and-Release-to-Pypi:
     runs-on: ${{ matrix.os }}
+
     environment:
       name: pypi
       url: https://pypi.org/p/SQLAlchemyExample
+
     permissions:
       id-token: write
+      contents: write
+      issues: write
+      pull-requests: write
+
     strategy:
       fail-fast: true
       matrix:
