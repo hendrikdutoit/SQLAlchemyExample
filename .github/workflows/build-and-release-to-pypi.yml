@@ -37,10 +37,16 @@ jobs:
         shell: bash -l {0}
         run: python -m build
 
+      - name: Merge into master
+        id: merge
+        run: |
+          git checkout master
+          git merge --no-ff $GITHUB_REF
+        continue-on-error: true
+
+      - name: Push to master
+        if: steps.merge.outcome == 'success'
+        run: git push origin master
+
       - name: Publish package to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
-#        with:
-#          user: __token__
-#          password: ${{ secrets.PYPI_API_TOKEN }}
-#          repository-url: https://upload.pypi.org/legacy/
-#          verbose: true
