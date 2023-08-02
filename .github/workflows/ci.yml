@@ -40,15 +40,15 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: ${{ matrix.python-version }}
-          architecture: x64
-
-      - name: Verify DB exists
-        run: mysql --host 127.0.0.1 -uroot -p${{env.MYSQL_PASSWORD}} -e "SHOW DATABASES" # LIKE 'SQLAlchemyExample'"
-
+#      - name: Set up Python
+#        uses: actions/setup-python@v4
+#        with:
+#          python-version: ${{ matrix.python-version }}
+#          architecture: x64
+#
+#      - name: Verify DB exists
+#        run: mysql --host 127.0.0.1 -uroot -p${{env.MYSQL_PASSWORD}} -e "SHOW DATABASES" # LIKE 'SQLAlchemyExample'"
+#
 #      - name: Install dependencies
 #        run: |
 #          python -m pip install --upgrade pip
