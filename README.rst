@@ -59,7 +59,9 @@ Installation
 
 Tests
 =====
+
 :Status: Work In Progress
+
 This project uses ``pytest`` to run tests and also to test docstring examples.
 
 Install the test dependencies.
@@ -74,6 +76,7 @@ Instructions about how to run tests.
 
 Contributing
 ============
+
 .. Guidelines on how to contribute to this project.
 
 :Status: Work In Progress
@@ -91,6 +94,7 @@ This project uses ``black`` to format code and ``flake8`` for linting. We also s
 
 Releasing
 =========
+
 :Status: Work In Progress
 
 Releases are published automatically when a tag is pushed to GitHub.
@@ -109,6 +113,7 @@ Releases are published automatically when a tag is pushed to GitHub.
 
 License
 =======
+
 :Status: Work In Progress
 
 .. Information about the project's license.
