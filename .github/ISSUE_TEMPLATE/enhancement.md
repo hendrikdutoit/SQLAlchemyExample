@@ -1,7 +1,7 @@
 ---
 name: Enhancement Request
 about: Request an enhancement to be added
-title: "[Feature]: "
+title: "[Enhancement]: "
 labels:
   - enhancement
 ---
