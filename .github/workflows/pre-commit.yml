@@ -1,8 +1,6 @@
 name: Pre-Commit
 
 on:
-#  pull_request:
-#  push:
   workflow_call:
 
 jobs:
@@ -19,13 +17,13 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v3
 
-#      - name: Set up Python
-#        uses: actions/setup-python@v4
-#        with:
-#          python-version: ${{ matrix.python-version }}
-#
-#      - name: Install pre-commit
-#        run: pip install pre-commit
-#
-#      - name: Run pre-commit checks
-#        uses: pre-commit/action@v3.0.0
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install pre-commit
+        run: pip install pre-commit
+
+      - name: Run pre-commit checks
+        uses: pre-commit/action@v3.0.0

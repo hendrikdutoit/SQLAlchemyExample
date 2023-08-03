@@ -6,13 +6,16 @@ labels:
   - enhancement
 ---
 
-**Description of Feature or Improvement**:
+**Description of Feature or Improvement:**
 
 
-**Proposed Solution**:
+**Proposed Solution:**
 
-**New Release Checks**
+**New Release Checks:**
 Only once all the checks below are completed should there be a new release: 
 - [ ] Pre-Commit successful
 - [ ] CI successful
 - [ ] CodeCov above 99% or justifiably less
+- [ ] Badges are correct on PyPI
+- [ ] Deleted the branch
+- [ ] Changed current branch to `master`
