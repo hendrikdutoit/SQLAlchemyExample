@@ -36,28 +36,24 @@
 Exploring SQLAlchemy
 ====================
 
-    This project provide a sandbox to experiment with SQLAlchemy. This idea is to build an example sequentially in steps to give new users the idea on where to start and how to progress.
+This project provide a sandbox to experiment with SQLAlchemy. This idea is to build an example sequentially in steps to give new users the idea on where to start and how to progress.
 
-    Along the way some principles will be exhibited. The code should be self-explanatory.
+Along the way some principles will be exhibited. The code should be self-explanatory.
 
-    The source code in ``src`` by itself does not do much, it basically only defines the tables and some setup code.  The "examples" are in the the ``pytest's`` since we are experimenting to see howe it works and if it was successfull.
+The source code in ``src`` by itself does not do much, it basically only defines the tables and some setup code.  The "examples" are in the the ``pytest's`` since we are experimenting to see howe it works and if it was successfull.
 
+References:
 
-    References:
-
-    - https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_orm_many_to_many_relationships.htm
-    - https://docs.sqlalchemy.org/en/14/orm/tutorial.html#building-a-relationship
-    - https://cyruslab.net/2020/07/16/pythoncreate-database-if-not-exists-with-sqlalchemy/
+- https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_orm_many_to_many_relationships.htm
+- https://docs.sqlalchemy.org/en/14/orm/tutorial.html#building-a-relationship
+- https://cyruslab.net/2020/07/16/pythoncreate-database-if-not-exists-with-sqlalchemy/
 
 ==================
 Get Up-and-Running
 ==================
 
-    1. Set the following environment variables:
-    2. Start Docker.  The ``docker-rebuild.bat`` script will git docker up and running.
-    3. dasd
-
-``pytest``
+1. Set the following environment variables:
+2. Start Docker.  The ``docker-rebuild.bat`` script will git docker up and running.
 
 =======
 Testing
@@ -70,8 +66,6 @@ Install the test dependencies.
 .. code-block::bash
 
     $ pip install -r requirements_test.txt
-
-
 
 
 Run the tests.

@@ -73,3 +73,21 @@ class TestOTMBiSTI:
 
         assert str(parent) == 'John'
         pass
+
+    def test_childotmbi_table_dunder_repr_ok(self, setup_db_otm_bi_sti):
+        engine, session, base = setup_db_otm_bi_sti
+        child = tab_cfg.ChildOTMBi(name='John')
+        session.add_all([child])
+        session.commit()
+
+        assert repr(child) == '<ChildOTMBi(id=1 name=John)>'
+        pass
+
+    def test_childotmbisti_table_dunder_repr_ok(self, setup_db_otm_bi_sti):
+        engine, session, base = setup_db_otm_bi_sti
+        child = tab_cfg.ChildOTMBiSTI(name='John')
+        session.add_all([child])
+        session.commit()
+
+        assert repr(child) == '<ChildOTMBiSTI(id=1 name=John parent_id=None)>'
+        pass
