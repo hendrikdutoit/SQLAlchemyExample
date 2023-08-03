@@ -50,6 +50,7 @@ References:
 Installation
 ============
 .. Detailed instructions on how to install, configure, and get the project running.
+
 :Status: Work In Progress
 1. Set the following environment variables:
 2. Start Docker.  The ``docker-rebuild.bat`` script will git docker up and running.
