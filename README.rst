@@ -48,7 +48,7 @@ References:
 - https://cyruslab.net/2020/07/16/pythoncreate-database-if-not-exists-with-sqlalchemy/
 
 Installation
-============
+------------
 .. Detailed instructions on how to install, configure, and get the project running.
 
 :Status: Work In Progress
@@ -58,7 +58,7 @@ Installation
 
 
 Tests
-=====
+-----
 
 :Status: Work In Progress
 
@@ -75,7 +75,7 @@ Run the tests.
 Instructions about how to run tests.
 
 Contributing
-============
+------------
 
 .. Guidelines on how to contribute to this project.
 
@@ -93,7 +93,7 @@ This project uses ``black`` to format code and ``flake8`` for linting. We also s
 
 
 Releasing
-=========
+---------
 
 :Status: Work In Progress
 
@@ -112,12 +112,12 @@ Releases are published automatically when a tag is pushed to GitHub.
     git push upstream --tags
 
 License
-=======
+-------
 
 :Status: Work In Progress
 
 .. Information about the project's license.
 
 Contact
-=======
+-------
 :Status: Work In Progress
