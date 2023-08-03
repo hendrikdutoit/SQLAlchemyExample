@@ -32,7 +32,6 @@
 .. image:: https://img.shields.io/pypi/v/SQLAlchemyExample
     :alt: PyPi
 
-====================
 Exploring SQLAlchemy
 ====================
 
@@ -48,49 +47,49 @@ References:
 - https://docs.sqlalchemy.org/en/14/orm/tutorial.html#building-a-relationship
 - https://cyruslab.net/2020/07/16/pythoncreate-database-if-not-exists-with-sqlalchemy/
 
-==================
-Get Up-and-Running
-==================
-
+Installation
+============
+.. Detailed instructions on how to install, configure, and get the project running.
+:Status: Work In Progress
 1. Set the following environment variables:
 2. Start Docker.  The ``docker-rebuild.bat`` script will git docker up and running.
 
-=======
-Testing
-=======
 
+Tests
+=====
+:Status: Work In Progress
 This project uses ``pytest`` to run tests and also to test docstring examples.
 
 Install the test dependencies.
 
-.. code-block::bash
+.. code-block:: bash
 
-    $ pip install -r requirements_test.txt
-
+    pip install -r requirements_test.txt
 
 Run the tests.
 
-.. code-block:: bash
+Instructions about how to run tests.
 
-    $ pytest tests
-    === XXX passed in SSS seconds ===
+Contributing
+============
+.. Guidelines on how to contribute to this project.
 
-==========
-Developing
-==========
-    The setup and installation is for Windows.  Feel free to add contribute to get it running on Linux as well.
+:Status: Work In Progress
+
+The setup and installation is for Windows.  Feel free to add contribute to get it running on Linux as well.
 
 This project uses ``black`` to format code and ``flake8`` for linting. We also support ``pre-commit`` to ensure these have been run. To configure your local environment please install these development dependencies and set up the commit hooks.
+
 
 .. code-block:: bash
 
     $ pip install black flake8 pre-commit
     $ pre-commit install
 
-=========
+
 Releasing
 =========
-
+:Status: Work In Progress
 Releases are published automatically when a tag is pushed to GitHub.
 
 .. code-block:: bash
@@ -104,3 +103,12 @@ Releases are published automatically when a tag is pushed to GitHub.
 
     # Push
     git push upstream --tags
+
+License
+=======
+:Status: Work In Progress
+.. Information about the project's license.
+
+Contact
+=======
+:Status: Work In Progress
