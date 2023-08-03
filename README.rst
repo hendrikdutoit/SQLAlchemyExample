@@ -52,6 +52,7 @@ Installation
 .. Detailed instructions on how to install, configure, and get the project running.
 
 :Status: Work In Progress
+
 1. Set the following environment variables:
 2. Start Docker.  The ``docker-rebuild.bat`` script will git docker up and running.
 
@@ -91,6 +92,7 @@ This project uses ``black`` to format code and ``flake8`` for linting. We also s
 Releasing
 =========
 :Status: Work In Progress
+
 Releases are published automatically when a tag is pushed to GitHub.
 
 .. code-block:: bash
@@ -108,6 +110,7 @@ Releases are published automatically when a tag is pushed to GitHub.
 License
 =======
 :Status: Work In Progress
+
 .. Information about the project's license.
 
 Contact
