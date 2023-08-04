@@ -1,4 +1,4 @@
 CALL del_dt.bat
-gitit adda
-gitit commitcust -m %1
-gitit pushall
+CALL gitit adda
+CALL gitit commitcust -m %1
+CALL gitit pushall
