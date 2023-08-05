@@ -24,14 +24,17 @@ git branch --all
 GOTO :Exit
 
 :AppHelp
-@ECHO usage: release version
+@ECHO usage: release version debug
 @ECHO where
 @ECHO  - version: MAJOR.MINOR.PATCH
 @ECHO      MAJOR version when you make incompatible API changes
 @ECHO      MINOR version when you add functionality in a backward compatible manner
 @ECHO      PATCH version when you make backward compatible bug fixes
+@ECHO  - debug:   ON or OFF
+ECHO '
 @ECHO eg. release 1.2.3
 @ECHO see www.semver.org
+ECHO '
 GOTO :Exit
 
 :Exit
