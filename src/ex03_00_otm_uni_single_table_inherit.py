@@ -4,6 +4,7 @@ Example: One-to_Many Uni-directional
 
 https://docs.sqlalchemy.org/en/14/orm/basic_relationships.html
 """
+from os import environ
 from sqlalchemy.orm import relationship
 from sqlalchemy import Column, ForeignKey, Integer, String
 import db_connection as dbc
@@ -14,56 +15,63 @@ engine = dbc.engine
 session = dbc.session
 
 
-class ParentOTMUni(Base):
-    __tablename__ = 'parent_otm_uni'
+class Parent(Base):
+    __tablename__ = 'parent'
+    __table_args__ = {'schema': environ.get("MYSQL_DB_NAME")}
+
     id = Column(Integer, primary_key=True)
     name = Column(String(45))
     type = Column(String(20))
 
     __mapper_args__ = {
         "polymorphic_on": type,
-        "polymorphic_identity": "parent_otm_uni",
+        "polymorphic_identity": "parent",
     }
     pass
 
     def __repr__(self):
-        return f"<ParentOTMUni(id={self.id} name={self.name})>"
+        return f"<Parent(id={self.id} name={self.name})>"
 
     def __str__(self):
         return f"{self.name}"
 
 
-class ChildOTMUni(Base):
-    __tablename__ = 'child_otm_uni'
+class Child(Base):
+    __tablename__ = 'child'
+    __table_args__ = {'schema': environ.get("MYSQL_DB_NAME")}
+
     id = Column(Integer, primary_key=True)
     name = Column(String(45))
     type = Column(String(20))
 
     __mapper_args__ = {
         "polymorphic_on": type,
-        "polymorphic_identity": "child_otm_uni",
+        "polymorphic_identity": "child",
     }
     pass
 
     def __repr__(self):
-        return f"<ChildOTMUni(id={self.id} name={self.name})>"
+        return f"<Child(id={self.id} name={self.name})>"
 
     def __str__(self):
         return f"{self.name}"
 
 
-class ParentOTMUniSTI(ParentOTMUni):
+class ParentSTI(Parent):
     __mapper_args__ = {
-        "polymorphic_identity": "parent_otm_uni_sti",
+        "polymorphic_identity": "parent_sti",
     }
-    children = relationship("ChildOTMUniSTI")
+    children = relationship("ChildSTI")
+
+    def __repr__(self):
+        return f"<ParentSTI(id={self.id} name={self.name})>"
 
 
-class ChildOTMUniSTI(ChildOTMUni):
-    parent_id = Column(Integer, ForeignKey("parent_otm_uni.id"))
+class ChildSTI(Child):
+    parent_id = Column(Integer, ForeignKey(f"{environ.get('MYSQL_DB_NAME')}.parent.id"))
     __mapper_args__ = {
-        "polymorphic_identity": "child_otm_uni_sti",
+        "polymorphic_identity": "child_sti",
     }
 
     def __repr__(self):
-        return f"<ChildOTMUniSTI(id={self.id} name={self.name} parent_id={self.parent_id})>"
+        return f"<ChildSTI(id={self.id} name={self.name} parent_id={self.parent_id})>"
