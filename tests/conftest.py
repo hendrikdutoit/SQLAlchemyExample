@@ -1,10 +1,12 @@
+from os import environ
 import pytest
 from sqlalchemy.orm import close_all_sessions
 
 
 @pytest.fixture
-def setup_db_st():
-    import simple_tables as tab_cfg
+def setup_db_simple():
+    environ['MYSQL_DB_NAME'] = 'ex01_00_simple'
+    import ex01_00_simple as tab_cfg
 
     tab_cfg.Base.metadata.drop_all()
     tab_cfg.Base.metadata.create_all()
@@ -15,7 +17,8 @@ def setup_db_st():
 
 @pytest.fixture
 def setup_db_otm_bi_sti():
-    import otm_bi_single_table_inherit as tab_cfg
+    environ['MYSQL_DB_NAME'] = 'ex02_00_otm_bi_single_table_inherit'
+    import ex02_00_otm_bi_single_table_inherit as tab_cfg
 
     tab_cfg.Base.metadata.drop_all()
     tab_cfg.Base.metadata.create_all()
@@ -26,7 +29,8 @@ def setup_db_otm_bi_sti():
 
 @pytest.fixture
 def setup_db_otm_uni_sti():
-    import otm_uni_single_table_inherit as tab_cfg
+    environ['MYSQL_DB_NAME'] = 'ex03_00_otm_uni_single_table_inherit'
+    import ex03_00_otm_uni_single_table_inherit as tab_cfg
 
     tab_cfg.Base.metadata.drop_all()
     tab_cfg.Base.metadata.create_all()
