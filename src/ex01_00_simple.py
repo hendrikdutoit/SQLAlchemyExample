@@ -5,11 +5,6 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy_utils import create_database, database_exists, drop_database
 
-
-# Base = db_connection.Base
-# engine = db_connection.engine
-# session = db_connection.session
-
 url = engine.URL.create(
     "mysql+mysqlconnector",
     username="root",

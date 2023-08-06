@@ -1,6 +1,6 @@
 """
 SQLAlchemy V1.4.46
-Example: One-to_Many Bi-directional
+Example: One-to_Many Uni-directional
 
 https://docs.sqlalchemy.org/en/14/orm/basic_relationships.html
 """
@@ -75,7 +75,7 @@ class ParentSTI(Parent):
     __mapper_args__ = {
         "polymorphic_identity": "parent_sti",
     }
-    children = relationship("ChildSTI", back_populates="parent")
+    children = relationship("ChildSTI")
 
     def __repr__(self):
         return f"<ParentSTI(id={self.id} name={self.name})>"
@@ -83,7 +83,6 @@ class ParentSTI(Parent):
 
 class ChildSTI(Child):
     parent_id = Column(Integer, ForeignKey(f"{environ.get('MYSQL_DB_NAME')}.parent.id"))
-    parent = relationship("ParentSTI", back_populates="children")
     __mapper_args__ = {
         "polymorphic_identity": "child_sti",
     }

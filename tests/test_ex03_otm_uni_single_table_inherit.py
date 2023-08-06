@@ -3,17 +3,17 @@ import pytest
 from sqlalchemy import inspect
 
 
-class TestSimple:
-    def test_tables_exist(self, setup_db_otm_uni_sti):
-        engine, session, base = setup_db_otm_uni_sti
+class TestEx03Simple:
+    def test_tables_exist(self, setup_db_03_01):
+        engine, session, base = setup_db_03_01
 
         inspector = inspect(engine)
         assert 'parent' in inspector.get_table_names()
         assert 'child' in inspector.get_table_names()
 
-    def test_parent(self, setup_db_otm_uni_sti):
-        engine, session, base = setup_db_otm_uni_sti
-        import ex03_00_otm_uni_single_table_inherit as tab_cfg
+    def test_parent(self, setup_db_03_01):
+        engine, session, base = setup_db_03_01
+        import ex03_01_otm_uni_single_table_inherit as tab_cfg
 
         parent = tab_cfg.Parent(name='John')
         session.add(parent)
@@ -25,10 +25,10 @@ class TestSimple:
         assert qry.name == 'John'
         pass
 
-    def test_parent_dunder_repr_ok(self, setup_db_otm_uni_sti):
-        import ex03_00_otm_uni_single_table_inherit as tab_cfg
+    def test_parent_dunder_repr_ok(self, setup_db_03_01):
+        import ex03_01_otm_uni_single_table_inherit as tab_cfg
 
-        engine, session, base = setup_db_otm_uni_sti
+        engine, session, base = setup_db_03_01
 
         parent = tab_cfg.Parent(name='John')
         session.add_all([parent])
@@ -37,17 +37,17 @@ class TestSimple:
         assert repr(parent) == '<Parent(id=1 name=John)>'
         pass
 
-    def test_parent_dunder_str_ok(self, setup_db_otm_uni_sti):
-        import ex03_00_otm_uni_single_table_inherit as tab_cfg
+    def test_parent_dunder_str_ok(self, setup_db_03_01):
+        import ex03_01_otm_uni_single_table_inherit as tab_cfg
 
         parent = tab_cfg.Parent(name='John')
 
         assert str(parent) == 'John'
         pass
 
-    def test_child(self, setup_db_otm_uni_sti):
-        engine, session, base = setup_db_otm_uni_sti
-        import ex03_00_otm_uni_single_table_inherit as tab_cfg
+    def test_child(self, setup_db_03_01):
+        engine, session, base = setup_db_03_01
+        import ex03_01_otm_uni_single_table_inherit as tab_cfg
 
         child = tab_cfg.Parent(name='Little Johnny')
         session.add(child)
@@ -59,10 +59,10 @@ class TestSimple:
         assert qry.name == 'Little Johnny'
         pass
 
-    def test_child_dunder_repr_ok(self, setup_db_otm_uni_sti):
-        import ex03_00_otm_uni_single_table_inherit as tab_cfg
+    def test_child_dunder_repr_ok(self, setup_db_03_01):
+        import ex03_01_otm_uni_single_table_inherit as tab_cfg
 
-        engine, session, base = setup_db_otm_uni_sti
+        engine, session, base = setup_db_03_01
 
         child = tab_cfg.Child(name='Little Johnny')
         session.add_all([child])
@@ -71,8 +71,8 @@ class TestSimple:
         assert repr(child) == '<Child(id=1 name=Little Johnny)>'
         pass
 
-    def test_child_dunder_str_ok(self, setup_db_otm_uni_sti):
-        import ex03_00_otm_uni_single_table_inherit as tab_cfg
+    def test_child_dunder_str_ok(self, setup_db_03_01):
+        import ex03_01_otm_uni_single_table_inherit as tab_cfg
 
         child = tab_cfg.Child(name='Little Johnny')
 
@@ -80,10 +80,10 @@ class TestSimple:
         pass
 
 
-class TestSTI:
-    def test_parent_sti(self, setup_db_otm_uni_sti):
-        engine, session, base = setup_db_otm_uni_sti
-        import ex03_00_otm_uni_single_table_inherit as tab_cfg
+class TestEx0300:
+    def test_parent_sti(self, setup_db_03_01):
+        engine, session, base = setup_db_03_01
+        import ex03_01_otm_uni_single_table_inherit as tab_cfg
 
         parent = tab_cfg.ParentSTI(name="John")
         session.add(parent)
@@ -95,9 +95,9 @@ class TestSTI:
         assert qry.name == 'John'
         pass
 
-    def test_child_sti_with_parent(self, setup_db_otm_uni_sti):
-        engine, session, base = setup_db_otm_uni_sti
-        import ex03_00_otm_uni_single_table_inherit as tab_cfg
+    def test_child_sti_with_parent(self, setup_db_03_01):
+        engine, session, base = setup_db_03_01
+        import ex03_01_otm_uni_single_table_inherit as tab_cfg
 
         parent_sti = tab_cfg.ParentSTI(name="John")
         child_sti = tab_cfg.ChildSTI(name="Little Johnny", parent_id=parent_sti.id)
@@ -111,9 +111,9 @@ class TestSTI:
         assert str(child_sti) == 'Little Johnny'
         pass
 
-    def test_child_sti_no_parent(self, setup_db_otm_uni_sti):
-        engine, session, base = setup_db_otm_uni_sti
-        import ex03_00_otm_uni_single_table_inherit as tab_cfg
+    def test_child_sti_no_parent(self, setup_db_03_01):
+        engine, session, base = setup_db_03_01
+        import ex03_01_otm_uni_single_table_inherit as tab_cfg
 
         child_sti = tab_cfg.ChildSTI(name="Little Johnny", parent_id=1)
         session.add(child_sti)
@@ -122,9 +122,9 @@ class TestSTI:
         assert e_info.typename == 'IntegrityError'
         pass
 
-    def test_parent_sti_dunder_repr_ok(self, setup_db_otm_uni_sti):
-        engine, session, base = setup_db_otm_uni_sti
-        import ex03_00_otm_uni_single_table_inherit as tab_cfg
+    def test_parent_sti_dunder_repr_ok(self, setup_db_03_01):
+        engine, session, base = setup_db_03_01
+        import ex03_01_otm_uni_single_table_inherit as tab_cfg
 
         parent_sti = tab_cfg.ParentSTI(name='John')
         session.add_all([parent_sti])
@@ -134,16 +134,16 @@ class TestSTI:
         pass
 
     def test_parent_sti_dunder_str_ok(self):
-        import ex03_00_otm_uni_single_table_inherit as tab_cfg
+        import ex03_01_otm_uni_single_table_inherit as tab_cfg
 
         parent_sti = tab_cfg.ParentSTI(name='John')
 
         assert str(parent_sti) == 'John'
         pass
 
-    def test_child_sti_dunder_repr_ok(self, setup_db_otm_uni_sti):
-        engine, session, base = setup_db_otm_uni_sti
-        import ex03_00_otm_uni_single_table_inherit as tab_cfg
+    def test_child_sti_dunder_repr_ok(self, setup_db_03_01):
+        engine, session, base = setup_db_03_01
+        import ex03_01_otm_uni_single_table_inherit as tab_cfg
 
         parent_sti = tab_cfg.ParentSTI(name='John')
         child_sti = tab_cfg.ChildSTI(name='Little Johnny', parent_id=parent_sti.id)
@@ -153,10 +153,40 @@ class TestSTI:
         assert repr(child_sti) == '<ChildSTI(id=1 name=Little Johnny parent_id=None)>'
         pass
 
-    def test_child_sti_dunder_str_ok(self, setup_db_otm_uni_sti):
-        import ex03_00_otm_uni_single_table_inherit as tab_cfg
+    def test_child_sti_dunder_str_ok(self, setup_db_03_01):
+        import ex03_01_otm_uni_single_table_inherit as tab_cfg
 
         child_sti = tab_cfg.ChildSTI(name='Little Johnny')
 
         assert str(child_sti) == 'Little Johnny'
+        pass
+
+
+class TestEx0301:
+    def test_login(self, setup_db_03_00):
+        engine, session, base = setup_db_03_00
+        import ex03_00_otm_uni_single_table_inherit as tab_cfg
+
+        login = tab_cfg.LogIn(email="john@somewhere.com")
+        session.add(login)
+        qry = session.query(tab_cfg.LogIn).filter_by(email="john@somewhere.com").first()
+        session.commit()
+
+        assert login.email == 'john@somewhere.com'
+        assert str(login) == 'john@somewhere.com'
+        assert qry.email == 'john@somewhere.com'
+        pass
+
+    def test_person(self, setup_db_03_00):
+        engine, session, base = setup_db_03_00
+        import ex03_00_otm_uni_single_table_inherit as tab_cfg
+
+        person = tab_cfg.Person(email="john@somewhere.com", name='John', surname='Doe')
+        session.add(person)
+        qry = session.query(tab_cfg.LogIn).filter_by(email="john@somewhere.com").first()
+        session.commit()
+
+        assert person.email == 'john@somewhere.com'
+        assert str(person) == 'john@somewhere.com'
+        assert qry.email == 'john@somewhere.com'
         pass
