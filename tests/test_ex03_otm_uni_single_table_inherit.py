@@ -15,14 +15,14 @@ class TestEx03Simple:
         engine, session, base = setup_db_03_01
         import ex03_01_otm_uni_single_table_inherit as tab_cfg
 
-        parent = tab_cfg.Parent(name='John')
+        parent = tab_cfg.LogIn(name='John')
         session.add(parent)
-        qry = session.query(tab_cfg.Parent).filter_by(name='John').first()
+        qry = session.query(tab_cfg.LogIn).filter_by(name='John').first()
         session.commit()
 
-        assert parent.name == 'John'
+        assert parent.email == 'John'
         assert str(parent) == 'John'
-        assert qry.name == 'John'
+        assert qry.email == 'John'
         pass
 
     def test_parent_dunder_repr_ok(self, setup_db_03_01):
@@ -30,7 +30,7 @@ class TestEx03Simple:
 
         engine, session, base = setup_db_03_01
 
-        parent = tab_cfg.Parent(name='John')
+        parent = tab_cfg.LogIn(name='John')
         session.add_all([parent])
         session.commit()
 
@@ -40,7 +40,7 @@ class TestEx03Simple:
     def test_parent_dunder_str_ok(self, setup_db_03_01):
         import ex03_01_otm_uni_single_table_inherit as tab_cfg
 
-        parent = tab_cfg.Parent(name='John')
+        parent = tab_cfg.LogIn(name='John')
 
         assert str(parent) == 'John'
         pass
@@ -49,14 +49,14 @@ class TestEx03Simple:
         engine, session, base = setup_db_03_01
         import ex03_01_otm_uni_single_table_inherit as tab_cfg
 
-        child = tab_cfg.Parent(name='Little Johnny')
+        child = tab_cfg.LogIn(name='Little Johnny')
         session.add(child)
-        qry = session.query(tab_cfg.Parent).filter_by(name='Little Johnny').first()
+        qry = session.query(tab_cfg.LogIn).filter_by(name='Little Johnny').first()
         session.commit()
 
-        assert child.name == 'Little Johnny'
+        assert child.email == 'Little Johnny'
         assert str(child) == 'Little Johnny'
-        assert qry.name == 'Little Johnny'
+        assert qry.email == 'Little Johnny'
         pass
 
     def test_child_dunder_repr_ok(self, setup_db_03_01):
@@ -90,9 +90,9 @@ class TestEx0300:
         qry = session.query(tab_cfg.ParentSTI).filter_by(name="John").first()
         session.commit()
 
-        assert parent.name == 'John'
+        assert parent.email == 'John'
         assert str(parent) == 'John'
-        assert qry.name == 'John'
+        assert qry.email == 'John'
         pass
 
     def test_child_sti_with_parent(self, setup_db_03_01):
@@ -105,7 +105,7 @@ class TestEx0300:
         session.add(child_sti)
         session.commit()
 
-        assert parent_sti.name == 'John'
+        assert parent_sti.email == 'John'
         assert str(parent_sti) == 'John'
         assert child_sti.name == 'Little Johnny'
         assert str(child_sti) == 'Little Johnny'

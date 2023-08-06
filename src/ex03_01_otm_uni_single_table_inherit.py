@@ -29,25 +29,25 @@ session = Session()
 Base = declarative_base(bind=engine)
 
 
-class Parent(Base):
-    __tablename__ = 'parent'
+class LogIn(Base):
+    __tablename__ = 'login'
     __table_args__ = {'schema': environ.get("MYSQL_DB_NAME")}
 
     id = Column(Integer, primary_key=True)
-    name = Column(String(45))
+    email = Column(String(100))
     type = Column(String(20))
 
     __mapper_args__ = {
         "polymorphic_on": type,
-        "polymorphic_identity": "parent",
+        "polymorphic_identity": "login",
     }
     pass
 
     def __repr__(self):
-        return f"<Parent(id={self.id} name={self.name})>"
+        return f"<LogIn(id={self.id} name={self.email})>"
 
     def __str__(self):
-        return f"{self.name}"
+        return f"{self.email}"
 
 
 class Child(Base):
@@ -71,14 +71,14 @@ class Child(Base):
         return f"{self.name}"
 
 
-class ParentSTI(Parent):
+class Person(LogIn):
     __mapper_args__ = {
         "polymorphic_identity": "parent_sti",
     }
-    children = relationship("ChildSTI")
+    children = relationship("Person")
 
     def __repr__(self):
-        return f"<ParentSTI(id={self.id} name={self.name})>"
+        return f"<Person(id={self.id} name={self.email})>"
 
 
 class ChildSTI(Child):

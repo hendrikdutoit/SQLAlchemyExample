@@ -22,7 +22,7 @@ class TestSimple:
 
         assert parent.name == 'John'
         assert str(parent) == 'John'
-        assert qry.name == 'John'
+        assert qry.email == 'John'
         pass
 
     def test_parent_dunder_repr_ok(self, setup_db_ex_02_00):
@@ -56,7 +56,7 @@ class TestSimple:
 
         assert child.name == 'Little Johnny'
         assert str(child) == 'Little Johnny'
-        assert qry.name == 'Little Johnny'
+        assert qry.email == 'Little Johnny'
         pass
 
     def test_child_dunder_repr_ok(self, setup_db_ex_02_00):
@@ -92,7 +92,7 @@ class TestSTI:
 
         assert parent.name == 'John'
         assert str(parent) == 'John'
-        assert qry.name == 'John'
+        assert qry.email == 'John'
         pass
 
     def test_child_sti_with_parent(self, setup_db_ex_02_00):
