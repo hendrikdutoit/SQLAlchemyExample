@@ -8,41 +8,41 @@ class TestEx03Simple:
         engine, session, base = setup_db_03_01
 
         inspector = inspect(engine)
-        assert 'parent' in inspector.get_table_names()
+        assert 'login' in inspector.get_table_names()
         assert 'child' in inspector.get_table_names()
 
-    def test_parent(self, setup_db_03_01):
+    def test_login(self, setup_db_03_01):
         engine, session, base = setup_db_03_01
         import ex03_01_otm_uni_single_table_inherit as tab_cfg
 
-        parent = tab_cfg.LogIn(name='John')
-        session.add(parent)
-        qry = session.query(tab_cfg.LogIn).filter_by(name='John').first()
+        login = tab_cfg.LogIn(email='john@somewhere.com')
+        session.add(login)
+        qry = session.query(tab_cfg.LogIn).filter_by(email='john@somewhere.com').first()
         session.commit()
 
-        assert parent.email == 'John'
-        assert str(parent) == 'John'
-        assert qry.email == 'John'
+        assert login.email == 'john@somewhere.com'
+        assert str(login) == 'john@somewhere.com'
+        assert qry.email == 'john@somewhere.com'
         pass
 
-    def test_parent_dunder_repr_ok(self, setup_db_03_01):
+    def test_login_dunder_repr_ok(self, setup_db_03_01):
         import ex03_01_otm_uni_single_table_inherit as tab_cfg
 
         engine, session, base = setup_db_03_01
 
-        parent = tab_cfg.LogIn(name='John')
-        session.add_all([parent])
+        login = tab_cfg.LogIn(email='john@somewhere.com')
+        session.add_all([login])
         session.commit()
 
-        assert repr(parent) == '<Parent(id=1 name=John)>'
+        assert repr(login) == '<Parent(id=1 email=john@somewhere.com)>'
         pass
 
-    def test_parent_dunder_str_ok(self, setup_db_03_01):
+    def test_login_dunder_str_ok(self, setup_db_03_01):
         import ex03_01_otm_uni_single_table_inherit as tab_cfg
 
-        parent = tab_cfg.LogIn(name='John')
+        login = tab_cfg.LogIn(email='john@somewhere.com')
 
-        assert str(parent) == 'John'
+        assert str(login) == 'john@somewhere.com'
         pass
 
     def test_child(self, setup_db_03_01):
@@ -181,7 +181,9 @@ class TestEx0301:
         engine, session, base = setup_db_03_00
         import ex03_00_otm_uni_single_table_inherit as tab_cfg
 
-        person = tab_cfg.Person(email="john@somewhere.com", name='John', surname='Doe')
+        person = tab_cfg.Person(
+            email="john@somewhere.com", name='john@somewhere.com', surname='Doe'
+        )
         session.add(person)
         qry = session.query(tab_cfg.LogIn).filter_by(email="john@somewhere.com").first()
         session.commit()

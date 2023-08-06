@@ -34,7 +34,7 @@ class TestSimple:
         qry = session.query(tab_cfg.Person).all()
         assert len(qry) > 0
         for i, x in enumerate(qry):
-            assert x.email == person_list[i].name
+            assert x.name == person_list[i].name
             pass
         pass
 
