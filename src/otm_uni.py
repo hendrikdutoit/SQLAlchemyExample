@@ -30,6 +30,9 @@ Base = declarative_base(bind=engine)
 
 
 class Student(Base):
+    __tablename__ = 'student'
+    __table_args__ = {'schema': environ.get("MYSQL_DB_NAME")}
+
     id = Column(Integer, primary_key=True)
     email = Column(String(100))
     name = Column(String(45))
@@ -38,7 +41,7 @@ class Student(Base):
     children = relationship("Course")
 
     def __repr__(self):
-        return f"<Student(id={self.id} name={self.name} surname = {self.surname} email={self.email})>"
+        return f"<Student(id={self.id} name={self.name} surname={self.surname} email={self.email})>"
 
     def __str__(self):
         return f"{self.name} {self.surname}"

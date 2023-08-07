@@ -3,112 +3,113 @@
 from sqlalchemy import inspect
 
 
-class TestOtmUniSti:
-    def test_tables_exist(self, setup_db_otm_uni_sti):
-        engine, session, base = setup_db_otm_uni_sti
+class TestOtmBiSti:
+    def test_tables_exist(self, setup_db_otm_bi_sti):
+        engine, session, base = setup_db_otm_bi_sti
 
         inspector = inspect(engine)
         assert 'login' in inspector.get_table_names()
-        assert 'course' in inspector.get_table_names()
+        assert 'book' in inspector.get_table_names()
 
-    def test_login(self, setup_db_otm_uni_sti):
-        engine, session, base = setup_db_otm_uni_sti
-        import otm_uni_sti as tab_cfg
+    def test_login(self, setup_db_otm_bi_sti):
+        engine, session, base = setup_db_otm_bi_sti
+        import otm_bi_sti as tab_cfg
 
-        login = tab_cfg.LogIn(email='john@bar.foo')
+        login = tab_cfg.LogIn(email='ford@bar.foo')
         session.add(login)
-        qry = session.query(tab_cfg.LogIn).filter_by(email='john@bar.foo').first()
+        qry = session.query(tab_cfg.LogIn).filter_by(email='ford@bar.foo').first()
         session.commit()
 
-        assert login.email == 'john@bar.foo'
-        assert str(login) == 'john@bar.foo'
-        assert qry.email == 'john@bar.foo'
+        assert login.email == 'ford@bar.foo'
+        assert str(login) == 'ford@bar.foo'
+        assert qry.email == 'ford@bar.foo'
         pass
 
-    def test_login_dunder_repr_ok(self, setup_db_otm_uni_sti):
-        import otm_uni_sti as tab_cfg
+    def test_login_dunder_repr_ok(self, setup_db_otm_bi_sti):
+        import otm_bi_sti as tab_cfg
 
-        engine, session, base = setup_db_otm_uni_sti
+        engine, session, base = setup_db_otm_bi_sti
 
-        login = tab_cfg.LogIn(email='john@bar.foo')
+        login = tab_cfg.LogIn(email='ford@bar.foo')
         session.add_all([login])
         session.commit()
 
-        assert repr(login) == '<LogIn(id=1 email=john@bar.foo)>'
+        assert repr(login) == '<LogIn(id=1 email=ford@bar.foo)>'
         pass
 
     def test_login_dunder_str_ok(self):
-        import otm_uni_sti as tab_cfg
+        import otm_bi_sti as tab_cfg
 
-        login = tab_cfg.LogIn(email='john@bar.foo')
+        login = tab_cfg.LogIn(email='ford@bar.foo')
 
-        assert str(login) == 'john@bar.foo'
+        assert str(login) == 'ford@bar.foo'
         pass
 
-    def test_student(self, setup_db_otm_uni_sti):
-        engine, session, base = setup_db_otm_uni_sti
-        import otm_uni_sti as tab_cfg
+    def test_author(self, setup_db_otm_bi_sti):
+        engine, session, base = setup_db_otm_bi_sti
+        import otm_bi_sti as tab_cfg
 
-        student = tab_cfg.Student(email='john@bar.foo', name='John', surname='Doe')
-        session.add(student)
-        qry = session.query(tab_cfg.LogIn).filter_by(email='john@bar.foo').first()
+        author = tab_cfg.Author(email='ford@bar.foo', name='Ford', surname='Prefect')
+        session.add(author)
+        qry = session.query(tab_cfg.LogIn).filter_by(email='ford@bar.foo').first()
         session.commit()
 
-        assert qry.email == 'john@bar.foo'
-        assert qry.name == 'John'
-        assert qry.surname == 'Doe'
+        assert qry.email == 'ford@bar.foo'
+        assert qry.name == 'Ford'
+        assert qry.surname == 'Prefect'
         pass
 
-    def test_student_dunder_repr_ok(self, setup_db_otm_uni_sti):
-        import otm_uni_sti as tab_cfg
+    def test_author_dunder_repr_ok(self, setup_db_otm_bi_sti):
+        import otm_bi_sti as tab_cfg
 
-        engine, session, base = setup_db_otm_uni_sti
+        engine, session, base = setup_db_otm_bi_sti
 
-        student = tab_cfg.Student(email='john@bar.foo', name='John', surname='Doe')
-        session.add_all([student])
+        author = tab_cfg.Author(email='ford@bar.foo', name='Ford', surname='Prefect')
+        session.add_all([author])
         session.commit()
 
         assert (
-            repr(student) == '<Student(id=1 name=John surname=Doe email=john@bar.foo)>'
+            repr(author)
+            == '<Author(id=1 name=Ford surname=Prefect email=ford@bar.foo)>'
         )
         pass
 
-    def test_student_dunder_str_ok(self):
-        import otm_uni_sti as tab_cfg
+    def test_author_dunder_str_ok(self):
+        import otm_bi_sti as tab_cfg
 
-        student = tab_cfg.Student(email='john@bar.foo', name='John', surname='Doe')
+        author = tab_cfg.Author(email='ford@bar.foo', name='Ford', surname='Prefect')
 
-        assert str(student) == 'John Doe'
+        assert str(author) == 'Ford Prefect'
         pass
 
-    def test_course(self, setup_db_otm_uni_sti):
-        engine, session, base = setup_db_otm_uni_sti
-        import otm_uni_sti as tab_cfg
+    def test_book(self, setup_db_otm_bi_sti):
+        engine, session, base = setup_db_otm_bi_sti
+        import otm_bi_sti as tab_cfg
 
-        course = tab_cfg.Course(name='Physics')
-        session.add(course)
-        qry = session.query(tab_cfg.Course).filter_by(name='Physics').first()
+        book = tab_cfg.Book(name='Physics')
+        session.add(book)
+        qry = session.query(tab_cfg.Book).filter_by(name='Physics').first()
         session.commit()
 
         assert qry.name == 'Physics'
         pass
 
-    def test_course_dunder_repr_ok(self, setup_db_otm_uni_sti):
-        import otm_uni_sti as tab_cfg
+    def test_book_dunder_repr_ok(self, setup_db_otm_bi_sti):
+        import otm_bi_sti as tab_cfg
 
-        engine, session, base = setup_db_otm_uni_sti
+        engine, session, base = setup_db_otm_bi_sti
 
-        course = tab_cfg.Course(name='Physics')
-        session.add_all([course])
+        book = tab_cfg.Book(name='Physics')
+        session.add_all([book])
         session.commit()
 
-        assert repr(course) == '<Course(id=1 name=Physics)>'
+        assert repr(book) == '<Book(id=1 name=Physics)>'
         pass
 
-    def test_course_dunder_str_ok(self):
-        import otm_uni_sti as tab_cfg
+    def test_book_dunder_str_ok(self):
+        import otm_bi_sti as tab_cfg
 
-        course = tab_cfg.Course(name='Physics')
+        book = tab_cfg.Book(name='Physics')
 
-        assert str(course) == 'Physics'
+        assert str(book) == 'Physics'
         pass

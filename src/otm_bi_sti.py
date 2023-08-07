@@ -60,7 +60,7 @@ class Author(LogIn):
     }
 
     def __repr__(self):
-        return f"<Author(id={self.id} name={self.name} surname = {self.surname} email={self.email})>"
+        return f"<Author(id={self.id} name={self.name} surname={self.surname} email={self.email})>"
 
     def __str__(self):
         return f"{self.name} {self.surname}"
@@ -72,7 +72,7 @@ class Book(Base):
 
     id = Column(Integer, primary_key=True)
     name = Column(String(45))
-    author_id = Column(Integer, ForeignKey(f"{environ.get('MYSQL_DB_NAME')}.author.id"))
+    author_id = Column(Integer, ForeignKey(f"{environ.get('MYSQL_DB_NAME')}.login.id"))
 
     author = relationship("Author", back_populates="books")
     pass

@@ -40,7 +40,7 @@ class Author(Base):
     books = relationship("Book", back_populates="author")
 
     def __repr__(self):
-        return f"<Author(id={self.id} name={self.name} surname = {self.surname} email={self.email})>"
+        return f"<Author(id={self.id} name={self.name} surname={self.surname})>"
 
     def __str__(self):
         return f"{self.name} {self.surname}"

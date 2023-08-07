@@ -25,8 +25,8 @@ class TestSimple:
         import simple as tab_cfg
 
         Student_list = [
-            tab_cfg.Student(name='John Doe'),
-            tab_cfg.Student(name='Jane Smith'),
+            tab_cfg.Student(name='Ford Prefect'),
+            tab_cfg.Student(name='Arthur Dent'),
         ]
         session.add_all(Student_list)
         session.commit()

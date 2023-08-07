@@ -4,14 +4,14 @@ from sqlalchemy import inspect
 
 
 class TestSTI:
-    def test_tables_exist(self, sti):
-        engine, session, base = sti
+    def test_tables_exist(self, setup_db_sti):
+        engine, session, base = setup_db_sti
 
         inspector = inspect(engine)
         assert 'login' in inspector.get_table_names()
 
-    def test_login(self, sti):
-        engine, session, base = sti
+    def test_login(self, setup_db_sti):
+        engine, session, base = setup_db_sti
         import sti as tab_cfg
 
         login = tab_cfg.LogIn(email='john@bar.foo')
@@ -24,10 +24,10 @@ class TestSTI:
         assert qry.email == 'john@bar.foo'
         pass
 
-    def test_login_dunder_repr_ok(self, sti):
+    def test_login_dunder_repr_ok(self, setup_db_sti):
         import sti as tab_cfg
 
-        engine, session, base = sti
+        engine, session, base = setup_db_sti
 
         login = tab_cfg.LogIn(email='john@bar.foo')
         session.add_all([login])
@@ -44,8 +44,8 @@ class TestSTI:
         assert str(login) == 'john@bar.foo'
         pass
 
-    def test_student(self, sti):
-        engine, session, base = sti
+    def test_student(self, setup_db_sti):
+        engine, session, base = setup_db_sti
         import sti as tab_cfg
 
         student = tab_cfg.Student(email='john@bar.foo', name='John', surname='Doe')
@@ -58,8 +58,8 @@ class TestSTI:
         assert qry.surname == 'Doe'
         pass
 
-    def test_student_dunder_repr_ok(self, sti):
-        engine, session, base = sti
+    def test_student_dunder_repr_ok(self, setup_db_sti):
+        engine, session, base = setup_db_sti
         import sti as tab_cfg
 
         student = tab_cfg.Student(email='john@bar.foo', name='John', surname='Doe')
