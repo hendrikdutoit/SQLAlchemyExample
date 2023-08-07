@@ -5,11 +5,6 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy_utils import create_database, database_exists, drop_database
 
-
-# Base = db_connection.Base
-# engine = db_connection.engine
-# session = db_connection.session
-
 url = engine.URL.create(
     "mysql+mysqlconnector",
     username="root",
@@ -28,8 +23,8 @@ session = Session()
 Base = declarative_base(bind=engine)
 
 
-class Person(Base):
-    __tablename__ = 'person'
+class Student(Base):
+    __tablename__ = 'Student'
     __table_args__ = {'schema': environ.get("MYSQL_DB_NAME")}
 
     id = Column(Integer, Identity(start=1), primary_key=True)
@@ -37,7 +32,7 @@ class Person(Base):
     pass
 
     def __repr__(self):
-        return f"<Person(id={self.id} name={self.name})>"
+        return f"<Student(id={self.id} name={self.name})>"
 
     def __str__(self):
         return f"{self.name}"

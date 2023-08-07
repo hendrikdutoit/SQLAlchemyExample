@@ -11,11 +11,6 @@ from sqlalchemy.orm import sessionmaker, relationship
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy_utils import create_database, database_exists, drop_database
 
-
-# Base = db_connection.Base
-# engine = db_connection.engine
-# session = db_connection.session
-
 url = engine.URL.create(
     "mysql+mysqlconnector",
     username="root",
@@ -34,63 +29,36 @@ session = Session()
 Base = declarative_base(bind=engine)
 
 
-class Parent(Base):
-    __tablename__ = 'parent'
+class Author(Base):
+    __tablename__ = 'author'
     __table_args__ = {'schema': environ.get("MYSQL_DB_NAME")}
 
     id = Column(Integer, primary_key=True)
     name = Column(String(45))
-    type = Column(String(20))
+    surname = Column(String(45))
 
-    __mapper_args__ = {
-        "polymorphic_on": type,
-        "polymorphic_identity": "parent",
-    }
-    pass
+    books = relationship("Book", back_populates="author")
 
     def __repr__(self):
-        return f"<Parent(id={self.id} name={self.name})>"
+        return f"<Author(id={self.id} name={self.name} surname={self.surname})>"
 
     def __str__(self):
-        return f"{self.name}"
+        return f"{self.name} {self.surname}"
 
 
-class Child(Base):
-    __tablename__ = 'child'
+class Book(Base):
+    __tablename__ = 'book'
     __table_args__ = {'schema': environ.get("MYSQL_DB_NAME")}
 
     id = Column(Integer, primary_key=True)
     name = Column(String(45))
-    type = Column(String(20))
+    author_id = Column(Integer, ForeignKey(f"{environ.get('MYSQL_DB_NAME')}.author.id"))
 
-    __mapper_args__ = {
-        "polymorphic_on": type,
-        "polymorphic_identity": "child",
-    }
+    author = relationship("Author", back_populates="books")
     pass
 
     def __repr__(self):
-        return f"<Child(id={self.id} name={self.name})>"
+        return f"<Book(id={self.id} name={self.name})>"
 
     def __str__(self):
         return f"{self.name}"
-
-
-class ParentSTI(Parent):
-    __mapper_args__ = {
-        "polymorphic_identity": "parent_sti",
-    }
-    children = relationship("ChildSTI")
-
-    def __repr__(self):
-        return f"<ParentSTI(id={self.id} name={self.name})>"
-
-
-class ChildSTI(Child):
-    parent_id = Column(Integer, ForeignKey(f"{environ.get('MYSQL_DB_NAME')}.parent.id"))
-    __mapper_args__ = {
-        "polymorphic_identity": "child_sti",
-    }
-
-    def __repr__(self):
-        return f"<ChildSTI(id={self.id} name={self.name} parent_id={self.parent_id})>"
