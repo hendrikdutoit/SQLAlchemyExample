@@ -23,8 +23,8 @@ session = Session()
 Base = declarative_base(bind=engine)
 
 
-class Person(Base):
-    __tablename__ = 'person'
+class Student(Base):
+    __tablename__ = 'Student'
     __table_args__ = {'schema': environ.get("MYSQL_DB_NAME")}
 
     id = Column(Integer, Identity(start=1), primary_key=True)
@@ -32,7 +32,7 @@ class Person(Base):
     pass
 
     def __repr__(self):
-        return f"<Person(id={self.id} name={self.name})>"
+        return f"<Student(id={self.id} name={self.name})>"
 
     def __str__(self):
         return f"{self.name}"
