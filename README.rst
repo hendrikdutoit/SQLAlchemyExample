@@ -17,11 +17,11 @@ Exploring SQLAlchemy
 +-------------------+---------------------------------------------------------------------------------------------+
 
 
-This project provide a sandbox to experiment with SQLAlchemy. This idea is to build an example sequentially in steps to give new users the idea on where to start and how to progress.
+This project provides a sandbox to experiment with SQLAlchemy. This idea is to build an example sequentially in steps to give new users the idea on where to start and how to progress.
 
 Along the way some principles will be exhibited. The code should be self-explanatory.
 
-The source code in ``src`` by itself does not do much, it basically only defines the tables and some setup code.  The "examples" are in the the ``pytest's`` since we are experimenting to see howe it works and if it was successfull.
+The source code in ``src`` by itself does not do much, it basically only defines the tables and some setup code.  The "examples" are in the ``pytest's`` since we are experimenting to see howe it works and if it was successful.
 
 References:
 
@@ -32,7 +32,7 @@ References:
 Installation
 ------------
 
-#. Since this is intended for experimental purposes, it is reccomeded to create a virtual environment to experiment for installation.
+#. Since this is intended for experimental purposes, it is recommended to create a virtual environment to experiment for installation.
 #. Set the following environment variables in the virtual environment.  Set these in your IDE as well.
 #. Start Docker.  The ``docker-rebuild.bat`` script will git docker up and running.
 #. The setup and installation is for Windows.  Feel free to add contribute to get it running on Linux as well.
@@ -64,47 +64,45 @@ Tests
 Contributing
 ------------
 
-:Status: Work In Progress
-
 Naming Conventions
 ~~~~~~~~~~~~~~~~~~
 
-#. Files containg tables
-
-#. Files contaning tests
-
+#. File names
+    #. Not knowing what's to come and what will be added, it is difficult to determine a naming convention for source, test and other file names.  The owner will therefore be a "benevolent dictator" to rename and change names.
+    #. Link the file name of the source code and the test so that it is easily linked.
 #. Branch names
+    "enhancement" | "bug" | "hotfix"/< ticket_nr>_<description>
+
+    where
+
+    ticket_nr: Ticket number assigned to the issue in GitHub.  Once an issue is registered, the owner will assign a ticket.
+
+    description: GitHub issue title or combination of titles is more than one issue is addressed.
 
 
 Releasing
----------
+~~~~~~~~~
+For the purpose of push and release of code two script files are included.  Use there two files to files to make life a
+bit easier.  The scripts make use of the ``gitit`` module to simplify tasks.
 
-:Status: Work In Progress
+#. ``push.bat`` - Use this script to push branches to GitHub repository.  In principle it does the following:
 
-Releases are published automatically when a tag is pushed to GitHub.
+    usage: push message
 
-.. code-block:: bash
+    #. .rst syntax check
+    #. git add -A
+    #. git commit -m message (with `pre-commit` including `black` and `flake8`)
+    #. git push --all
 
-    # Set next version number
-    export RELEASE = x.x.x
+#. ``release.bat`` - Use this script to push a new tag and release to the GitHub repository.  Remember to change the version number in the setup.cfg else the workflow will fail.
 
-    # Create tags
-    git commit --allow -empty -m "Release $RELEASE"
-    git tag -a $RELEASE -m "Version $RELEASE"
+    usage: release version  The version will match the release and the tag. Only issue a release once a push.bat was successful.  In principle it does the following:
 
-    # Push
-    git push upstream --tags
+    #. Commit the changes
+    #. Create and push the release tag
+    #. Checkout master since it assumes that the branch is now merged with master and will be deleted.
+    #. display a list of all the current branches as a reminder to delete the branch on completion.
 
-License
--------
-
-:Status: Work In Progress
-
-.. Information about the project's license.
-
-Contact
--------
-:Status: Work In Progress
 
 .. General
 
