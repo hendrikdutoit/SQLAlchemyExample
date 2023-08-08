@@ -55,9 +55,6 @@ jobs:
       - name: Install editable package
         run: pip install -e .
 
-      - name: Check.rst documentation syntax
-        run: python check_rst_syntax.py
-
       - name: Run pytest
         run: pytest --cov=./
 

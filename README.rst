@@ -37,9 +37,6 @@
     :alt: CodeCov
     :target: https://app.codecov.io/gh/hendrikdutoit/SQLAlchemyExample
 
-.. image:: https://img.shields.io/github/actions/workflow/status/hendrikdutoit/SQLAlchemyExample/pre-commit.yml?label=pre-commit
-    :alt: Pre-Commit
-
 .. image:: https://img.shields.io/pypi/v/SQLAlchemyExample
     :alt: PyPi
 
@@ -154,22 +151,18 @@ Contact
 
 .. CI
 
+.. |pre_commit_ci| image:: https://img.shields.io/github/actions/workflow/status/hendrikdutoit/SQLAlchemyExample/pre-commit.yml?label=pre-commit
+    :target: https://github.com/hendrikdutoit/SQLAlchemyExample/blob/master/.github/workflows/pre-commit.yml
+    :alt: Pre-Commit
+
+
 .. |gha_tests| image:: https://img.shields.io/github/actions/workflow/status/hendrikdutoit/SQLAlchemyExample/ci.yml?label=ci
     :target: https://github.com/hendrikdutoit/SQLAlchemyExample/blob/master/.github/workflows/ci.yml
     :alt: Test status
 
 .. |gha_docu| image:: https://img.shields.io/github/actions/workflow/status/hendrikdutoit/SQLAlchemyExample/check-documentation.yml?label=check rst
-    :target: https://github.com/rstcheck/rstcheck/actions/workflows/documentation.yaml
+    :target: https://github.com/hendrikdutoit/SQLAlchemyExample/blob/master/.github/workflows/check-documentation.yml
     :alt: Documentation status
-
-.. |gha_qa| image:: https://img.shields.io/github/actions/workflow/status/rstcheck/rstcheck/qa.yml?branch=main&style=flat-square&logo=github&label=QA
-    :target: https://github.com/rstcheck/rstcheck/actions/workflows/qa.yaml
-    :alt: QA status
-
-.. |pre_commit_ci| image:: https://results.pre-commit.ci/badge/github/rstcheck/rstcheck/main.svg
-    :target: https://results.pre-commit.ci/latest/github/rstcheck/rstcheck/main
-    :alt: pre-commit status
-
 
 .. PyPI
 
