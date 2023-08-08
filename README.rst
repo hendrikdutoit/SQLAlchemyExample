@@ -72,9 +72,14 @@ Tests
 Contributing
 ------------
 
-.. Guidelines on how to contribute to this project.
-
 :Status: Work In Progress
+
+Naming Conventions
+~~~~~~~~~~~~~~~~~~
+
+1. Files containg tables
+2. Files contaning tests
+3. Branch names
 
 
 Releasing
@@ -176,11 +181,3 @@ Contact
 
 .. |gh_searches| image:: https://img.shields.io/github/search/hendrikdutoit/SQLAlchemyExample/GitHub
     :alt: GitHub Searches
-=======
-
-ToDo
-----
-
-1. Documentation - Add naming conventions
-    1. Tables
-    2. Table module definitions
