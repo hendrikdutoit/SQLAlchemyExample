@@ -158,7 +158,7 @@ Contact
     :target: https://github.com/hendrikdutoit/SQLAlchemyExample/blob/master/.github/workflows/ci.yml
     :alt: Test status
 
-.. |gha_docu| image:: https://img.shields.io/github/actions/workflow/status/rstcheck/rstcheck/documentation.yml?branch=main&style=flat-square&logo=github&label=Test%20documentation
+.. |gha_docu| image:: https://img.shields.io/github/actions/workflow/status/hendrikdutoit/SQLAlchemyExample/check-documentation.yml?label=check rst
     :target: https://github.com/rstcheck/rstcheck/actions/workflows/documentation.yaml
     :alt: Documentation status
 
