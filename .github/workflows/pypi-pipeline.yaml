@@ -8,7 +8,7 @@ jobs:
   Pre-Commit:
     uses: ./.github/workflows/pre-commit.yml
 
-  Check Documentation:
+  Check-documentation:
     uses: ./.github/workflows/check-documentation.yml
 
   CI:
