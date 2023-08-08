@@ -17,9 +17,6 @@ Exploring SQLAlchemy
 +-------------------+---------------------------------------------------------------------------------------------+
 
 
-Exploring SQLAlchemy
-====================
-
 This project provide a sandbox to experiment with SQLAlchemy. This idea is to build an example sequentially in steps to give new users the idea on where to start and how to progress.
 
 Along the way some principles will be exhibited. The code should be self-explanatory.
