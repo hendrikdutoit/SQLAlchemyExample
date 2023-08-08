@@ -1,11 +1,11 @@
-name: Check Documentation
+name: Check rst documentation
 
 on:
   workflow_call:
 
 jobs:
   build:
-    name: Check Dcoumentation ${{ matrix.os }}
+    name: Check Documentation ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: true

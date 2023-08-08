@@ -1,44 +1,21 @@
+====================
+Exploring SQLAlchemy
+====================
+
 +-------------------+---------------------------------------------------------------------------------------------+
 | **General**       | |maintenance_y| |semver|                                                                    |
 |                   +---------------------------------------------------------------------------------------------+
 |                   | |license|                                                                                   |
 +-------------------+---------------------------------------------------------------------------------------------+
-| **CI**            | |gha_tests| |gha_docu| |gha_qa| |pre_commit_ci|                                             |
+| **CI**            | |gha_tests| |gha_docu| |pre_commit_ci|                                                      |
 +-------------------+---------------------------------------------------------------------------------------------+
-| **PyPI**          | |pypi_release| |pypi_py_versions| |pypi_implementations|                                    |
+| **PyPI**          | |pypi_release| |pypi_py_versions| |pypi_status|                                             |
 |                   +---------------------------------------------------------------------------------------------+
 |                   | |pypi_format| |pypi_downloads|                                                              |
 +-------------------+---------------------------------------------------------------------------------------------+
-| **Github**        | |gh_tag| |gh_last_commit|                                                                   |
-|                   +---------------------------------------------------------------------------------------------+
-|                   | |gh_stars| |gh_forks| |gh_contributors| |gh_watchers|                                       |
+| **Github**        | |gh_issues| |gh_searches|                                                                   |
 +-------------------+---------------------------------------------------------------------------------------------+
 
-
-.. image:: https://img.shields.io/pypi/status/SQLAlchemyExample
-    :alt: PyPI - Status
-
-.. image:: https://img.shields.io/pypi/wheel/SQLAlchemyExample
-    :alt: PyPI - Wheel
-
-.. image:: https://img.shields.io/pypi/pyversions/SQLAlchemyExample
-    :alt: PyPI - Python Version
-
-.. image:: https://img.shields.io/github/issues-raw/hendrikdutoit/SQLAlchemyExample
-    :alt: GitHub issues
-
-.. image:: https://img.shields.io/pypi/dm/SQLAlchemyExample
-    :alt: PyPI - Downloads
-
-.. image:: https://img.shields.io/github/search/hendrikdutoit/SQLAlchemyExample/GitHub
-    :alt: GitHub Searches
-
-.. image:: https://img.shields.io/codecov/c/gh/hendrikdutoit/SQLAlchemyExample
-    :alt: CodeCov
-    :target: https://app.codecov.io/gh/hendrikdutoit/SQLAlchemyExample
-
-.. image:: https://img.shields.io/pypi/v/SQLAlchemyExample
-    :alt: PyPi
 
 Exploring SQLAlchemy
 ====================
@@ -155,7 +132,6 @@ Contact
     :target: https://github.com/hendrikdutoit/SQLAlchemyExample/blob/master/.github/workflows/pre-commit.yml
     :alt: Pre-Commit
 
-
 .. |gha_tests| image:: https://img.shields.io/github/actions/workflow/status/hendrikdutoit/SQLAlchemyExample/ci.yml?label=ci
     :target: https://github.com/hendrikdutoit/SQLAlchemyExample/blob/master/.github/workflows/ci.yml
     :alt: Test status
@@ -164,52 +140,39 @@ Contact
     :target: https://github.com/hendrikdutoit/SQLAlchemyExample/blob/master/.github/workflows/check-documentation.yml
     :alt: Documentation status
 
+.. |codecov| image:: https://img.shields.io/codecov/c/gh/hendrikdutoit/SQLAlchemyExample
+    :target: https://app.codecov.io/gh/hendrikdutoit/SQLAlchemyExample
+    :alt: CodeCov
+
+
 .. PyPI
 
-.. |pypi_release| image:: https://img.shields.io/pypi/v/rstcheck.svg?style=flat-square&logo=pypi&logoColor=FBE072
-    :target: https://pypi.org/project/rstcheck/
+.. |pypi_release| image:: https://img.shields.io/pypi/v/SQLAlchemyExample
+    :target: https://pypi.org/project/SQLAlchemyExample/
     :alt: PyPI - Package latest release
 
-.. |pypi_py_versions| image:: https://img.shields.io/pypi/pyversions/rstcheck.svg?style=flat-square&logo=python&logoColor=FBE072
-    :target: https://pypi.org/project/rstcheck/
+.. |pypi_py_versions| image:: https://img.shields.io/pypi/pyversions/SQLAlchemyExample
+    :target: https://pypi.org/project/SQLAlchemyExample/
     :alt: PyPI - Supported Python Versions
 
-.. |pypi_implementations| image:: https://img.shields.io/pypi/implementation/rstcheck.svg?style=flat-square&logo=python&logoColor=FBE072
-    :target: https://pypi.org/project/rstcheck/
-    :alt: PyPI - Supported Implementations
-
-.. |pypi_format| image:: https://img.shields.io/pypi/format/rstcheck.svg?style=flat-square&logo=pypi&logoColor=FBE072
-    :target: https://pypi.org/project/rstcheck/
+.. |pypi_format| image:: https://img.shields.io/pypi/wheel/SQLAlchemyExample
+    :target: https://pypi.org/project/SQLAlchemyExample/
     :alt: PyPI - Format
 
-.. |pypi_downloads| image:: https://img.shields.io/pypi/dm/rstcheck.svg?style=flat-square&logo=pypi&logoColor=FBE072
-    :target: https://pypi.org/project/rstcheck/
+.. |pypi_downloads| image:: https://img.shields.io/pypi/dm/SQLAlchemyExample
+    :target: https://pypi.org/project/SQLAlchemyExample/
     :alt: PyPI - Monthly downloads
 
+.. |pypi_status| image:: https://img.shields.io/pypi/status/SQLAlchemyExample
+    :target: https://pypi.org/project/SQLAlchemyExample/
+    :alt: PyPI - Status
 
 
 .. GitHub
 
-.. |gh_tag| image:: https://img.shields.io/github/v/tag/rstcheck/rstcheck.svg?sort=semver&style=flat-square&logo=github
-    :target: https://github.com/rstcheck/rstcheck/tags
-    :alt: Github - Latest Release
-
-.. |gh_last_commit| image:: https://img.shields.io/github/last-commit/rstcheck/rstcheck.svg?style=flat-square&logo=github
-    :target: https://github.com/rstcheck/rstcheck/commits/main
+.. |gh_issues| image:: https://img.shields.io/github/issues-raw/hendrikdutoit/SQLAlchemyExample
+    :target: https://github.com/hendrikdutoit/SQLAlchemyExample/issues
     :alt: GitHub - Last Commit
 
-.. |gh_stars| image:: https://img.shields.io/github/stars/rstcheck/rstcheck.svg?style=flat-square&logo=github
-    :target: https://github.com/rstcheck/rstcheck/stargazers
-    :alt: Github - Stars
-
-.. |gh_forks| image:: https://img.shields.io/github/forks/rstcheck/rstcheck.svg?style=flat-square&logo=github
-    :target: https://github.com/rstcheck/rstcheck/network/members
-    :alt: Github - Forks
-
-.. |gh_contributors| image:: https://img.shields.io/github/contributors/rstcheck/rstcheck.svg?style=flat-square&logo=github
-    :target: https://github.com/rstcheck/rstcheck/graphs/contributors
-    :alt: Github - Contributors
-
-.. |gh_watchers| image:: https://img.shields.io/github/watchers/rstcheck/rstcheck.svg?style=flat-square&logo=github
-    :target: https://github.com/rstcheck/rstcheck/watchers/
-    :alt: Github - Watchers
+.. |gh_searches| image:: https://img.shields.io/github/search/hendrikdutoit/SQLAlchemyExample/GitHub
+    :alt: GitHub Searches
