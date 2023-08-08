@@ -1,10 +1,11 @@
-name: Pre-Commit
+name: Check rst documentation
 
 on:
   workflow_call:
 
 jobs:
-  Pre-Commit:
+  build:
+    name: Check Documentation ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: true
@@ -25,8 +26,8 @@ jobs:
       - name: Upgrade pip
         run: python -m pip install --upgrade pip
 
-      - name: Install pre-commit
-        run: pip install pre-commit
+      - name: Install dependencies
+        run: pip install rstcheck
 
-      - name: Run pre-commit checks
-        uses: pre-commit/action@v3.0.0
+      - name: Check documents
+        run: rstcheck README.rst

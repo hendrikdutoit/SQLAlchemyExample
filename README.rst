@@ -1,39 +1,21 @@
-.. image:: https://img.shields.io/pypi/status/SQLAlchemyExample
-    :alt: PyPI - Status
-
-.. image:: https://img.shields.io/pypi/wheel/SQLAlchemyExample
-    :alt: PyPI - Wheel
-
-.. image:: https://img.shields.io/pypi/pyversions/SQLAlchemyExample
-    :alt: PyPI - Python Version
-
-.. image:: https://img.shields.io/github/license/hendrikdutoit/SQLAlchemyExample
-    :alt: License
-
-.. image:: https://img.shields.io/github/issues-raw/hendrikdutoit/SQLAlchemyExample
-    :alt: GitHub issues
-
-.. image:: https://img.shields.io/pypi/dm/SQLAlchemyExample
-    :alt: PyPI - Downloads
-
-.. image:: https://img.shields.io/github/search/hendrikdutoit/SQLAlchemyExample/GitHub
-    :alt: GitHub Searches
-
-.. image:: https://img.shields.io/codecov/c/gh/hendrikdutoit/SQLAlchemyExample
-    :alt: CodeCov
-    :target: https://app.codecov.io/gh/hendrikdutoit/SQLAlchemyExample
-
-.. image:: https://img.shields.io/github/actions/workflow/status/hendrikdutoit/SQLAlchemyExample/pre-commit.yml?label=pre-commit
-    :alt: Pre-Commit
-
-.. image:: https://img.shields.io/github/actions/workflow/status/hendrikdutoit/SQLAlchemyExample/ci.yml?label=ci
-    :alt: ci
-
-.. image:: https://img.shields.io/pypi/v/SQLAlchemyExample
-    :alt: PyPi
-
+====================
 Exploring SQLAlchemy
 ====================
+
++-------------------+---------------------------------------------------------------------------------------------+
+| **General**       | |maintenance_y| |semver| |license|                                                          |
++-------------------+---------------------------------------------------------------------------------------------+
+| **CI**            | |gha_tests| |gha_docu| |pre_commit_ci|                                                      |
+|                   +---------------------------------------------------------------------------------------------+
+|                   | |codecov|                                                                                   |
++-------------------+---------------------------------------------------------------------------------------------+
+| **PyPI**          | |pypi_release| |pypi_py_versions| |pypi_status|                                             |
+|                   +---------------------------------------------------------------------------------------------+
+|                   | |pypi_format| |pypi_downloads|                                                              |
++-------------------+---------------------------------------------------------------------------------------------+
+| **Github**        | |gh_issues| |gh_searches|                                                                   |
++-------------------+---------------------------------------------------------------------------------------------+
+
 
 This project provide a sandbox to experiment with SQLAlchemy. This idea is to build an example sequentially in steps to give new users the idea on where to start and how to progress.
 
@@ -122,6 +104,76 @@ Contact
 -------
 :Status: Work In Progress
 
+.. General
+
+.. |maintenance_n| image:: https://img.shields.io/badge/Maintenance%20Intended-✖-red.svg?style=flat-square
+    :target: http://unmaintained.tech/
+    :alt: Maintenance - not intended
+
+.. |maintenance_y| image:: https://img.shields.io/badge/Maintenance%20Intended-✔-green.svg?style=flat-square
+    :target: http://unmaintained.tech/
+    :alt: Maintenance - intended
+
+.. |license| image:: https://img.shields.io/github/license/hendrikdutoit/SQLAlchemyExample
+    :target: https://github.com/hendrikdutoit/SQLAlchemyExample/blob/master/LICENSE
+    :alt: License
+
+.. |semver| image:: https://img.shields.io/badge/Semantic%20Versioning-2.0.0-brightgreen.svg?style=flat-square
+    :target: https://semver.org/
+    :alt: Semantic Versioning - 2.0.0
+
+
+.. CI
+
+.. |pre_commit_ci| image:: https://img.shields.io/github/actions/workflow/status/hendrikdutoit/SQLAlchemyExample/pre-commit.yml?label=pre-commit
+    :target: https://github.com/hendrikdutoit/SQLAlchemyExample/blob/master/.github/workflows/pre-commit.yml
+    :alt: Pre-Commit
+
+.. |gha_tests| image:: https://img.shields.io/github/actions/workflow/status/hendrikdutoit/SQLAlchemyExample/ci.yml?label=ci
+    :target: https://github.com/hendrikdutoit/SQLAlchemyExample/blob/master/.github/workflows/ci.yml
+    :alt: Test status
+
+.. |gha_docu| image:: https://img.shields.io/github/actions/workflow/status/hendrikdutoit/SQLAlchemyExample/check-documentation.yml?label=check rst
+    :target: https://github.com/hendrikdutoit/SQLAlchemyExample/blob/master/.github/workflows/check-documentation.yml
+    :alt: Documentation status
+
+.. |codecov| image:: https://img.shields.io/codecov/c/gh/hendrikdutoit/SQLAlchemyExample
+    :target: https://app.codecov.io/gh/hendrikdutoit/SQLAlchemyExample
+    :alt: CodeCov
+
+
+.. PyPI
+
+.. |pypi_release| image:: https://img.shields.io/pypi/v/SQLAlchemyExample
+    :target: https://pypi.org/project/SQLAlchemyExample/
+    :alt: PyPI - Package latest release
+
+.. |pypi_py_versions| image:: https://img.shields.io/pypi/pyversions/SQLAlchemyExample
+    :target: https://pypi.org/project/SQLAlchemyExample/
+    :alt: PyPI - Supported Python Versions
+
+.. |pypi_format| image:: https://img.shields.io/pypi/wheel/SQLAlchemyExample
+    :target: https://pypi.org/project/SQLAlchemyExample/
+    :alt: PyPI - Format
+
+.. |pypi_downloads| image:: https://img.shields.io/pypi/dm/SQLAlchemyExample
+    :target: https://pypi.org/project/SQLAlchemyExample/
+    :alt: PyPI - Monthly downloads
+
+.. |pypi_status| image:: https://img.shields.io/pypi/status/SQLAlchemyExample
+    :target: https://pypi.org/project/SQLAlchemyExample/
+    :alt: PyPI - Status
+
+
+.. GitHub
+
+.. |gh_issues| image:: https://img.shields.io/github/issues-raw/hendrikdutoit/SQLAlchemyExample
+    :target: https://github.com/hendrikdutoit/SQLAlchemyExample/issues
+    :alt: GitHub - Last Commit
+
+.. |gh_searches| image:: https://img.shields.io/github/search/hendrikdutoit/SQLAlchemyExample/GitHub
+    :alt: GitHub Searches
+=======
 
 ToDo
 ----
