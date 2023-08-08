@@ -8,12 +8,13 @@ jobs:
   Pre-Commit:
     uses: ./.github/workflows/pre-commit.yml
 
-  Check-documentation:
+  Check-Documentation:
+    needs: Pre-Commit
     uses: ./.github/workflows/check-documentation.yml
 
   CI:
     uses: ./.github/workflows/ci.yml
-    needs: Pre-Commit
+    needs: Check-Documentation
 
   Build-and-Release-to-Pypi:
     needs: CI
