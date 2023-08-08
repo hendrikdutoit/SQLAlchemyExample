@@ -32,37 +32,29 @@ References:
 Installation
 ------------
 
-1. Since this is intended for experimental purposes, it is reccomeded to create a virtual environment to experiment for installation.
+#. Since this is intended for experimental purposes, it is reccomeded to create a virtual environment to experiment for installation.
+#. Set the following environment variables in the virtual environment.  Set these in your IDE as well.
+#. Start Docker.  The ``docker-rebuild.bat`` script will git docker up and running.
+#. The setup and installation is for Windows.  Feel free to add contribute to get it running on Linux as well.
 
 .. code-block:: bash
 
     python -m venv ./sqlalchemyexample_venv
     pip install sqlalchemyexample
     pre-commit install
-
-2. Set the following environment variables in the virtual environment.  Set these in your IDE as well.
-
-.. code-block:: bash
-
     SET MYSQL_HOST=localhost
     SET MYSQL_ROOT_PWD=N0tS0S3curePassw0rd
     SET MYSQL_TCP_PORT_EXAMPLES=50002
     SET SQLALCHEMY_SILENCE_UBER_WARNING=1
-
-3. Start Docker.  The ``docker-rebuild.bat`` script will git docker up and running.
-
-.. code-block:: bash
-
     docker-rebuild.bat
 
-4. The setup and installation is for Windows.  Feel free to add contribute to get it running on Linux as well.
 
 Tests
 -----
 
-1. This project uses ``pytest`` to run tests.
-2. There are various settings combinations in the ``[tool.pytest.ini_options]`` section of the pyproject.toml file that can used by commenting it out.
-3. This project uses ``black`` to format code and ``flake8`` for linting. We also support ``pre-commit`` to ensure these have been run. To configure your local environment please install these development dependencies and set up the commit hooks.
+#. This project uses ``pytest`` to run tests.
+#. There are various settings combinations in the ``[tool.pytest.ini_options]`` section of the pyproject.toml file that can used by commenting it out.
+#. This project uses ``black`` to format code and ``flake8`` for linting. We also support ``pre-commit`` to ensure these have been run. To configure your local environment please install these development dependencies and set up the commit hooks.
 
 .. code-block:: bash
 
@@ -77,9 +69,11 @@ Contributing
 Naming Conventions
 ~~~~~~~~~~~~~~~~~~
 
-1. Files containg tables
-2. Files contaning tests
-3. Branch names
+#. Files containg tables
+
+#. Files contaning tests
+
+#. Branch names
 
 
 Releasing
