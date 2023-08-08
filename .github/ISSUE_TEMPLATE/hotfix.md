@@ -1,6 +1,6 @@
 ---
 name: HotFix Report
-about: Report a bug in the system
+about: An urgent, critical fix applied directly to the live environment, often bypassing regular development cycles.
 title: "[HotFix]: "
 labels:
   - hotfix
@@ -28,3 +28,6 @@ labels:
 - Python version:
 - Operating System:
 - Install method (pip, source):
+
+**Ticket Nr**
+<!--Will be provided by owner -->

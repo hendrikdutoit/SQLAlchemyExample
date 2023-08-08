@@ -1,6 +1,6 @@
 ---
 name: Enhancement Request
-about: Request an enhancement to be added
+about: Planned improvement or addition to functionality; non-urgent.
 title: "[Enhancement]: "
 labels:
   - enhancement
@@ -10,6 +10,9 @@ labels:
 
 
 **Proposed Solution:**
+
+**Ticket Nr**
+<!--Will be provided by owner -->
 
 **New Release Checks:**
 Only once all the checks below are completed should there be a new release: 

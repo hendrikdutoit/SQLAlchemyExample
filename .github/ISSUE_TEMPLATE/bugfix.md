@@ -1,6 +1,6 @@
 ---
 name: BugFix Report
-about: Report a bug in the system
+about: An error or defect causing incorrect or unexpected behavior; typically fixed in regular development cycles.
 title: "[BugFix]: "
 labels:
   - bugfix
@@ -30,3 +30,6 @@ labels:
 - Python version:
 - Operating System:
 - Install method (pip, source):
+
+**Ticket Nr**
+<!--Will be provided by owner -->
