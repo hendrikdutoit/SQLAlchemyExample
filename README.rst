@@ -1,3 +1,20 @@
++-------------------+---------------------------------------------------------------------------------------------+
+| **General**       | |maintenance_y| |semver|                                                                    |
+|                   +---------------------------------------------------------------------------------------------+
+|                   | |license|                                                                                   |
++-------------------+---------------------------------------------------------------------------------------------+
+| **CI**            | |gha_tests| |gha_docu| |gha_qa| |pre_commit_ci|                                             |
++-------------------+---------------------------------------------------------------------------------------------+
+| **PyPI**          | |pypi_release| |pypi_py_versions| |pypi_implementations|                                    |
+|                   +---------------------------------------------------------------------------------------------+
+|                   | |pypi_format| |pypi_downloads|                                                              |
++-------------------+---------------------------------------------------------------------------------------------+
+| **Github**        | |gh_tag| |gh_last_commit|                                                                   |
+|                   +---------------------------------------------------------------------------------------------+
+|                   | |gh_stars| |gh_forks| |gh_contributors| |gh_watchers|                                       |
++-------------------+---------------------------------------------------------------------------------------------+
+
+
 .. image:: https://img.shields.io/pypi/status/SQLAlchemyExample
     :alt: PyPI - Status
 
@@ -6,9 +23,6 @@
 
 .. image:: https://img.shields.io/pypi/pyversions/SQLAlchemyExample
     :alt: PyPI - Python Version
-
-.. image:: https://img.shields.io/github/license/hendrikdutoit/SQLAlchemyExample
-    :alt: License
 
 .. image:: https://img.shields.io/github/issues-raw/hendrikdutoit/SQLAlchemyExample
     :alt: GitHub issues
@@ -26,14 +40,11 @@
 .. image:: https://img.shields.io/github/actions/workflow/status/hendrikdutoit/SQLAlchemyExample/pre-commit.yml?label=pre-commit
     :alt: Pre-Commit
 
-.. image:: https://img.shields.io/github/actions/workflow/status/hendrikdutoit/SQLAlchemyExample/ci.yml?label=ci
-    :alt: ci
-
 .. image:: https://img.shields.io/pypi/v/SQLAlchemyExample
     :alt: PyPi
 
 Exploring SQLAlchemy
-====================
+=================
 
 This project provide a sandbox to experiment with SQLAlchemy. This idea is to build an example sequentially in steps to give new users the idea on where to start and how to progress.
 
@@ -121,3 +132,91 @@ License
 Contact
 -------
 :Status: Work In Progress
+
+.. General
+
+.. |maintenance_n| image:: https://img.shields.io/badge/Maintenance%20Intended-✖-red.svg?style=flat-square
+    :target: http://unmaintained.tech/
+    :alt: Maintenance - not intended
+
+.. |maintenance_y| image:: https://img.shields.io/badge/Maintenance%20Intended-✔-green.svg?style=flat-square
+    :target: http://unmaintained.tech/
+    :alt: Maintenance - intended
+
+.. |license| image:: https://img.shields.io/github/license/hendrikdutoit/SQLAlchemyExample
+    :target: https://github.com/hendrikdutoit/SQLAlchemyExample/blob/master/LICENSE
+    :alt: License
+
+.. |semver| image:: https://img.shields.io/badge/Semantic%20Versioning-2.0.0-brightgreen.svg?style=flat-square
+    :target: https://semver.org/
+    :alt: Semantic Versioning - 2.0.0
+
+
+.. CI
+
+.. |gha_tests| image:: https://img.shields.io/github/actions/workflow/status/hendrikdutoit/SQLAlchemyExample/ci.yml?label=ci
+    :target: https://github.com/hendrikdutoit/SQLAlchemyExample/blob/master/.github/workflows/ci.yml
+    :alt: Test status
+
+.. |gha_docu| image:: https://img.shields.io/github/actions/workflow/status/rstcheck/rstcheck/documentation.yml?branch=main&style=flat-square&logo=github&label=Test%20documentation
+    :target: https://github.com/rstcheck/rstcheck/actions/workflows/documentation.yaml
+    :alt: Documentation status
+
+.. |gha_qa| image:: https://img.shields.io/github/actions/workflow/status/rstcheck/rstcheck/qa.yml?branch=main&style=flat-square&logo=github&label=QA
+    :target: https://github.com/rstcheck/rstcheck/actions/workflows/qa.yaml
+    :alt: QA status
+
+.. |pre_commit_ci| image:: https://results.pre-commit.ci/badge/github/rstcheck/rstcheck/main.svg
+    :target: https://results.pre-commit.ci/latest/github/rstcheck/rstcheck/main
+    :alt: pre-commit status
+
+
+.. PyPI
+
+.. |pypi_release| image:: https://img.shields.io/pypi/v/rstcheck.svg?style=flat-square&logo=pypi&logoColor=FBE072
+    :target: https://pypi.org/project/rstcheck/
+    :alt: PyPI - Package latest release
+
+.. |pypi_py_versions| image:: https://img.shields.io/pypi/pyversions/rstcheck.svg?style=flat-square&logo=python&logoColor=FBE072
+    :target: https://pypi.org/project/rstcheck/
+    :alt: PyPI - Supported Python Versions
+
+.. |pypi_implementations| image:: https://img.shields.io/pypi/implementation/rstcheck.svg?style=flat-square&logo=python&logoColor=FBE072
+    :target: https://pypi.org/project/rstcheck/
+    :alt: PyPI - Supported Implementations
+
+.. |pypi_format| image:: https://img.shields.io/pypi/format/rstcheck.svg?style=flat-square&logo=pypi&logoColor=FBE072
+    :target: https://pypi.org/project/rstcheck/
+    :alt: PyPI - Format
+
+.. |pypi_downloads| image:: https://img.shields.io/pypi/dm/rstcheck.svg?style=flat-square&logo=pypi&logoColor=FBE072
+    :target: https://pypi.org/project/rstcheck/
+    :alt: PyPI - Monthly downloads
+
+
+
+.. GitHub
+
+.. |gh_tag| image:: https://img.shields.io/github/v/tag/rstcheck/rstcheck.svg?sort=semver&style=flat-square&logo=github
+    :target: https://github.com/rstcheck/rstcheck/tags
+    :alt: Github - Latest Release
+
+.. |gh_last_commit| image:: https://img.shields.io/github/last-commit/rstcheck/rstcheck.svg?style=flat-square&logo=github
+    :target: https://github.com/rstcheck/rstcheck/commits/main
+    :alt: GitHub - Last Commit
+
+.. |gh_stars| image:: https://img.shields.io/github/stars/rstcheck/rstcheck.svg?style=flat-square&logo=github
+    :target: https://github.com/rstcheck/rstcheck/stargazers
+    :alt: Github - Stars
+
+.. |gh_forks| image:: https://img.shields.io/github/forks/rstcheck/rstcheck.svg?style=flat-square&logo=github
+    :target: https://github.com/rstcheck/rstcheck/network/members
+    :alt: Github - Forks
+
+.. |gh_contributors| image:: https://img.shields.io/github/contributors/rstcheck/rstcheck.svg?style=flat-square&logo=github
+    :target: https://github.com/rstcheck/rstcheck/graphs/contributors
+    :alt: Github - Contributors
+
+.. |gh_watchers| image:: https://img.shields.io/github/watchers/rstcheck/rstcheck.svg?style=flat-square&logo=github
+    :target: https://github.com/rstcheck/rstcheck/watchers/
+    :alt: Github - Watchers
