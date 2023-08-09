@@ -11,7 +11,7 @@ html_context = {
     "github_user": "hendrikdutoit",  # Username
     "github_repo": "SQLAlchemyExample",  # Repo name
     "github_version": "master",  # Version
-    "conf_py_path": "/source/",  # Path in the checkout to the docs root
+    "conf_py_path": "/source",  # Path in the checkout to the docs root
 }
 extensions = ['sphinx.ext.autodoc', 'sphinx.ext.napoleon', 'sphinx.ext.autosummary']
 templates_path = ['_templates']
