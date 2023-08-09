@@ -16,5 +16,6 @@ mysql-connector-python
 Pygments
 pytest
 pytest-cov
+sphinx
 sqlalchemy < 2.0.0
 sqlalchemy_utils

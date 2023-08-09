@@ -74,10 +74,15 @@ Naming Conventions
     "enhancement" | "bug" | "hotfix"/< ticket_nr>_<description>
 
     where
+        enhancement - Planned improvement or addition to functionality; non-urgent.
 
-    ticket_nr: Ticket number assigned to the issue in GitHub.  Once an issue is registered, the owner will assign a ticket.
+        bug - An error or defect causing incorrect or unexpected behavior; typically fixed in regular development cycles.
 
-    description: GitHub issue title or combination of titles is more than one issue is addressed.
+        hotfix - An urgent, critical fix applied directly to the live environment, often bypassing regular development cycles.
+
+        ticket_nr: Ticket number assigned to the issue in GitHub.  Once an issue is registered, the owner will assign a ticket.
+
+        description: GitHub issue title or combination of titles is more than one issue is addressed.
 
 
 Releasing
@@ -89,6 +94,8 @@ bit easier.  The scripts make use of the ``gitit`` module to simplify tasks.
 
     usage: push message
 
+    e.g. push "Changed the Infinite Improbability Drive"
+
     #. .rst syntax check
     #. git add -A
     #. git commit -m message (with `pre-commit` including `black` and `flake8`)
@@ -98,8 +105,10 @@ bit easier.  The scripts make use of the ``gitit`` module to simplify tasks.
 
     usage: release version  The version will match the release and the tag. Only issue a release once a push.bat was successful.  In principle it does the following:
 
+    e.g. relase 1.2.3
+
     #. Commit the changes
-    #. Create and push the release tag
+    #. Create and push the release tag with the correct naming conventions.
     #. Checkout master since it assumes that the branch is now merged with master and will be deleted.
     #. display a list of all the current branches as a reminder to delete the branch on completion.
 

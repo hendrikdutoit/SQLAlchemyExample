@@ -1,6 +1,6 @@
 """
-SQLAlchemy V1.4.46
-Example: One-to_Many Uni-directional
+SQLAlchemy V1.4.x
+Example: One-to_Many bi-directional
 
 https://docs.sqlalchemy.org/en/14/orm/basic_relationships.html
 """
