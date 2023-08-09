@@ -19,7 +19,7 @@ CALL del_dt.bat
 git commit --allow-empty -m "Release %1"
 git tag -a %1-%YY%%MM%%DD%%Hr%%Min%%Sec% -m "Version %1"
 git push --tags
-git checkout master
+REM git checkout master
 git branch --all
 GOTO :Exit
 
