@@ -15,5 +15,5 @@ python:
         - all
     - requirements: docs/requirements_docs.txt
 
-submodules:
-  include: all
+#submodules:
+#  include: all
