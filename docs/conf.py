@@ -10,7 +10,7 @@ project = 'SQLAlchemyExample'
 copyright = '2023, Hendrik du Toit'
 author = 'Hendrik du Toit'
 release = '0.1.20'
-version = '0.1.19'
+version = '0.1.20'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
