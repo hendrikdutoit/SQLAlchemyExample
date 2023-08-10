@@ -112,6 +112,23 @@ bit easier.  The scripts make use of the ``gitit`` module to simplify tasks.
     #. Checkout master since it assumes that the branch is now merged with master and will be deleted.
     #. display a list of all the current branches as a reminder to delete the branch on completion.
 
+-----
+Usage
+-----
+
+.. code-block:: bash
+
+    Insert text in Usage.rst
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Contents
+    :numbered:
+
+    conventions
+    api
+    examples
+    faq
 
 .. General
 
@@ -142,9 +159,9 @@ bit easier.  The scripts make use of the ``gitit`` module to simplify tasks.
     :target: https://github.com/hendrikdutoit/SQLAlchemyExample/blob/master/.github/workflows/ci.yml
     :alt: Test status
 
-.. |gha_docu| image:: https://img.shields.io/readthedocs/sqlalchemyexample
-    :target: https://github.com/hendrikdutoit/SQLAlchemyExample/blob/master/.github/workflows/check-rst-documentation.yml
-    :alt: Read the Docs
+.. |gha_docu| image:: https://img.shields.io/github/actions/workflow/status/hendrikdutoit/SQLAlchemyExample/check-documentation.yml?label=check rst
+    :target: https://github.com/hendrikdutoit/SQLAlchemyExample/blob/master/.github/workflows/check-documentation.yml
+    :alt: Documentation status
 
 .. |codecov| image:: https://img.shields.io/codecov/c/gh/hendrikdutoit/SQLAlchemyExample
     :target: https://app.codecov.io/gh/hendrikdutoit/SQLAlchemyExample

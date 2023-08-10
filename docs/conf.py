@@ -9,21 +9,21 @@
 project = 'SQLAlchemyExample'
 copyright = '2023, Hendrik du Toit'
 author = 'Hendrik du Toit'
-release = '0.1.18'
-version = '0.1.18'
+release = '0.1.26'
+version = '0.1.26'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = []
 
-templates_path = ['_templates']
+templates_path = ['templates']
 exclude_patterns = []
+# master_doc = 'source/index'
 
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'alabaster'
-html_static_path = ['_static']
-master_doc = 'source/index'
+html_static_path = ['static']

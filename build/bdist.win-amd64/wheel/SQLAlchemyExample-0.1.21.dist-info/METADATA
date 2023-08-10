@@ -1,3 +1,25 @@
+Metadata-Version: 2.1
+Name: SQLAlchemyExample
+Version: 0.1.21
+Summary: Exploring SQLAlchemy
+Author: Hendrik du Toit
+Author-email: hendrik@brightedge.co.za
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development
+Classifier: Topic :: Database
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+Requires-Dist: Path
+Requires-Dist: beetools
+Requires-Dist: sqlalchemy
+Requires-Dist: sqlalchemy-utils
+
 ====================
 Exploring SQLAlchemy
 ====================
@@ -142,9 +164,9 @@ bit easier.  The scripts make use of the ``gitit`` module to simplify tasks.
     :target: https://github.com/hendrikdutoit/SQLAlchemyExample/blob/master/.github/workflows/ci.yml
     :alt: Test status
 
-.. |gha_docu| image:: https://img.shields.io/readthedocs/sqlalchemyexample
+.. |gha_docu| image:: https://img.shields.io/github/actions/workflow/status/hendrikdutoit/SQLAlchemyExample/check-rst-documentation.yml?label=check rst
     :target: https://github.com/hendrikdutoit/SQLAlchemyExample/blob/master/.github/workflows/check-rst-documentation.yml
-    :alt: Read the Docs
+    :alt: Documentation status
 
 .. |codecov| image:: https://img.shields.io/codecov/c/gh/hendrikdutoit/SQLAlchemyExample
     :target: https://app.codecov.io/gh/hendrikdutoit/SQLAlchemyExample

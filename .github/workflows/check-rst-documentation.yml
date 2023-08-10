@@ -1,4 +1,4 @@
-name: Check rst documentation
+name: Check-rst-documentation
 
 on:
   workflow_call:

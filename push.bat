@@ -1,5 +1,5 @@
 REM CLS
-@ECHO ON
+@ECHO OFF
 IF /I "%2"=="ON" (
     set _debug=ON
     ) ELSE (
@@ -10,7 +10,7 @@ IF %1=="" GOTO :AppHelp
 @ECHO %_debug%
 ECHO Push current branch to GitHub
 ECHO '
-CALL del_dt.bat
+REM CALL del_dt.bat
 rstcheck README.rst
 gitit adda
 gitit commitcust -m %1
