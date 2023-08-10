@@ -2,28 +2,36 @@
 #
 # For the full list of built-in configuration values, see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
-
+#
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
+#
+# -- General configuration ---------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
+#
+# -- Options for HTML output -------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 project = 'SQLAlchemyExample'
 copyright = '2023, Hendrik du Toit'
 author = 'Hendrik du Toit'
-release = '0.1.26'
-version = '0.1.26'
+release = '0.1.27'
+version = '0.1.27'
 
-# -- General configuration ---------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = []
-
-templates_path = ['templates']
+autosummary_generate = True
+autosummary_imported_members = True
 exclude_patterns = []
-# master_doc = 'source/index'
-
-
-# -- Options for HTML output -------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
-
-html_theme = 'alabaster'
+extensions = ["sphinx.ext.autodoc", "sphinx.ext.napoleon", "sphinx.ext.autosummary"]
+html_theme = "bizstyle"
 html_static_path = ['static']
+html_context = {
+    "display_github": True,  # Integrate GitHub
+    "github_user": "hendrikdutoit",  # Username
+    "github_repo": "SQLAlchemyExample",  # Repo name
+    "github_version": "master",  # Version
+    # "conf_py_path": "/source/",  # Path in the checkout to the docs root
+}
+language = "en"
+# master_doc = 'source/index'
+templates_path = ['templates']
