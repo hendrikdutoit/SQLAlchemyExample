@@ -159,9 +159,9 @@ Usage
     :target: https://github.com/hendrikdutoit/SQLAlchemyExample/blob/master/.github/workflows/ci.yml
     :alt: Test status
 
-.. |gha_docu| image:: https://img.shields.io/github/actions/workflow/status/hendrikdutoit/SQLAlchemyExample/check-documentation.yml?label=check rst
-    :target: https://github.com/hendrikdutoit/SQLAlchemyExample/blob/master/.github/workflows/check-documentation.yml
-    :alt: Documentation status
+.. |gha_docu| image:: https://img.shields.io/readthedocs/sqlalchemyexample
+    :target: https://github.com/hendrikdutoit/SQLAlchemyExample/blob/master/.github/workflows/check-rst-documentation.yml
+    :alt: Read the Docs
 
 .. |codecov| image:: https://img.shields.io/codecov/c/gh/hendrikdutoit/SQLAlchemyExample
     :target: https://app.codecov.io/gh/hendrikdutoit/SQLAlchemyExample
