@@ -9,7 +9,7 @@
 project = 'SQLAlchemyExample'
 copyright = '2023, Hendrik du Toit'
 author = 'Hendrik du Toit'
-release = '0.1.19'
+release = '0.1.20'
 version = '0.1.19'
 
 # -- General configuration ---------------------------------------------------

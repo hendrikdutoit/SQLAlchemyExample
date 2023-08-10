@@ -1,5 +1,5 @@
 REM CLS
-@ECHO ON
+@ECHO OFF
 IF /I "%2"=="ON" (
     set _debug=ON
     ) ELSE (
