@@ -1,2 +1,2 @@
-sphinx
-sphinx-autobuild
+sphinx >= 7.1.2
+#sphinx-autobuild
