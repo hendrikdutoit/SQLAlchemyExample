@@ -142,9 +142,9 @@ bit easier.  The scripts make use of the ``gitit`` module to simplify tasks.
     :target: https://github.com/hendrikdutoit/SQLAlchemyExample/blob/master/.github/workflows/ci.yml
     :alt: Test status
 
-.. |gha_docu| image:: https://img.shields.io/github/actions/workflow/status/hendrikdutoit/SQLAlchemyExample/check-rst-documentation.yml?label=check rst
+.. |gha_docu| image:: https://img.shields.io/readthedocs/sqlalchemyexample
     :target: https://github.com/hendrikdutoit/SQLAlchemyExample/blob/master/.github/workflows/check-rst-documentation.yml
-    :alt: Documentation status
+    :alt: Read the Docs
 
 .. |codecov| image:: https://img.shields.io/codecov/c/gh/hendrikdutoit/SQLAlchemyExample
     :target: https://app.codecov.io/gh/hendrikdutoit/SQLAlchemyExample
