@@ -18,8 +18,8 @@ import sys
 project = 'SQLAlchemyExample'
 copyright = '2023, Hendrik du Toit'
 author = 'Hendrik du Toit'
-release = '0.1.28'
-version = '0.1.28'
+release = '0.1.29'
+version = '0.1.29'
 
 add_module_names = False
 sys.path.insert(0, os.path.abspath(r'./src'))
