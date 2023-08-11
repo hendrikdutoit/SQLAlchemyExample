@@ -5,7 +5,7 @@ Exploring SQLAlchemy
 +-------------------+---------------------------------------------------------------------------------------------+
 | **General**       | |maintenance_y| |semver| |license|                                                          |
 +-------------------+---------------------------------------------------------------------------------------------+
-| **CI**            | |gha_tests| |gha_docu| |pre_commit_ci|                                                      |
+| **CI**            | |gha_tests| |gha_docu| |pre_commit_ci|  |codestyle|                                         |
 |                   +---------------------------------------------------------------------------------------------+
 |                   | |codecov|                                                                                   |
 +-------------------+---------------------------------------------------------------------------------------------+
@@ -16,18 +16,23 @@ Exploring SQLAlchemy
 | **Github**        | |gh_issues| |gh_searches|                                                                   |
 +-------------------+---------------------------------------------------------------------------------------------+
 
-
 This project provides a sandbox to experiment with SQLAlchemy. This idea is to build an example sequentially in steps to give new users the idea on where to start and how to progress.
 
 Along the way some principles will be exhibited. The code should be self-explanatory.
 
 The source code in ``src`` by itself does not do much, it basically only defines the tables and some setup code.  The "examples" are in the ``pytest's`` since we are experimenting to see howe it works and if it was successful.
 
-References:
+----
 
-- https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_orm_many_to_many_relationships.htm
-- https://docs.sqlalchemy.org/en/14/orm/tutorial.html#building-a-relationship
-- https://cyruslab.net/2020/07/16/pythoncreate-database-if-not-exists-with-sqlalchemy/
+.. toctree::
+    :maxdepth: 1
+    :caption: Contents
+    :numbered:
+
+    source/conventions
+    source/api
+    source/examples
+    source/faq
 
 Installation
 ------------
@@ -90,12 +95,13 @@ Releasing
 For the purpose of push and release of code two script files are included.  Use there two files to files to make life a
 bit easier.  The scripts make use of the ``gitit`` module to simplify tasks.
 
-#. ``push.bat`` - Use this script to push branches to GitHub repository.  In principle it does the following:
+#. ``push.bat`` - Use this script to push branches to GitHub repository.
 
     usage: push message
 
     e.g. push "Changed the Infinite Improbability Drive"
 
+    In principle it does the following:
     #. .rst syntax check
     #. git add -A
     #. git commit -m message (with `pre-commit` including `black` and `flake8`)
@@ -105,14 +111,13 @@ bit easier.  The scripts make use of the ``gitit`` module to simplify tasks.
 
     usage: release version  The version will match the release and the tag. Only issue a release once a push.bat was successful.  In principle it does the following:
 
-    e.g. relase 1.2.3
+    e.g. release 1.2.3
 
     #. Commit the changes
     #. Create and push the release tag with the correct naming conventions.
     #. Checkout master since it assumes that the branch is now merged with master and will be deleted.
     #. display a list of all the current branches as a reminder to delete the branch on completion.
 
------
 Usage
 -----
 
@@ -120,15 +125,13 @@ Usage
 
     Insert text in Usage.rst
 
-.. toctree::
-    :maxdepth: 2
-    :caption: Contents
-    :numbered:
+References
+----------
 
-    conventions
-    api
-    examples
-    faq
+- https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_orm_many_to_many_relationships.htm
+- https://docs.sqlalchemy.org/en/14/orm/tutorial.html#building-a-relationship
+- https://cyruslab.net/2020/07/16/pythoncreate-database-if-not-exists-with-sqlalchemy/
+
 
 .. General
 
@@ -166,6 +169,10 @@ Usage
 .. |codecov| image:: https://img.shields.io/codecov/c/gh/hendrikdutoit/SQLAlchemyExample
     :target: https://app.codecov.io/gh/hendrikdutoit/SQLAlchemyExample
     :alt: CodeCov
+
+.. |codestyle| image:: https://img.shields.io/badge/code%20style-black-000000.svg
+    :target: https://github.com/psf/black
+    :alt: Code Style Black
 
 
 .. PyPI

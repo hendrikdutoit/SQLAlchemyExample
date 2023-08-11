@@ -1,13 +1,49 @@
 repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-toml
+      - id: check-yaml
+      - id: debug-statements
+      - id: double-quote-string-fixer
+      - id: mixed-line-ending
+        args: [ --fix=lf ]
+      - id: no-commit-to-branch
+        args: [ --branch, master ]
+      - id: pretty-format-json
+      - id: requirements-txt-fixer
+      - id: trailing-whitespace
+        args: [ --markdown-linebreak-ext=md ]
+
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v3.1.0
+    hooks:
+      - id: pyupgrade
+        args: [ --py37-plus ]
+
   - repo: https://github.com/psf/black
     rev: 23.7.0
     hooks:
     - id: black
       language_version: python3
-      exclude: 'templates'
+#      exclude: 'templates'
+
   - repo: https://github.com/pycqa/flake8
     rev: 6.0.0
     hooks:
     - id: flake8
       language_version: python3
       exclude: 'templates'
+
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.2.5
+    hooks:
+      - id: codespell
+        additional_dependencies:
+          - tomli
+#        exclude: tests/
+#        args:
+#          - --quiet-level=2

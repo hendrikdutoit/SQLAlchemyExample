@@ -1,3 +1,6 @@
+import os
+import sys
+
 # Configuration file for the Sphinx documentation builder.
 #
 # For the full list of built-in configuration values, see the documentation:
@@ -18,20 +21,21 @@ author = 'Hendrik du Toit'
 release = '0.1.27'
 version = '0.1.27'
 
-
+add_module_names = False
+sys.path.insert(0, os.path.abspath(r'.\src'))
 autosummary_generate = True
 autosummary_imported_members = True
 exclude_patterns = []
-extensions = ["sphinx.ext.autodoc", "sphinx.ext.napoleon", "sphinx.ext.autosummary"]
-html_theme = "bizstyle"
+extensions = ['sphinx.ext.autodoc', 'sphinx.ext.napoleon', 'sphinx.ext.autosummary']
+html_theme = 'bizstyle'
 html_static_path = ['static']
 html_context = {
-    "display_github": True,  # Integrate GitHub
-    "github_user": "hendrikdutoit",  # Username
-    "github_repo": "SQLAlchemyExample",  # Repo name
-    "github_version": "master",  # Version
+    'display_github': True,  # Integrate GitHub
+    'github_user': 'hendrikdutoit',  # Username
+    'github_repo': 'SQLAlchemyExample',  # Repo name
+    'github_version': 'master',  # Version
     # "conf_py_path": "/source/",  # Path in the checkout to the docs root
 }
-language = "en"
+language = 'en'
 # master_doc = 'source/index'
 templates_path = ['templates']
