@@ -10,7 +10,7 @@ repos:
       - id: debug-statements
       - id: double-quote-string-fixer
 #      - id: mixed-line-ending
-        args: [ --fix=crlf ]
+#        args: [ --fix=crlf ]
       - id: no-commit-to-branch
         args: [ --branch, master ]
       - id: pretty-format-json
