@@ -5,7 +5,7 @@ sphinx:
   builder: html
 #  fail_on_warning: true
 
-formats: all
+formats: []
 
 build:
   os: ubuntu-22.04
