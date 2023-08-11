@@ -22,7 +22,7 @@ release = '0.1.28'
 version = '0.1.28'
 
 add_module_names = False
-sys.path.insert(0, os.path.abspath(r'.\src'))
+sys.path.insert(0, os.path.abspath(r'./src'))
 autosummary_generate = True
 autosummary_imported_members = True
 exclude_patterns = []
