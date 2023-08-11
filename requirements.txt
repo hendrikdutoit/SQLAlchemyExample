@@ -6,13 +6,13 @@
 # D:\Dropbox\Projects\SQLAlchemyExample\.packageit\packageit.ini
 #===================================================================
 argparse
-Path
 
 beetools
 codecov
 docutils
 git-it
 mysql-connector-python
+Path
 Pygments
 pytest
 pytest-cov

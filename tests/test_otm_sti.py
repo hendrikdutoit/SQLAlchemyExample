@@ -68,10 +68,7 @@ class TestOtmBiSti:
         session.add_all([author])
         session.commit()
 
-        assert (
-            repr(author)
-            == '<Author(id=1 name=Ford surname=Prefect email=ford@bar.foo)>'
-        )
+        assert repr(author) == '<Author(id=1 name=Ford surname=Prefect email=ford@bar.foo)>'
         pass
 
     def test_author_dunder_str_ok(self):

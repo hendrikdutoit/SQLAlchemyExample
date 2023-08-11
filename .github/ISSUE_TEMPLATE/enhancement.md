@@ -15,7 +15,7 @@ labels:
 <!--Will be provided by owner -->
 
 **New Release Checks:**
-Only once all the checks below are completed should there be a new release: 
+Only once all the checks below are completed should there be a new release:
 - [ ] Pre-Commit successful
 - [ ] CI successful
 - [ ] CodeCov above 99% or justifiably less
