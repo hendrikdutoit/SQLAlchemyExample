@@ -66,10 +66,7 @@ class TestSTI:
         session.add_all([student])
         session.commit()
 
-        assert (
-            repr(student)
-            == '<Student(id=1 name=John surname = Doe email=john@bar.foo)>'
-        )
+        assert repr(student) == '<Student(id=1 name=John surname = Doe email=john@bar.foo)>'
         pass
 
     def test_student_dunder_str_ok(self):

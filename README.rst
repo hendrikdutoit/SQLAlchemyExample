@@ -5,7 +5,7 @@ Exploring SQLAlchemy
 +-------------------+---------------------------------------------------------------------------------------------+
 | **General**       | |maintenance_y| |semver| |license|                                                          |
 +-------------------+---------------------------------------------------------------------------------------------+
-| **CI**            | |gha_tests| |gha_docu| |pre_commit_ci|                                                      |
+| **CI**            | |gha_tests| |gha_docu| |pre_commit_ci| |codestyle|                                          |
 |                   +---------------------------------------------------------------------------------------------+
 |                   | |codecov|                                                                                   |
 +-------------------+---------------------------------------------------------------------------------------------+
@@ -105,7 +105,7 @@ bit easier.  The scripts make use of the ``gitit`` module to simplify tasks.
 
     usage: release version  The version will match the release and the tag. Only issue a release once a push.bat was successful.  In principle it does the following:
 
-    e.g. relase 1.2.3
+    e.g. release 1.2.3
 
     #. Commit the changes
     #. Create and push the release tag with the correct naming conventions.
@@ -130,6 +130,10 @@ bit easier.  The scripts make use of the ``gitit`` module to simplify tasks.
 .. |semver| image:: https://img.shields.io/badge/Semantic%20Versioning-2.0.0-brightgreen.svg?style=flat-square
     :target: https://semver.org/
     :alt: Semantic Versioning - 2.0.0
+
+.. |codestyle| image:: https://img.shields.io/badge/code%20style-black-000000.svg
+    :target: https://github.com/psf/black
+    :alt: Code Style Black
 
 
 .. CI

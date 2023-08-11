@@ -135,10 +135,7 @@ class TestOtmUni:
         session.add_all([student])
         session.commit()
 
-        assert (
-            repr(student)
-            == '<Student(id=1 name=Arthur surname=Dent email=arthur@bar.foo)>'
-        )
+        assert repr(student) == '<Student(id=1 name=Arthur surname=Dent email=arthur@bar.foo)>'
         pass
 
     def test_student_dunder_str_ok(self):
@@ -155,11 +152,7 @@ class TestOtmUni:
 
         course = tab_cfg.Course(name='Life, the Universe, and Everything')
         session.add(course)
-        qry = (
-            session.query(tab_cfg.Course)
-            .filter_by(name='Life, the Universe, and Everything')
-            .first()
-        )
+        qry = session.query(tab_cfg.Course).filter_by(name='Life, the Universe, and Everything').first()
         session.commit()
 
         assert qry.name == 'Life, the Universe, and Everything'
@@ -190,15 +183,9 @@ class TestOtmUni:
 
         student = tab_cfg.Student(name='Arthur', surname='Dent')
         session.add(student)
-        course = tab_cfg.Course(
-            name='Life, the Universe, and Everything', student_id=student.id
-        )
+        course = tab_cfg.Course(name='Life, the Universe, and Everything', student_id=student.id)
         session.add(course)
-        qry = (
-            session.query(tab_cfg.Course)
-            .filter_by(name='Life, the Universe, and Everything')
-            .first()
-        )
+        qry = session.query(tab_cfg.Course).filter_by(name='Life, the Universe, and Everything').first()
         session.commit()
 
         assert qry.name == 'Life, the Universe, and Everything'

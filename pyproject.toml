@@ -4,14 +4,21 @@ build-backend = "setuptools.build_meta"
 
 [tool.black]
 skip-string-normalization = true
-extend-exclude = "/templates"
+#extend-exclude = '/templates'
+line-length = 120
+target-version = ['py310']
 
 
 [tool.pytest.ini_options]
 addopts = ["--import-mode=importlib", '-v', '--ignore-glob=*\Archive', '--cov-report=html']
 #addopts = ["--import-mode=importlib", '-v', '--cov=./', '--ignore-glob=*\Archive', '--cov-report=html']
-#pythonpath = ["src", "tests" ]
+pythonpath = ["src", "tests" ]
 markers = [
     'select: Run a selection of tests',
     'otmuni: One-To-Manu Uni-direction'
 ]
+
+[tool.codespell]
+#skip = './docs/build/html/*.js'
+count = ''
+quiet-level = 2

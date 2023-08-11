@@ -1,6 +1,6 @@
 .. role:: raw-html(raw)
     :format: html
-	
+
 ===
 FAQ
 ===
@@ -11,7 +11,7 @@ want to consider asking a question on `StackOverflow <https://stackoverflow.com/
 **Insert your FAQ #1 here.**
 ---------------------------------------
 
-This is the answer to the above FAQ.  The answer to the above FAQ 
+This is the answer to the above FAQ.  The answer to the above FAQ
 can can span multiple lines.
 :raw-html:`<br />`
 :raw-html:`<br />`

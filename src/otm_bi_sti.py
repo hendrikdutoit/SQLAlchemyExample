@@ -12,12 +12,12 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy_utils import create_database, database_exists, drop_database
 
 url = engine.URL.create(
-    "mysql+mysqlconnector",
-    username="root",
-    password=environ.get("MYSQL_ROOT_PWD"),
-    host=environ.get("MYSQL_HOST"),
-    port=environ.get("MYSQL_TCP_PORT_EXAMPLES"),
-    database=environ.get("MYSQL_DB_NAME"),
+    'mysql+mysqlconnector',
+    username='root',
+    password=environ.get('MYSQL_ROOT_PWD'),
+    host=environ.get('MYSQL_HOST'),
+    port=environ.get('MYSQL_TCP_PORT_EXAMPLES'),
+    database=environ.get('MYSQL_DB_NAME'),
 )
 # url = 'sqlite:///:memory:'
 engine = create_engine(url, echo=False)
@@ -31,54 +31,54 @@ Base = declarative_base(bind=engine)
 
 class LogIn(Base):
     __tablename__ = 'login'
-    __table_args__ = {'schema': environ.get("MYSQL_DB_NAME")}
+    __table_args__ = {'schema': environ.get('MYSQL_DB_NAME')}
 
     id = Column(Integer, primary_key=True)
     email = Column(String(100))
     type = Column(String(20))
 
     __mapper_args__ = {
-        "polymorphic_on": type,
-        "polymorphic_identity": "login",
+        'polymorphic_on': type,
+        'polymorphic_identity': 'login',
     }
     pass
 
     def __repr__(self):
-        return f"<LogIn(id={self.id} email={self.email})>"
+        return f'<LogIn(id={self.id} email={self.email})>'
 
     def __str__(self):
-        return f"{self.email}"
+        return f'{self.email}'
 
 
 class Author(LogIn):
     name = Column(String(45))
     surname = Column(String(45))
 
-    books = relationship("Book", back_populates="author")
+    books = relationship('Book', back_populates='author')
     __mapper_args__ = {
-        "polymorphic_identity": "author",
+        'polymorphic_identity': 'author',
     }
 
     def __repr__(self):
-        return f"<Author(id={self.id} name={self.name} surname={self.surname} email={self.email})>"
+        return f'<Author(id={self.id} name={self.name} surname={self.surname} email={self.email})>'
 
     def __str__(self):
-        return f"{self.name} {self.surname}"
+        return f'{self.name} {self.surname}'
 
 
 class Book(Base):
     __tablename__ = 'book'
-    __table_args__ = {'schema': environ.get("MYSQL_DB_NAME")}
+    __table_args__ = {'schema': environ.get('MYSQL_DB_NAME')}
 
     id = Column(Integer, primary_key=True)
     name = Column(String(45))
     author_id = Column(Integer, ForeignKey(f"{environ.get('MYSQL_DB_NAME')}.login.id"))
 
-    author = relationship("Author", back_populates="books")
+    author = relationship('Author', back_populates='books')
     pass
 
     def __repr__(self):
-        return f"<Book(id={self.id} name={self.name})>"
+        return f'<Book(id={self.id} name={self.name})>'
 
     def __str__(self):
-        return f"{self.name}"
+        return f'{self.name}'
