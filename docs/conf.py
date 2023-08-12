@@ -18,8 +18,8 @@
 project = 'SQLAlchemyExample'
 copyright = '2023, Hendrik du Toit'
 author = 'Hendrik du Toit'
-release = '0.1.32'
-version = '0.1.32'
+release = '0.1.33'
+version = '0.1.33'
 
 add_module_names = False
 # sys.path.insert(0, os.path.abspath(r'./src'))
@@ -28,7 +28,7 @@ autosummary_imported_members = True
 exclude_patterns = []
 extensions = ['sphinx.ext.autodoc', 'sphinx.ext.napoleon', 'sphinx.ext.autosummary']
 html_theme = 'bizstyle'
-html_static_path = ['static']
+html_static_path = ['_static']
 html_context = {
     'display_github': True,  # Integrate GitHub
     'github_user': 'hendrikdutoit',  # Username
