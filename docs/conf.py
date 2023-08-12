@@ -1,5 +1,5 @@
-import os
-import sys
+# import os
+# import sys
 
 # Configuration file for the Sphinx documentation builder.
 #
@@ -18,11 +18,11 @@ import sys
 project = 'SQLAlchemyExample'
 copyright = '2023, Hendrik du Toit'
 author = 'Hendrik du Toit'
-release = '0.1.31'
-version = '0.1.31'
+release = '0.1.32'
+version = '0.1.32'
 
 add_module_names = False
-sys.path.insert(0, os.path.abspath(r'./src'))
+# sys.path.insert(0, os.path.abspath(r'./src'))
 autosummary_generate = True
 autosummary_imported_members = True
 exclude_patterns = []
