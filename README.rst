@@ -9,7 +9,7 @@ Exploring SQLAlchemy
 +-----------+------------------------------------------------------------------------------------+
 |**PyPI**   | |pypi_release| |pypi_py_versions| |pypi_status| |pypi_format| |pypi_downloads|     |
 +-----------+------------------------------------------------------------------------------------+
-|**Github** | |gh_issues| |gh_searches|                                                          |
+|**Github** | |gh_issues| |gh_language| |gh_last_commit| |gh_deployment|                         |
 +-----------+------------------------------------------------------------------------------------+
 
 
@@ -119,7 +119,7 @@ bit easier.  The scripts make use of the ``gitit`` module to simplify tasks.
     :target: http://unmaintained.tech/
     :alt: Maintenance - intended
 
-.. |license| image:: https://img.shields.io/github/license/hendrikdutoit/SQLAlchemyExample
+.. |license| image:: https://img.shields.io/pypi/l/SQLAlchemyExample
     :target: https://github.com/hendrikdutoit/SQLAlchemyExample/blob/master/LICENSE
     :alt: License
 
@@ -178,7 +178,16 @@ bit easier.  The scripts make use of the ``gitit`` module to simplify tasks.
 
 .. |gh_issues| image:: https://img.shields.io/github/issues-raw/hendrikdutoit/SQLAlchemyExample
     :target: https://github.com/hendrikdutoit/SQLAlchemyExample/issues
+    :alt: GitHub - Issue Counter
+
+.. |gh_language| image:: https://img.shields.io/github/languages/top/hendrikdutoit/SQLAlchemyExample
+    :target: https://github.com/hendrikdutoit/SQLAlchemyExample
+    :alt: GitHub - Top Language
+
+.. |gh_last_commit| image:: https://img.shields.io/github/last-commit/hendrikdutoit/SQLAlchemyExample/master
+    :target: https://github.com/hendrikdutoit/SQLAlchemyExample/commit/master
     :alt: GitHub - Last Commit
 
-.. |gh_searches| image:: https://img.shields.io/github/search/hendrikdutoit/SQLAlchemyExample/GitHub
-    :alt: GitHub Searches
+.. |gh_deployment| image:: https://img.shields.io/github/deployments/hendrikdutoit/SQLAlchemyExample/pypi
+    :target: https://github.com/hendrikdutoit/SQLAlchemyExample/deployments/pypi
+    :alt: GitHub - PiPy Deployment
