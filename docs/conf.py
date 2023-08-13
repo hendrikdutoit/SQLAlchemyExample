@@ -18,11 +18,11 @@ import sys
 project = 'SQLAlchemyExample'
 copyright = '2023, Hendrik du Toit'
 author = 'Hendrik du Toit'
-release = '0.1.34'
-version = '0.1.34'
+release = '0.1.35'
+version = '0.1.35'
 
 add_module_names = False
-# sys.path.insert(0, os.path.abspath(r'./src'))
+sys.path.insert(0, os.path.abspath(r'./src'))
 sys.path.insert(0, os.path.abspath('.'))
 sys.path.insert(0, os.path.abspath('../'))
 autosummary_generate = True
