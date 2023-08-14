@@ -18,8 +18,8 @@ import sys
 project = 'SQLAlchemyExample'
 copyright = '2023, Hendrik du Toit'
 author = 'Hendrik du Toit'
-release = '0.1.39'
-version = '0.1.39'
+release = '0.1.40'
+version = '0.1.40'
 
 add_module_names = False
 sys.path.insert(0, os.path.abspath(r'../src'))
@@ -28,7 +28,7 @@ sys.path.insert(0, os.path.abspath('../'))
 print('Hello world!"')
 print(sys.path)
 autosummary_generate = True
-autosummary_imported_members = True
+autosummary_imported_members = False
 exclude_patterns = []
 extensions = ['sphinx.ext.autodoc', 'sphinx.ext.napoleon', 'sphinx.ext.autosummary']
 html_theme = 'bizstyle'
