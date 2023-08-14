@@ -18,11 +18,11 @@ import sys
 project = 'SQLAlchemyExample'
 copyright = '2023, Hendrik du Toit'
 author = 'Hendrik du Toit'
-release = '0.1.37'
-version = '0.1.37'
+release = '0.1.38'
+version = '0.1.38'
 
 add_module_names = False
-sys.path.insert(0, os.path.abspath(r'src'))
+sys.path.insert(0, os.path.abspath(r'./src'))
 sys.path.insert(0, os.path.abspath('.'))
 sys.path.insert(0, os.path.abspath('../'))
 print('Hello world!"')
