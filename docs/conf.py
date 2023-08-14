@@ -23,8 +23,8 @@ version = '0.1.40'
 
 add_module_names = False
 sys.path.insert(0, os.path.abspath(r'../src'))
-# sys.path.insert(0, os.path.abspath('.'))
-# sys.path.insert(0, os.path.abspath('../'))
+sys.path.insert(0, os.path.abspath('.'))
+sys.path.insert(0, os.path.abspath('../'))
 print('Hello world!"')
 print(sys.path)
 autosummary_generate = True
