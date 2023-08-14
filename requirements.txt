@@ -7,7 +7,7 @@
 #===================================================================
 argparse
 
-beetools
+# beetools
 codecov
 docutils
 git-it
