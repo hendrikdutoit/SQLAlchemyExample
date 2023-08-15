@@ -21,13 +21,10 @@ The source code in ``src`` by itself does not do much, it basically only defines
 ----
 
 .. toctree::
-    :maxdepth: 1
-    :caption: Contents
-    :numbered:
 
-    source/conventions
-    source/examples
-    source/faq
+    conventions
+    examples
+    faq
 
 Installation
 ------------

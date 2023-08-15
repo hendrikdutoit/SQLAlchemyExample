@@ -2,6 +2,11 @@
 requires = [ "setuptools", "wheel",]
 build-backend = "setuptools.build_meta"
 
+[project]
+name = "SQLAlchemyExample"
+authors = [{name = "Hendrik du Toit", email = "hendrik@brightedge.co.za"}]
+dynamic = ["version", "description"]
+
 [tool.black]
 skip-string-normalization = true
 #extend-exclude = '/templates'
