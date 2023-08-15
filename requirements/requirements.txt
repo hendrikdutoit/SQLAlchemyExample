@@ -16,6 +16,6 @@ Path
 Pygments
 pytest
 pytest-cov
-sphinx
+sphinx==6.2.1
 sqlalchemy < 2.0.0
 sqlalchemy_utils

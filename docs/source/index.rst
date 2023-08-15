@@ -20,10 +20,15 @@ The source code in ``src`` by itself does not do much, it basically only defines
 
 ----
 
+Contents
+--------
 .. toctree::
+    :maxdepth: 1
+    :numbered:
 
     conventions
     examples
+    api
     faq
 
 Installation
@@ -123,16 +128,6 @@ References
 - https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_orm_many_to_many_relationships.htm
 - https://docs.sqlalchemy.org/en/14/orm/tutorial.html#building-a-relationship
 - https://cyruslab.net/2020/07/16/pythoncreate-database-if-not-exists-with-sqlalchemy/
-
-
-.. automodule:: src.otm_bi
-    :members:
-
-.. automodule:: src.otm_uni
-    :members:
-
-.. automodule:: src.otm_bi_sti
-    :members:
 
 
 .. General
