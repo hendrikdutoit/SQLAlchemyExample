@@ -12,6 +12,7 @@ Archive/
 desktop.ini
 docs/build/
 docs/_build/
+docs/source/generated/
 htmlcov/
 VersionArchive/
 dist/
