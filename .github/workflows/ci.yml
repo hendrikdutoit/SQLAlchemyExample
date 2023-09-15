@@ -32,7 +32,7 @@ jobs:
         env:
 #          MYSQL_ALLOW_EMPTY_PASSWORD: yes
           MYSQL_ROOT_PASSWORD: ${{vars.MYSQL_ROOT_PWD}}
-          MYSQL_DATABASE: ${{env.MYSQL_DB_NAME}}
+          MYSQL_DATABASE: ${{vars.MYSQL_DB_NAME}}
 
     steps:
       - name: Check out code
