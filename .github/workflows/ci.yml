@@ -38,11 +38,11 @@ jobs:
 #          MYSQL_ALLOW_EMPTY_PASSWORD: yes
 #          MYSQL_ROOT_PASSWORD: ${{env.MYSQL_PASSWORD}}
           MYSQL_ROOT_PASSWORD: ${{vars.MYSQL_ROOT_PWD}}
-          MYSQL_DATABASE: ${{env.MYSQL_DB_NAME}}
+          MYSQL_DATABASE: ${{vars.MYSQL_DB_NAME}}
 
     steps:
-#      - name: Check out code
-#        uses: actions/checkout@v3
+      - name: Check out code
+        uses: actions/checkout@v3
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -52,7 +52,7 @@ jobs:
 
       - name: Verify DB exists
 #        run: mysql --host 127.0.0.1 -uroot -p${{env.MYSQL_PASSWORD}} -e "SHOW DATABASES" # LIKE 'SQLAlchemyExample'"
-        run: mysql --host 127.0.0.1 -uroot -p${{vars.MYSQL_ROOT_PWD}} -e "SHOW DATABASES" # LIKE 'SQLAlchemyExample'"
+        run: mysql --host 127.0.0.1 -uroot -p${{vars.MYSQL_ROOT_PWD}} -e "SHOW DATABASES"
 
       - name: Upgrade pip
         run: python -m pip install --upgrade pip
