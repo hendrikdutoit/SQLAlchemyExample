@@ -13,7 +13,7 @@ class TestSimple:
 
     def test_Student_table_deletion(self, setup_db_simple):
         engine, session, base = setup_db_simple
-        base.metadata.tables[f'{environ.get("MYSQL_DB_NAME")}.Student'].drop()
+        base.metadata.tables[f'{environ.get("MYSQL_DATABASE")}.Student'].drop()
         inspector = inspect(engine)
 
         assert 'Student' not in inspector.get_table_names()

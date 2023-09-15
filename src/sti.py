@@ -16,8 +16,8 @@ url = engine.URL.create(
     username='root',
     password=environ.get('MYSQL_ROOT_PWD'),
     host=environ.get('MYSQL_HOST'),
-    port=environ.get('MYSQL_TCP_PORT_EXAMPLES'),
-    database=environ.get('MYSQL_DB_NAME'),
+    port=environ.get('MYSQL_TCP_PORT'),
+    database=environ.get('MYSQL_DATABASE'),
 )
 # url = 'sqlite:///:memory:'
 engine = create_engine(url, echo=False)
@@ -31,7 +31,7 @@ Base = declarative_base(bind=engine)
 
 class LogIn(Base):
     __tablename__ = 'login'
-    __table_args__ = {'schema': environ.get('MYSQL_DB_NAME')}
+    __table_args__ = {'schema': environ.get('MYSQL_DATABASE')}
 
     id = Column(Integer, primary_key=True)
     email = Column(String(100))

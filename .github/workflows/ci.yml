@@ -7,13 +7,9 @@ jobs:
   CI:
     runs-on: ${{matrix.os}}
     env:
-      MYSQL_DB_NAME:  ${{vars.MYSQL_DB_NAME}}
-      MYSQL_DATABASE: ${{vars.MYSQL_DB_NAME}}
+      MYSQL_DATABASE: ${{vars.MYSQL_DATABASE}}
       MYSQL_HOST:  ${{vars.MYSQL_HOST}}
-      MYSQL_PASSWORD: ${{vars.MYSQL_ROOT_PWD}}
-      MYSQL_PWD:  ${{vars.MYSQL_ROOT_PWD}}
       MYSQL_ROOT_PWD:  ${{vars.MYSQL_ROOT_PWD}}
-      MYSQL_TCP_PORT_EXAMPLES: ${{vars.MYSQL_TCP_PORT}}
       MYSQL_TCP_PORT: ${{vars.MYSQL_TCP_PORT}}
       SQLALCHEMY_SILENCE_UBER_WARNING: 1
     strategy:
@@ -27,12 +23,12 @@ jobs:
       mysql:
         image: mysql:8.0.21
         ports:
-          - 50002:3306
+          - ${{vars.MYSQL_TCP_PORT}}:3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
         env:
 #          MYSQL_ALLOW_EMPTY_PASSWORD: yes
           MYSQL_ROOT_PASSWORD: ${{vars.MYSQL_ROOT_PWD}}
-          MYSQL_DATABASE: ${{vars.MYSQL_DB_NAME}}
+          MYSQL_DATABASE: ${{vars.MYSQL_DATABASE}}
 
     steps:
       - name: Check out code
