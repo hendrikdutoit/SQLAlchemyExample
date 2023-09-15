@@ -11,7 +11,7 @@ jobs:
       MYSQL_DATABASE: ${{vars.MYSQL_DB_NAME}}
       MYSQL_HOST:  ${{vars.MYSQL_HOST}}
       MYSQL_PASSWORD: ${{vars.MYSQL_ROOT_PWD}}
-      MYSQL_PWD:  ${{vars.MYSQL_ROOT_PWD}}
+#      MYSQL_PWD:  ${{vars.MYSQL_ROOT_PWD}}
       MYSQL_ROOT_PWD:  ${{vars.MYSQL_ROOT_PWD}}
 #      MYSQL_TCP_PORT_EXAMPLES: ${{vars.MYSQL_TCP_PORT}}
       MYSQL_TCP_PORT: ${{vars.MYSQL_TCP_PORT}}
