@@ -15,7 +15,7 @@ url = engine.URL.create(
     username='root',
     password=environ.get('MYSQL_ROOT_PWD'),
     host=environ.get('MYSQL_HOST'),
-    port=environ.get('MYSQL_TCP_PORT_EXAMPLES'),
+    port=environ.get('MYSQL_TCP_PORT'),
     database=environ.get('MYSQL_DB_NAME'),
 )
 # url = 'sqlite:///:memory:'
