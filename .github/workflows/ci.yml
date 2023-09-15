@@ -10,8 +10,8 @@ jobs:
 #      MYSQL_DB_NAME: SQLAlchemyExample
       MYSQL_DB_NAME:  SQLAlchemyExample
       MYSQL_DATABASE: SQLAlchemyExample
-      MYSQL_HOST: localhost
-#      MYSQL_HOST:  localhost
+#      MYSQL_HOST: localhost
+      MYSQL_HOST:  localhost
       MYSQL_PASSWORD: N0tS0S3curePassw0rd
       MYSQL_PWD: N0tS0S3curePassw0rd
 #      MYSQL_PWD:  N0tS0S3curePassw0rd
