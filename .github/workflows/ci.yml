@@ -31,7 +31,6 @@ jobs:
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
         env:
 #          MYSQL_ALLOW_EMPTY_PASSWORD: yes
-#          MYSQL_ROOT_PASSWORD: ${{env.MYSQL_PASSWORD}}
           MYSQL_ROOT_PASSWORD: ${{vars.MYSQL_ROOT_PWD}}
           MYSQL_DATABASE: ${{vars.MYSQL_DB_NAME}}
 
@@ -46,7 +45,6 @@ jobs:
           architecture: x64
 
       - name: Verify DB exists
-#        run: mysql --host 127.0.0.1 -uroot -p${{env.MYSQL_PASSWORD}} -e "SHOW DATABASES" # LIKE 'SQLAlchemyExample'"
         run: mysql --host 127.0.0.1 -uroot -p${{vars.MYSQL_ROOT_PWD}} -e "SHOW DATABASES"
 
       - name: Upgrade pip
