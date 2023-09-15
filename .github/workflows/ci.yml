@@ -13,8 +13,8 @@ jobs:
 #      MYSQL_HOST: localhost
       MYSQL_HOST:  localhost
       MYSQL_PASSWORD: N0tS0S3curePassw0rd
-      MYSQL_PWD: N0tS0S3curePassw0rd
-#      MYSQL_PWD:  N0tS0S3curePassw0rd
+#      MYSQL_PWD: N0tS0S3curePassw0rd
+      MYSQL_PWD:  N0tS0S3curePassw0rd
       MYSQL_ROOT_PWD: N0tS0S3curePassw0rd
 #      MYSQL_ROOT_PWD:  N0tS0S3curePassw0rd
       MYSQL_TCP_PORT_EXAMPLES: 50002
