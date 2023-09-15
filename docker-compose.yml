@@ -9,7 +9,7 @@ services:
     command: mysqld --default-authentication-plugin=mysql_native_password
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_PWD}
-#      MYSQL_DATABASE: ${MYSQL_DB_NAME}
+#      MYSQL_DATABASE: ${MYSQL_DATABASE}
     ports:
       - "${MYSQL_TCP_PORT_EXAMPLES}:3306"
 #    volumes:

@@ -50,7 +50,7 @@ url = engine.URL.create(
     password=environ.get('MYSQL_ROOT_PWD'),
     host=environ.get('MYSQL_HOST'),
     port=environ.get('MYSQL_TCP_PORT'),
-    database=environ.get('MYSQL_DB_NAME'),
+    database=environ.get('MYSQL_DATABASE'),
 )
 # url = 'sqlite:///:memory:'
 engine = create_engine(url, echo=False)
@@ -64,7 +64,7 @@ Base = declarative_base(bind=engine)
 
 class Student(Base):
     __tablename__ = 'student'
-    __table_args__ = {'schema': environ.get('MYSQL_DB_NAME')}
+    __table_args__ = {'schema': environ.get('MYSQL_DATABASE')}
 
     id = Column(Integer, primary_key=True)
     email = Column(String(100))
@@ -82,12 +82,12 @@ class Student(Base):
 
 class Course(Base):
     __tablename__ = 'course'
-    __table_args__ = {'schema': environ.get('MYSQL_DB_NAME')}
+    __table_args__ = {'schema': environ.get('MYSQL_DATABASE')}
 
     id = Column(Integer, primary_key=True)
     name = Column(String(45))
 
-    student_id = Column(Integer, ForeignKey(f"{environ.get('MYSQL_DB_NAME')}.student.id"))
+    student_id = Column(Integer, ForeignKey(f"{environ.get('MYSQL_DATABASE')}.student.id"))
     pass
 
     def __repr__(self):
