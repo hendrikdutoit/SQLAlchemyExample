@@ -36,8 +36,8 @@ jobs:
           MYSQL_DATABASE: ${{vars.MYSQL_DB_NAME}}
 
     steps:
-#      - name: Check out code
-#        uses: actions/checkout@v3
+      - name: Check out code
+        uses: actions/checkout@v3
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -49,17 +49,17 @@ jobs:
 #        run: mysql --host 127.0.0.1 -uroot -p${{env.MYSQL_PASSWORD}} -e "SHOW DATABASES" # LIKE 'SQLAlchemyExample'"
         run: mysql --host 127.0.0.1 -uroot -p${{vars.MYSQL_ROOT_PWD}} -e "SHOW DATABASES"
 
-#      - name: Upgrade pip
-#        run: python -m pip install --upgrade pip
+      - name: Upgrade pip
+        run: python -m pip install --upgrade pip
 
-#      - name: Install dependencies
-#        run: pip install -r ./requirements/requirements.txt
+      - name: Install dependencies
+        run: pip install -r ./requirements/requirements.txt
 
-#      - name: Install editable package
-#        run: pip install -e .
+      - name: Install editable package
+        run: pip install -e .
 
-#      - name: Run pytest
-#        run: pytest --cov=./
+      - name: Run pytest
+        run: pytest --cov=./
 
-#      - name: Upload coverage to Codecov
-#        uses: codecov/codecov-action@v3
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
