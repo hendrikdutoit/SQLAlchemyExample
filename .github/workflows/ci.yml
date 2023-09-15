@@ -9,10 +9,7 @@ jobs:
     env:
       MYSQL_DATABASE: ${{vars.MYSQL_DATABASE}}
       MYSQL_HOST:  ${{vars.MYSQL_HOST}}
-#      MYSQL_PASSWORD: ${{vars.MYSQL_ROOT_PWD}}
-#      MYSQL_PWD:  ${{vars.MYSQL_ROOT_PWD}}
       MYSQL_ROOT_PWD:  ${{vars.MYSQL_ROOT_PWD}}
-#      MYSQL_TCP_PORT_EXAMPLES: ${{vars.MYSQL_TCP_PORT}}
       MYSQL_TCP_PORT: ${{vars.MYSQL_TCP_PORT}}
       SQLALCHEMY_SILENCE_UBER_WARNING: 1
     strategy:
