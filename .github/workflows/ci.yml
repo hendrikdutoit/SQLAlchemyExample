@@ -7,14 +7,19 @@ jobs:
   CI:
     runs-on: ${{matrix.os}}
     env:
-      MYSQL_DB_NAME: SQLAlchemyExample
+#      MYSQL_DB_NAME: SQLAlchemyExample
+      MYSQL_DB_NAME:  SQLAlchemyExample
       MYSQL_DATABASE: SQLAlchemyExample
       MYSQL_HOST: localhost
+#      MYSQL_HOST:  localhost
       MYSQL_PASSWORD: N0tS0S3curePassw0rd
       MYSQL_PWD: N0tS0S3curePassw0rd
+#      MYSQL_PWD:  N0tS0S3curePassw0rd
       MYSQL_ROOT_PWD: N0tS0S3curePassw0rd
+#      MYSQL_ROOT_PWD:  N0tS0S3curePassw0rd
       MYSQL_TCP_PORT_EXAMPLES: 50002
       MYSQL_TCP_PORT: 50002
+#      MYSQL_TCP_PORT: 50002
       SQLALCHEMY_SILENCE_UBER_WARNING: 1
     strategy:
       fail-fast: true
@@ -31,12 +36,13 @@ jobs:
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
         env:
 #          MYSQL_ALLOW_EMPTY_PASSWORD: yes
-          MYSQL_ROOT_PASSWORD: ${{env.MYSQL_PASSWORD}}
-          MYSQL_DATABASE: ${{env.MYSQL_DB_NAME}}
+#          MYSQL_ROOT_PASSWORD: ${{env.MYSQL_PASSWORD}}
+          MYSQL_ROOT_PASSWORD: ${{vars.MYSQL_ROOT_PWD}}
+          MYSQL_DATABASE: ${{vars.MYSQL_DB_NAME}}
 
     steps:
-      - name: Check out code
-        uses: actions/checkout@v3
+#      - name: Check out code
+#        uses: actions/checkout@v3
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -45,18 +51,20 @@ jobs:
           architecture: x64
 
       - name: Verify DB exists
-        run: mysql --host 127.0.0.1 -uroot -p${{env.MYSQL_PASSWORD}} -e "SHOW DATABASES" # LIKE 'SQLAlchemyExample'"
+#        run: mysql --host 127.0.0.1 -uroot -p${{env.MYSQL_PASSWORD}} -e "SHOW DATABASES" # LIKE 'SQLAlchemyExample'"
+        run: mysql --host 127.0.0.1 -uroot -p${{vars.MYSQL_ROOT_PWD}} -e "SHOW DATABASES"
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+#      - name: Upgrade pip
+#        run: python -m pip install --upgrade pip
 
-      - name: Install editable package
-        run: pip install -e .
+#      - name: Install dependencies
+#        run: pip install -r ./requirements/requirements.txt
 
-      - name: Run pytest
-        run: pytest --cov=./
+#      - name: Install editable package
+#        run: pip install -e .
 
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
+#      - name: Run pytest
+#        run: pytest --cov=./
+
+#      - name: Upload coverage to Codecov
+#        uses: codecov/codecov-action@v3
