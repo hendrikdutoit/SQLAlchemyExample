@@ -9,13 +9,13 @@ jobs:
     env:
       MYSQL_DB_NAME: SQLAlchemyExample
       MYSQL_DATABASE: SQLAlchemyExample
-#      MYSQL_HOST: localhost
+      MYSQL_HOST: localhost
       MYSQL_PASSWORD: N0tS0S3curePassw0rd
       MYSQL_PWD: N0tS0S3curePassw0rd
-#      MYSQL_ROOT_PWD: N0tS0S3curePassw0rd
-#      MYSQL_TCP_PORT_EXAMPLES: 50002
-#      MYSQL_TCP_PORT: 50002
-#      SQLALCHEMY_SILENCE_UBER_WARNING: 1
+      MYSQL_ROOT_PWD: N0tS0S3curePassw0rd
+      MYSQL_TCP_PORT_EXAMPLES: 50002
+      MYSQL_TCP_PORT: 50002
+      SQLALCHEMY_SILENCE_UBER_WARNING: 1
     strategy:
       fail-fast: true
       matrix:
@@ -27,7 +27,7 @@ jobs:
       mysql:
         image: mysql:8.0.21
         ports:
-          - ${{vars.MYSQL_TCP_PORT}}:3306
+          - 50002:3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
         env:
 #          MYSQL_ALLOW_EMPTY_PASSWORD: yes
