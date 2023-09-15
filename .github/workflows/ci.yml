@@ -10,7 +10,7 @@ jobs:
       MYSQL_DB_NAME:  ${{vars.MYSQL_DB_NAME}}
       MYSQL_DATABASE: ${{vars.MYSQL_DB_NAME}}
       MYSQL_HOST:  ${{vars.MYSQL_HOST}}
-      MYSQL_PASSWORD: N0tS0S3curePassw0rd
+      MYSQL_PASSWORD: ${{vars.MYSQL_ROOT_PWD}}
       MYSQL_PWD:  N0tS0S3curePassw0rd
       MYSQL_ROOT_PWD:  N0tS0S3curePassw0rd
       MYSQL_TCP_PORT_EXAMPLES: 50002
