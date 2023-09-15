@@ -18,8 +18,8 @@ jobs:
 #      MYSQL_ROOT_PWD: N0tS0S3curePassw0rd
       MYSQL_ROOT_PWD:  N0tS0S3curePassw0rd
       MYSQL_TCP_PORT_EXAMPLES: 50002
-      MYSQL_TCP_PORT: 50002
 #      MYSQL_TCP_PORT: 50002
+      MYSQL_TCP_PORT: 50002
       SQLALCHEMY_SILENCE_UBER_WARNING: 1
     strategy:
       fail-fast: true
