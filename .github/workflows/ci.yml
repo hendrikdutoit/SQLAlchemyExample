@@ -6,16 +6,16 @@ on:
 jobs:
   CI:
     runs-on: ${{matrix.os}}
-#    env:
-#      MYSQL_DB_NAME: SQLAlchemyExample
-#      MYSQL_DATABASE: SQLAlchemyExample
-#      MYSQL_HOST: localhost
-#      MYSQL_PASSWORD: N0tS0S3curePassw0rd
-#      MYSQL_PWD: N0tS0S3curePassw0rd
-#      MYSQL_ROOT_PWD: N0tS0S3curePassw0rd
-#      MYSQL_TCP_PORT_EXAMPLES: 50002
-#      MYSQL_TCP_PORT: 50002
-#      SQLALCHEMY_SILENCE_UBER_WARNING: 1
+    env:
+      MYSQL_DB_NAME: SQLAlchemyExample
+      MYSQL_DATABASE: SQLAlchemyExample
+      MYSQL_HOST: localhost
+      MYSQL_PASSWORD: N0tS0S3curePassw0rd
+      MYSQL_PWD: N0tS0S3curePassw0rd
+      MYSQL_ROOT_PWD: N0tS0S3curePassw0rd
+      MYSQL_TCP_PORT_EXAMPLES: 50002
+      MYSQL_TCP_PORT: 50002
+      SQLALCHEMY_SILENCE_UBER_WARNING: 1
     strategy:
       fail-fast: true
       matrix:
@@ -31,8 +31,8 @@ jobs:
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
         env:
 #          MYSQL_ALLOW_EMPTY_PASSWORD: yes
-          MYSQL_ROOT_PASSWORD: ${{vars.MYSQL_ROOT_PWD}}
-          MYSQL_DATABASE: ${{vars.MYSQL_DB_NAME}}
+          MYSQL_ROOT_PASSWORD: ${{env.MYSQL_PASSWORD}}
+          MYSQL_DATABASE: ${{env.MYSQL_DB_NAME}}
 
     steps:
       - name: Check out code
@@ -45,7 +45,7 @@ jobs:
           architecture: x64
 
       - name: Verify DB exists
-        run: mysql --host 127.0.0.1 -uroot -p${{vars.MYSQL_ROOT_PWD}} -e "SHOW DATABASES"
+        run: mysql --host 127.0.0.1 -uroot -p${{env.MYSQL_PASSWORD}} -e "SHOW DATABASES" # LIKE 'SQLAlchemyExample'"
 
       - name: Install dependencies
         run: |
