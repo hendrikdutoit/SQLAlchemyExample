@@ -15,8 +15,8 @@ repos:
         args: [ --branch, master ]
       - id: pretty-format-json
       - id: requirements-txt-fixer
-      - id: trailing-whitespace
-        args: [ --markdown-linebreak-ext=md ]
+#      - id: trailing-whitespace
+#        args: [ --markdown-linebreak-ext=md ]
 
 #  - repo: https://github.com/asottile/pyupgrade
 #    rev: v3.1.0

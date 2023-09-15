@@ -1,8 +1,52 @@
 """
-SQLAlchemy V1.4.46
-Example: One-to_Many Uni-directional
+One-to-Many: Bidirectional and Single Inheritance
+=================================================
+In an Entity-Relationship (ER) diagram, a one-to-many (1:N) relationship exists when one entity instance is associated
+with multiple instances of another entity. When we say the relationship is bidirectional, we mean that there is a
+meaningful description of the relationship in both directions.
 
-https://docs.sqlalchemy.org/en/14/orm/basic_relationships.html
+In this inheritance mechanism, multiple subclasses (entities) share a single database table. Each row in the table
+includes a special discriminator column that indicates which subclass it belongs to.
+
+Let's consider an example of a one-to-many relationship between "Author" and "Book" entities:
+
+- **Author:** An entity that represents a person who writes books. An author can write multiple books, so there's a one-to-many relationship from Author to Book.
+- **Book:** An entity that represents a literary work. Each book is written by one and only one author, so there's a many-to-one relationship from Book to Author.
+
+Diagram
+-------
+
+- The "Author" entity has an attribute "author_id" that uniquely identifies each author.
+- The "Book" entity has attributes including "book_id" (a unique identifier for each book) and "author_id" (a foreign
+  key referencing the "Author" entity).
+- A one-to-many relationship is depicted from "Author" to "Book", symbolized by a line connecting these entities. The
+  line ends with a crow's foot near "Book", indicating the "many" side, and a straight line near "Author", indicating
+  the "one" side.
+
+Bidirectionality
+----------------
+
+The bidirectionality of the relationship can be described as:
+
+- One author writes many books (from "Author" to "Book").
+- Each book is written by one author (from "Book" to "Author").
+
+This bidirectional understanding helps in understanding how the entities are related in both directions, aiding in both
+database design and query formulation.
+
+Here's an illustration of this relationship:
+
+.. code-block::
+
+       1           N
+    author <────> book
+
+- The "1" near "Author" signifies the "one" side of the relationship.
+- The "N" near "Book" signifies the "many" side of the relationship.
+- The "author_id" in "Book" is a foreign key that creates the linkage between the two entities, ensuring referential
+  integrity.
+
+See: https://docs.sqlalchemy.org/en/14/_modules/examples/inheritance/single.html
 """
 from os import environ
 from sqlalchemy import Column, Integer, String, ForeignKey
