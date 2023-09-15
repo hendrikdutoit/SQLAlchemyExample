@@ -1,3 +1,8 @@
+"""
+Simple Example
+==============
+
+"""
 from os import environ
 from sqlalchemy import Column, Integer, String, Identity
 from sqlalchemy import create_engine, engine

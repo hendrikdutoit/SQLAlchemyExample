@@ -1,8 +1,8 @@
 """
-SQLAlchemy V1.4.46
-Example: One-to_Many Uni-directional
-
-https://docs.sqlalchemy.org/en/14/orm/basic_relationships.html
+Single Table Inheritance
+========================
+In this inheritance mechanism, multiple subclasses (entities) share a single database table. Each row in the table
+includes a special discriminator column that indicates which subclass it belongs to.
 """
 from os import environ
 from sqlalchemy import Column, Integer, String
