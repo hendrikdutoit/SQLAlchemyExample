@@ -1,10 +1,12 @@
 from os import environ
+
 import pytest
 from sqlalchemy.orm import close_all_sessions
 
 
 @pytest.fixture
 def setup_db_otm_bi():
+    # import pdb;pdb.set_trace()
     environ['MYSQL_DATABASE'] = 'otm_bi'
     import otm_bi as tab_cfg
 

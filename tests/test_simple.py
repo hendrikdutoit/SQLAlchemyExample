@@ -1,4 +1,5 @@
 from os import environ
+
 import pytest
 from sqlalchemy import inspect
 

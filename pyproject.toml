@@ -1,29 +1,76 @@
-[build-system]
-requires = [ "setuptools", "wheel",]
-build-backend = "setuptools.build_meta"
-
 [project]
-name = "SQLAlchemyExample"
-authors = [{name = "Hendrik du Toit", email = "hendrik@brightedge.co.za"}]
-dynamic = ["version", "description"]
+name = 'SQLAlchemyExample'
+version = '0.1.45'
+authors = [
+    { name = 'Hendrik du Toit', email = 'hendrik@brightedge.co.za' },
+]
+description = 'Exploring SQLAlchemy'
+license = {file = 'LICENSE'}
+classifiers = [
+	'Development Status :: 5 - Production/Stable',
+	'Intended Audience :: Developers',
+	'Topic :: Software Development',
+	'Topic :: Database',
+	'License :: OSI Approved :: MIT License',
+	'Programming Language :: Python :: 3.8',
+	'Programming Language :: Python :: 3.9',
+	'Programming Language :: Python :: 3.10',
+	'Programming Language :: Python :: 3.11',
+]
+readme = {file = 'README.rst', content-type = 'text/x-rst'}
+requires-python = '>=3.10, <=12.0'
+dependencies = [
+    'mysql-connector-python',
+    'sqlalchemy < 2.0.0',
+    'sqlalchemy-utils',
+  ]
+
+[project.optional-dependencies]
+dev = [
+    'git-it',
+    'Pygments',
+    'pytest',
+    'pytest-cov',
+    'rstcheck',
+    'uvicorn'
+]
+
+[project.urls]
+Changelog = 'https://github.com/hendrikdutoit/SQLAlchemyExample/enhancement/master/CHANGES.md'
+Homepage = 'https://github.com/hendrikdutoit/SQLAlchemyExample'
+
+[build-system]
+requires = [
+    "setuptools >= 68",
+    "wheel",
+    "setuptools-git >= 1.1",
+    "setuptools_scm"
+]
+build-backend = "setuptools.build_meta"
 
 [tool.black]
 skip-string-normalization = true
-#extend-exclude = '/templates'
 line-length = 120
-target-version = ['py310']
+target-version = ["py311"]
 
+[tool.codespell]
+count = ''
+quiet-level = 2
+skip = 'documentation/Archive/*'
+
+[tool.coverage.run]
+source = ['src']
 
 [tool.pytest.ini_options]
-addopts = ["--import-mode=importlib", '-v', '--ignore-glob=*\Archive', '--cov-report=html']
-#addopts = ["--import-mode=importlib", '-v', '--cov=./', '--ignore-glob=*\Archive', '--cov-report=html']
-pythonpath = ["src", "tests" ]
+addopts = ['--import-mode=importlib', '-vv', '--ignore-glob=*\\Archive']
+#addopts = ['--import-mode=importlib', "-v", "--cov=./", "--ignore-glob=*\\Archive", "--cov-report=html"]
+pythonpath = ['src','src/rte-db', 'tests' ]
 markers = [
     'select: Run a selection of tests',
     'otmuni: One-To-Manu Uni-direction'
 ]
-
-[tool.codespell]
-#skip = './docs/build/html/*.js'
-count = ''
-quiet-level = 2
+filterwarnings = [
+    "ignore::DeprecationWarning",
+]
+#python_functions = 'demo_setup'
+testpaths = 'tests'

@@ -33,7 +33,7 @@ PEP 8
 -----
 `PEP 8 <https://peps.python.org/pep-0008/>`_ applies.  The maximum line length for text is relaxed to 120.
 
-Odering
+Ordering
 -------
 Attribute-, method-, class-, etc names are ordered alphabetically (where possible) within the local scope.  Should there
 be a dependency, the item (stuff) are moved to the bottom, in alphabetical order, to accommodate the dependency.
