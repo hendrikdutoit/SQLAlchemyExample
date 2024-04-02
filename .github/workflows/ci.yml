@@ -8,8 +8,11 @@ jobs:
     runs-on: ${{matrix.os}}
     env:
       MYSQL_DATABASE: ${{vars.MYSQL_DATABASE}}
+      MYSQL_ROOT_PASSWORD: ${{vars.MYSQL_ROOT_PASSWORD}}
       MYSQL_HOST:  ${{vars.MYSQL_HOST}}
-      MYSQL_ROOT_PWD:  ${{vars.MYSQL_ROOT_PWD}}
+      INSTALLER_USERID: ${{vars.INSTALLER_USERID}}
+      INSTALLER_PWD: ${{vars.INSTALLER_PWD}}
+      MYSQL_PWD: ${{vars.MYSQL_PWD}}
       MYSQL_TCP_PORT: ${{vars.MYSQL_TCP_PORT}}
       SQLALCHEMY_SILENCE_UBER_WARNING: 1
     strategy:
@@ -19,13 +22,17 @@ jobs:
         os: ['ubuntu-latest']
     services:
       mysql:
-        image: mysql:8.0.21
+        image: mysql:8.0.25
         ports:
           - ${{vars.MYSQL_TCP_PORT}}:3306
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+        options: >-
+          --health-cmd="mysqladmin ping"
+          --health-cmd="mysqladmin ping -h localhost -u root -p${{ vars.MYSQL_ROOT_PASSWORD }}" 
+          --health-interval=10s 
+          --health-timeout=5s 
+          --health-retries=5
         env:
-#          MYSQL_ALLOW_EMPTY_PASSWORD: yes
-          MYSQL_ROOT_PASSWORD: ${{vars.MYSQL_ROOT_PWD}}
+          MYSQL_ROOT_PASSWORD: ${{vars.MYSQL_ROOT_PASSWORD}}
           MYSQL_DATABASE: ${{vars.MYSQL_DATABASE}}
 
     steps:
@@ -33,19 +40,19 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
           architecture: x64
 
       - name: Verify DB exists
-        run: mysql --host 127.0.0.1 -uroot -p${{vars.MYSQL_ROOT_PWD}} -e "SHOW DATABASES"
+        run: mysql --host ${{env.MYSQL_HOST}} -uroot -p${{env.MYSQL_ROOT_PASSWORD}} -e "SHOW DATABASES"
 
       - name: Upgrade pip
         run: python -m pip install --upgrade pip
 
-#      - name: Install dependencies
-#        run: pip install -r ./requirements/requirements.txt
+      - name: Set PYTHONPATH
+        run: echo "PYTHONPATH=$PWD:$PWD/src/rtedb" >> $GITHUB_ENV
 
       - name: Install editable package
         run: pip install -e .[dev]
