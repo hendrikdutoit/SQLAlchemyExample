@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.4.0
+    rev: v4.5.0
     hooks:
       - id: check-added-large-files
       - id: check-json
@@ -18,32 +18,38 @@ repos:
 #      - id: trailing-whitespace
 #        args: [ --markdown-linebreak-ext=md ]
 
-#  - repo: https://github.com/asottile/pyupgrade
-#    rev: v3.1.0
-#    hooks:
-#      - id: pyupgrade
-#        args: [ --py37-plus ]
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v3.15.0
+    hooks:
+      - id: pyupgrade
+        args: [ --py37-plus ]
+
+  - repo: https://github.com/asottile/reorder-python-imports
+    rev: v3.12.0
+    hooks:
+    -   id: reorder-python-imports
+        args: [
+            '--application-directories=.:src:tests',
+            '--py38-plus',
+        ]
+
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.2.6
+    hooks:
+      - id: codespell
+        args: [--write, --toml, pyproject.toml]
+        additional_dependencies:
+          - tomli
 
   - repo: https://github.com/psf/black
-    rev: 23.7.0
+    rev: 23.10.1
     hooks:
     - id: black
       language_version: python3
-#      exclude: 'templates'
 
   - repo: https://github.com/pycqa/flake8
-    rev: 6.0.0
+    rev: 6.1.0
     hooks:
     - id: flake8
       language_version: python3
       exclude: 'templates'
-
-  - repo: https://github.com/codespell-project/codespell
-    rev: v2.2.5
-    hooks:
-      - id: codespell
-        additional_dependencies:
-          - tomli
-#        exclude: tests/
-#        args:
-#          - --quiet-level=2

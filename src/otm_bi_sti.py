@@ -49,16 +49,24 @@ Here's an illustration of this relationship:
 See: https://docs.sqlalchemy.org/en/14/_modules/examples/inheritance/single.html
 """
 from os import environ
-from sqlalchemy import Column, Integer, String, ForeignKey
-from sqlalchemy import create_engine, engine
-from sqlalchemy.orm import sessionmaker, relationship
+
+from sqlalchemy import Column
+from sqlalchemy import create_engine
+from sqlalchemy import engine
+from sqlalchemy import ForeignKey
+from sqlalchemy import Integer
+from sqlalchemy import String
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy_utils import create_database, database_exists, drop_database
+from sqlalchemy.orm import relationship
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy_utils import create_database
+from sqlalchemy_utils import database_exists
+from sqlalchemy_utils import drop_database
 
 url = engine.URL.create(
     'mysql+mysqlconnector',
     username='root',
-    password=environ.get('MYSQL_ROOT_PWD'),
+    password=environ.get('MYSQL_ROOT_PASSWORD'),
     host=environ.get('MYSQL_HOST'),
     port=environ.get('MYSQL_TCP_PORT'),
     database=environ.get('MYSQL_DATABASE'),

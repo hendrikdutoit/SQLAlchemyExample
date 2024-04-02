@@ -13,8 +13,8 @@ RUN apt update && \
     apt upgrade -y && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
-    pip install --upgrade pip setuptools wheel && \
-    pip install --no-cache-dir --force-reinstall -r requirements.txt -r requirements_test.txt
+    pip install --upgrade pip setuptools wheel
+#    pip install --no-cache-dir --force-reinstall -r requirements.txt -r requirements_test.txt
 
 # Copy the current directory contents into the container at /app
 COPY . /app
