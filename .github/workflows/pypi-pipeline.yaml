@@ -13,8 +13,9 @@ jobs:
 #    uses: ./.github/workflows/check-rst-documentation.yml
 
   CI:
-    uses: ./.github/workflows/ci.yml
 #    needs: Check-Documentation
+    uses: ./.github/workflows/ci.yml
+    secrets: inherit
 
   Build-and-Release-to-Pypi:
     needs: CI
