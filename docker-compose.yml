@@ -1,14 +1,15 @@
 version: '3'
 
 services:
-  mysql:
+  db:
     build:
       context: .
       dockerfile: Dockerfile
-    image: mysql:latest
+    image: mysql:8.0.25
     command: mysqld --default-authentication-plugin=mysql_native_password
     environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_PWD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     ports:
       - "${MYSQL_TCP_PORT}:3306"
 #    volumes:
