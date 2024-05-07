@@ -10,7 +10,7 @@ jobs:
 
   Check-Documentation:
     needs: Pre-Commit
-    uses: ./.github/workflows/01-check-documentation.yml
+    uses: ./.github/workflows/02-check-documentation.yml
 
   CI:
     needs: Check-Documentation

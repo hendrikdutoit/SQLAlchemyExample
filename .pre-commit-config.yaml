@@ -9,14 +9,11 @@ repos:
       - id: check-yaml
       - id: debug-statements
       - id: double-quote-string-fixer
-#      - id: mixed-line-ending
-#        args: [ --fix=crlf ]
       - id: no-commit-to-branch
         args: [ --branch, master ]
       - id: pretty-format-json
-      - id: requirements-txt-fixer
-#      - id: trailing-whitespace
-#        args: [ --markdown-linebreak-ext=md ]
+      - id: trailing-whitespace
+        args: [ --markdown-linebreak-ext=md ]
 
   - repo: https://github.com/asottile/pyupgrade
     rev: v3.15.2
@@ -37,7 +34,7 @@ repos:
     hooks:
       - id: isort
         args: [ "--profile", "black", "--filter-files", "--force-single-line-imports",
-                "--force-alphabetical-sort-within-sections" ]
+                "--force-alphabetical-sort-within-sections", "--py", "auto" ]
 
   - repo: https://github.com/psf/black
     rev: 24.4.2

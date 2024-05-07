@@ -24,8 +24,14 @@ jobs:
       - name: Upgrade pip
         run: python -m pip install --upgrade pip
 
-      - name: Install dependencies
+      - name: Install rst checker
         run: pip install rstcheck
 
       - name: Check documents
         run: rstcheck README.rst
+
+      - name: Install md formatter
+        run: pip install mdformat
+
+      - name: Check documents
+        run: mdformat RELEASE.md

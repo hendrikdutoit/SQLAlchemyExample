@@ -14,7 +14,7 @@ class TestOtmBi:
 
     def test_author(self, setup_db_otm_bi):
         engine, session, base = setup_db_otm_bi
-        import otm_bi as tab_cfg
+        from directional import otm_bi as tab_cfg
 
         author = tab_cfg.Author(name='Ford', surname='Prefect')
         session.add(author)
@@ -29,7 +29,7 @@ class TestOtmBi:
 
     def test_author_dunder_repr_ok(self, setup_db_otm_bi):
         engine, session, base = setup_db_otm_bi
-        import otm_bi as tab_cfg
+        from directional import otm_bi as tab_cfg
 
         author = tab_cfg.Author(name='Ford', surname='Prefect')
         session.add_all([author])
@@ -39,7 +39,7 @@ class TestOtmBi:
         pass
 
     def test_author_dunder_str_ok(self):
-        import otm_bi as tab_cfg
+        from directional import otm_bi as tab_cfg
 
         author = tab_cfg.Author(name='Ford', surname='Prefect')
 
@@ -48,7 +48,7 @@ class TestOtmBi:
 
     def test_book(self, setup_db_otm_bi):
         engine, session, base = setup_db_otm_bi
-        import otm_bi as tab_cfg
+        from directional import otm_bi as tab_cfg
 
         book = tab_cfg.Book(name='Hitchikers Guide')
         session.add(book)
@@ -60,7 +60,7 @@ class TestOtmBi:
 
     def test_book_dunder_repr_ok(self, setup_db_otm_bi):
         engine, session, base = setup_db_otm_bi
-        import otm_bi as tab_cfg
+        from directional import otm_bi as tab_cfg
 
         book = tab_cfg.Book(name='Hitchikers Guide')
         session.add_all([book])
@@ -70,7 +70,7 @@ class TestOtmBi:
         pass
 
     def test_book_dunder_str_ok(self):
-        import otm_bi as tab_cfg
+        from directional import otm_bi as tab_cfg
 
         book = tab_cfg.Book(name='Hitchikers Guide')
 
@@ -79,7 +79,7 @@ class TestOtmBi:
 
     def test_book_and_author(self, setup_db_otm_bi):
         engine, session, base = setup_db_otm_bi
-        import otm_bi as tab_cfg
+        from directional import otm_bi as tab_cfg
 
         author = tab_cfg.Author(name='Ford', surname='Prefect')
         session.add(author)
@@ -93,7 +93,7 @@ class TestOtmBi:
 
     def test_book_add_with_no_author(self, setup_db_otm_bi):
         engine, session, base = setup_db_otm_bi
-        import otm_bi as tab_cfg
+        from directional import otm_bi as tab_cfg
 
         book = tab_cfg.Book(name='Hitchikers Guide', author_id=1)
         session.add(book)
@@ -113,7 +113,7 @@ class TestOtmUni:
 
     def test_student(self, setup_db_otm_uni):
         engine, session, base = setup_db_otm_uni
-        import otm_uni as tab_cfg
+        from directional import otm_uni as tab_cfg
 
         student = tab_cfg.Student(name='Arthur', surname='Dent', email='arthur@bar.foo')
         session.add(student)
@@ -130,7 +130,7 @@ class TestOtmUni:
 
     def test_student_dunder_repr_ok(self, setup_db_otm_uni):
         engine, session, base = setup_db_otm_uni
-        import otm_uni as tab_cfg
+        from directional import otm_uni as tab_cfg
 
         student = tab_cfg.Student(name='Arthur', surname='Dent', email='arthur@bar.foo')
         session.add_all([student])
@@ -140,7 +140,7 @@ class TestOtmUni:
         pass
 
     def test_student_dunder_str_ok(self):
-        import otm_uni as tab_cfg
+        from directional import otm_uni as tab_cfg
 
         student = tab_cfg.Student(name='Arthur', surname='Dent', email='arthur@bar.foo')
 
@@ -149,7 +149,7 @@ class TestOtmUni:
 
     def test_course(self, setup_db_otm_uni):
         engine, session, base = setup_db_otm_uni
-        import otm_uni as tab_cfg
+        from directional import otm_uni as tab_cfg
 
         course = tab_cfg.Course(name='Life, the Universe, and Everything')
         session.add(course)
@@ -161,7 +161,7 @@ class TestOtmUni:
 
     def test_course_dunder_repr_ok(self, setup_db_otm_uni):
         engine, session, base = setup_db_otm_uni
-        import otm_uni as tab_cfg
+        from directional import otm_uni as tab_cfg
 
         course = tab_cfg.Course(name='Life, the Universe, and Everything')
         session.add_all([course])
@@ -171,7 +171,7 @@ class TestOtmUni:
         pass
 
     def test_course_dunder_str_ok(self):
-        import otm_uni as tab_cfg
+        from directional import otm_uni as tab_cfg
 
         course = tab_cfg.Course(name='Life, the Universe, and Everything')
 
@@ -180,7 +180,7 @@ class TestOtmUni:
 
     def test_course_and_student(self, setup_db_otm_uni):
         engine, session, base = setup_db_otm_uni
-        import otm_uni as tab_cfg
+        from directional import otm_uni as tab_cfg
 
         student = tab_cfg.Student(name='Arthur', surname='Dent')
         session.add(student)
@@ -194,7 +194,7 @@ class TestOtmUni:
 
     def test_course_add_with_no_student(self, setup_db_otm_uni):
         engine, session, base = setup_db_otm_uni
-        import otm_uni as tab_cfg
+        from directional import otm_uni as tab_cfg
 
         course = tab_cfg.Course(name='Life, the Universe, and Everything', student_id=1)
         session.add(course)

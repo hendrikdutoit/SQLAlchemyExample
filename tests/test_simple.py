@@ -23,7 +23,7 @@ class TestSimple:
     @pytest.mark.select
     def test_Student_assign_data(self, setup_db_simple):
         engine, session, base = setup_db_simple
-        import simple as tab_cfg
+        from simple import simple as tab_cfg
 
         Student_list = [
             tab_cfg.Student(name='Ford Prefect'),
@@ -42,7 +42,7 @@ class TestSimple:
     @pytest.mark.select
     def test_Student_table_dunder_repr_ok(self, setup_db_simple):
         engine, session, base = setup_db_simple
-        import simple as tab_cfg
+        from simple import simple as tab_cfg
 
         Student = tab_cfg.Student(name='John')
         session.add_all([Student])
@@ -53,7 +53,7 @@ class TestSimple:
 
     @pytest.mark.select
     def test_Student_table_dunder_str_ok(self, setup_db_simple):
-        import simple as tab_cfg
+        from simple import simple as tab_cfg
 
         Student = tab_cfg.Student(name='John')
 

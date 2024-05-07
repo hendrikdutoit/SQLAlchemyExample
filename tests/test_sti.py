@@ -13,7 +13,7 @@ class TestSTI:
 
     def test_login(self, setup_db_sti):
         engine, session, base = setup_db_sti
-        import sti as tab_cfg
+        from inheritance import sti as tab_cfg
 
         login = tab_cfg.LogIn(email='john@bar.foo')
         session.add(login)
@@ -26,7 +26,7 @@ class TestSTI:
         pass
 
     def test_login_dunder_repr_ok(self, setup_db_sti):
-        import sti as tab_cfg
+        from inheritance import sti as tab_cfg
 
         engine, session, base = setup_db_sti
 
@@ -38,7 +38,7 @@ class TestSTI:
         pass
 
     def test_login_dunder_str_ok(self):
-        import sti as tab_cfg
+        from inheritance import sti as tab_cfg
 
         login = tab_cfg.LogIn(email='john@bar.foo')
 
@@ -47,7 +47,7 @@ class TestSTI:
 
     def test_student(self, setup_db_sti):
         engine, session, base = setup_db_sti
-        import sti as tab_cfg
+        from inheritance import sti as tab_cfg
 
         student = tab_cfg.Student(email='john@bar.foo', name='John', surname='Doe')
         session.add(student)
@@ -61,7 +61,7 @@ class TestSTI:
 
     def test_student_dunder_repr_ok(self, setup_db_sti):
         engine, session, base = setup_db_sti
-        import sti as tab_cfg
+        from inheritance import sti as tab_cfg
 
         student = tab_cfg.Student(email='john@bar.foo', name='John', surname='Doe')
         session.add_all([student])
@@ -71,7 +71,7 @@ class TestSTI:
         pass
 
     def test_student_dunder_str_ok(self):
-        import sti as tab_cfg
+        from inheritance import sti as tab_cfg
 
         student = tab_cfg.Student(email='john@bar.foo', name='John', surname='Doe')
 

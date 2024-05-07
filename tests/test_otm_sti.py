@@ -14,7 +14,7 @@ class TestOtmBiSti:
 
     def test_login(self, setup_db_otm_bi_sti):
         engine, session, base = setup_db_otm_bi_sti
-        import otm_bi_sti as tab_cfg
+        from directional import otm_bi_sti as tab_cfg
 
         login = tab_cfg.LogIn(email='ford@bar.foo')
         session.add(login)
@@ -27,7 +27,7 @@ class TestOtmBiSti:
         pass
 
     def test_login_dunder_repr_ok(self, setup_db_otm_bi_sti):
-        import otm_bi_sti as tab_cfg
+        from directional import otm_bi_sti as tab_cfg
 
         engine, session, base = setup_db_otm_bi_sti
 
@@ -39,7 +39,7 @@ class TestOtmBiSti:
         pass
 
     def test_login_dunder_str_ok(self):
-        import otm_bi_sti as tab_cfg
+        from directional import otm_bi_sti as tab_cfg
 
         login = tab_cfg.LogIn(email='ford@bar.foo')
 
@@ -48,7 +48,7 @@ class TestOtmBiSti:
 
     def test_author(self, setup_db_otm_bi_sti):
         engine, session, base = setup_db_otm_bi_sti
-        import otm_bi_sti as tab_cfg
+        from directional import otm_bi_sti as tab_cfg
 
         author = tab_cfg.Author(email='ford@bar.foo', name='Ford', surname='Prefect')
         session.add(author)
@@ -61,7 +61,7 @@ class TestOtmBiSti:
         pass
 
     def test_author_dunder_repr_ok(self, setup_db_otm_bi_sti):
-        import otm_bi_sti as tab_cfg
+        from directional import otm_bi_sti as tab_cfg
 
         engine, session, base = setup_db_otm_bi_sti
 
@@ -73,7 +73,7 @@ class TestOtmBiSti:
         pass
 
     def test_author_dunder_str_ok(self):
-        import otm_bi_sti as tab_cfg
+        from directional import otm_bi_sti as tab_cfg
 
         author = tab_cfg.Author(email='ford@bar.foo', name='Ford', surname='Prefect')
 
@@ -82,7 +82,7 @@ class TestOtmBiSti:
 
     def test_book(self, setup_db_otm_bi_sti):
         engine, session, base = setup_db_otm_bi_sti
-        import otm_bi_sti as tab_cfg
+        from directional import otm_bi_sti as tab_cfg
 
         book = tab_cfg.Book(name='Physics')
         session.add(book)
@@ -93,7 +93,7 @@ class TestOtmBiSti:
         pass
 
     def test_book_dunder_repr_ok(self, setup_db_otm_bi_sti):
-        import otm_bi_sti as tab_cfg
+        from directional import otm_bi_sti as tab_cfg
 
         engine, session, base = setup_db_otm_bi_sti
 
@@ -105,7 +105,7 @@ class TestOtmBiSti:
         pass
 
     def test_book_dunder_str_ok(self):
-        import otm_bi_sti as tab_cfg
+        from directional import otm_bi_sti as tab_cfg
 
         book = tab_cfg.Book(name='Physics')
 

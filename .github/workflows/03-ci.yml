@@ -29,9 +29,9 @@ jobs:
           - ${{vars.MYSQL_TCP_PORT}}:3306
         options: >-
           --health-cmd="mysqladmin ping"
-          --health-cmd="mysqladmin ping -h localhost -u root -p${{ vars.MYSQL_ROOT_PASSWORD }}" 
-          --health-interval=10s 
-          --health-timeout=5s 
+          --health-cmd="mysqladmin ping -h localhost -u root -p${{ vars.MYSQL_ROOT_PASSWORD }}"
+          --health-interval=10s
+          --health-timeout=5s
           --health-retries=5
         env:
           MYSQL_ROOT_PASSWORD: ${{vars.MYSQL_ROOT_PASSWORD}}
