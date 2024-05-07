@@ -8,7 +8,6 @@ repos:
       - id: check-toml
       - id: check-yaml
       - id: debug-statements
-      - id: double-quote-string-fixer
       - id: no-commit-to-branch
         args: [ --branch, master ]
       - id: pretty-format-json
