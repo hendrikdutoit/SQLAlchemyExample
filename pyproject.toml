@@ -28,6 +28,7 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     'git-it',
+    'isort',
     'Pygments',
     'pytest',
     'pytest-cov',
@@ -60,6 +61,9 @@ skip = 'documentation/Archive/*'
 
 [tool.coverage.run]
 source = ['src']
+
+[tool.isort]
+profile = "black"
 
 [tool.pytest.ini_options]
 addopts = ['--import-mode=importlib', '-vv', '--ignore-glob=*\\Archive']
