@@ -5,6 +5,18 @@ from sqlalchemy.orm import close_all_sessions
 
 
 @pytest.fixture
+def setup_db_mixin():
+    environ['MYSQL_DATABASE'] = 'mixin'
+    from inheritance import mixin as tab_cfg
+
+    tab_cfg.Base.metadata.drop_all()
+    tab_cfg.Base.metadata.create_all()
+    yield tab_cfg.engine, tab_cfg.session, tab_cfg.Base
+    close_all_sessions()
+    pass
+
+
+@pytest.fixture
 def setup_db_otm_bi():
     # import pdb;pdb.set_trace()
     environ['MYSQL_DATABASE'] = 'otm_bi'
@@ -32,7 +44,7 @@ def setup_db_otm_uni():
 @pytest.fixture
 def setup_db_otm_bi_sti():
     environ['MYSQL_DATABASE'] = 'otm_bi_sti'
-    from directional import otm_bi_sti as tab_cfg
+    from inheritance import otm_bi_sti as tab_cfg
 
     tab_cfg.Base.metadata.drop_all()
     tab_cfg.Base.metadata.create_all()
@@ -55,7 +67,7 @@ def setup_db_simple():
 
 @pytest.fixture
 def setup_db_sti():
-    environ['MYSQL_DATABASE'] = 'ex03_00_sti'
+    environ['MYSQL_DATABASE'] = 'sti'
     from inheritance import sti as tab_cfg
 
     tab_cfg.Base.metadata.drop_all()
