@@ -1,0 +1,61 @@
+"""
+Composing Mapped Hierarchies with Mixins
+========================================
+
+"""
+
+from os import environ
+
+# from sqlalchemy import ForeignKey
+from sqlalchemy import Column
+from sqlalchemy import create_engine
+from sqlalchemy import engine
+from sqlalchemy import Integer
+from sqlalchemy import String
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import declarative_mixin
+from sqlalchemy.orm import declared_attr
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy_utils import create_database
+from sqlalchemy_utils import database_exists
+from sqlalchemy_utils import drop_database
+
+url = engine.URL.create(
+    'mysql+mysqlconnector',
+    username='root',
+    password=environ.get('MYSQL_ROOT_PASSWORD'),
+    host=environ.get('MYSQL_HOST'),
+    port=environ.get('MYSQL_TCP_PORT'),
+    database=environ.get('MYSQL_DATABASE'),
+)
+# url = 'sqlite:///:memory:'
+engine = create_engine(url, echo=False)
+if database_exists(engine.url):
+    drop_database(engine.url)
+create_database(engine.url)
+Session = sessionmaker(bind=engine)
+session = Session()
+Base = declarative_base(bind=engine)
+
+
+@declarative_mixin
+class MyMixin:
+    @classmethod
+    @declared_attr
+    def __tablename__(cls):
+        return cls.__name__.lower()
+
+    __table_args__ = {"mysql_engine": "InnoDB"}
+    __mapper_args__ = {"always_refresh": True}
+
+    id = Column(Integer, primary_key=True)
+
+
+class MyModel(MyMixin, Base):
+    name = Column(String(1000))
+
+    def __repr__(self):
+        return f'<MyModel(id={self.id} name={self.name})>'
+
+    def __str__(self):
+        return f'{self.id},{self.name}'

@@ -25,6 +25,7 @@ dependencies = [
     'mysql-connector-python',
     'sqlalchemy < 2.0.0',
     'sqlalchemy-utils',
+    'time_machine',
   ]
 
 [project.optional-dependencies]

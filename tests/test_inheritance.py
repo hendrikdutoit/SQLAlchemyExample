@@ -1,6 +1,5 @@
 """Testing sqlalchemyexample__init__()"""
 
-# import pytest
 from sqlalchemy import inspect
 
 
@@ -188,17 +187,17 @@ class TestOtmBiSti:
         pass
 
 
-class TestMixin:
-    def test_tables_exist(self, setup_db_mixin):
-        engine, session, base = setup_db_mixin
+class TestMixinSimple:
+    def test_tables_exist(self, setup_db_mixin_simple):
+        engine, session, base = setup_db_mixin_simple
 
         inspector = inspect(engine)
         assert 'mymodel' in inspector.get_table_names()
 
-    def test_book_dunders(self, setup_db_mixin):
-        from inheritance import mixin as tab_cfg
+    def test_book_dunders(self, setup_db_mixin_simple):
+        from inheritance import mixin_simple as tab_cfg
 
-        engine, session, base = setup_db_mixin
+        engine, session, base = setup_db_mixin_simple
 
         mymodel = tab_cfg.MyModel(id=1, name='Model 1')
         session.add_all([mymodel])
@@ -206,4 +205,48 @@ class TestMixin:
 
         assert repr(mymodel) == '<MyModel(id=1 name=Model 1)>'
         assert str(mymodel) == '1,Model 1'
+        pass
+
+
+class TestMixinColumn:
+    def test_tables_exist(self, setup_db_mixin_column):
+        engine, session, base = setup_db_mixin_column
+
+        inspector = inspect(engine)
+        assert 'test' in inspector.get_table_names()
+
+    def test_book_dunders(self, setup_db_mixin_column):
+        from inheritance import mixin_column as tab_cfg
+
+        engine, session, base = setup_db_mixin_column
+
+        mymodel = tab_cfg.MyModel(id=1, name='Model 1')
+        session.add_all([mymodel])
+        session.commit()
+
+        assert repr(mymodel) == '<MyModel(id=1 name=Model 1 created_at=2024-01-05 15:30:00)>'
+        assert str(mymodel) == '1,Model 1,2024-01-05 15:30:00'
+        pass
+
+
+class TestMixinDeclaredAttr:
+    def test_tables_exist(self, setup_db_mixin_declared_attr):
+        engine, session, base = setup_db_mixin_declared_attr
+
+        inspector = inspect(engine)
+        assert 'address' in inspector.get_table_names()
+        assert 'user' in inspector.get_table_names()
+
+    def test_book_dunders(self, setup_db_mixin_declared_attr):
+        from inheritance import mixin_declared_attr as tab_cfg
+
+        engine, session, base = setup_db_mixin_declared_attr
+
+        myaddress = tab_cfg.Address(id=11)
+        mymodel = tab_cfg.User(id=1, address_id='11')
+        session.add_all([mymodel, myaddress])
+        session.commit()
+
+        assert repr(mymodel) == '<User(id=1 address_id=11)>'
+        assert str(mymodel) == '1,11'
         pass

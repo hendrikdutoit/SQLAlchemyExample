@@ -1,23 +1,20 @@
 """
-Single Table Inheritance
-========================
-In this inheritance mechanism, multiple subclasses (entities) share a single database table. Each row in the table
-includes a special discriminator column that indicates which subclass it belongs to.
+Composing Mapped Hierarchies with Mixins
+========================================
+
 """
 
+from datetime import datetime
 from os import environ
 
-# from sqlalchemy import ForeignKey
 from sqlalchemy import Column
 from sqlalchemy import create_engine
+from sqlalchemy import DateTime
 from sqlalchemy import engine
 from sqlalchemy import Integer
 from sqlalchemy import String
 from sqlalchemy.ext.declarative import declarative_base
-
-# from sqlalchemy.orm import relationship
 from sqlalchemy.orm import declarative_mixin
-from sqlalchemy.orm import declared_attr
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy_utils import create_database
 from sqlalchemy_utils import database_exists
@@ -42,22 +39,18 @@ Base = declarative_base(bind=engine)
 
 
 @declarative_mixin
-class MyMixin:
-    @declared_attr
-    def __tablename__(self):
-        return self.__name__.lower()
+class TimestampMixin:
+    created_at = Column(DateTime, default=datetime.now())
 
-    __table_args__ = {"mysql_engine": "InnoDB"}
-    __mapper_args__ = {"always_refresh": True}
+
+class MyModel(TimestampMixin, Base):
+    __tablename__ = "test"
 
     id = Column(Integer, primary_key=True)
-
-
-class MyModel(MyMixin, Base):
     name = Column(String(1000))
 
     def __repr__(self):
-        return f'<MyModel(id={self.id} name={self.name})>'
+        return f'<MyModel(id={self.id} name={self.name} created_at={self.created_at})>'
 
     def __str__(self):
-        return f'{self.id},{self.name}'
+        return f'{self.id},{self.name},{self.created_at}'
