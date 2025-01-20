@@ -3,6 +3,7 @@ Simple Example
 ==============
 
 """
+
 from os import environ
 
 from sqlalchemy import Column

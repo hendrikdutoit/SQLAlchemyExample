@@ -37,6 +37,7 @@ student must enroll in at least one course, it's total participation from the St
 
 This simple example captures the essence of a typical one-to-many, unidirectional relationship in an ER diagram.
 """
+
 from os import environ
 
 from sqlalchemy import Column

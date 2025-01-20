@@ -1,4 +1,5 @@
 """Testing sqlalchemyexample__init__()"""
+
 import pytest
 from sqlalchemy import inspect
 

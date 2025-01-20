@@ -4,6 +4,7 @@ Single Table Inheritance
 In this inheritance mechanism, multiple subclasses (entities) share a single database table. Each row in the table
 includes a special discriminator column that indicates which subclass it belongs to.
 """
+
 from os import environ
 
 from sqlalchemy import Column
