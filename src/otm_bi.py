@@ -43,6 +43,7 @@ Here's an illustration of this relationship:
 - The "author_id" in "Book" is a foreign key that creates the linkage between the two entities, ensuring referential
   integrity.
 """
+
 from os import environ
 
 from sqlalchemy import Column

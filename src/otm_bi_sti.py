@@ -48,6 +48,7 @@ Here's an illustration of this relationship:
 
 See: https://docs.sqlalchemy.org/en/14/_modules/examples/inheritance/single.html
 """
+
 from os import environ
 
 from sqlalchemy import Column

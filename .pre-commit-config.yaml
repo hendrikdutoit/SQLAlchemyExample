@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
+    rev: v5.0.0
     hooks:
       - id: check-added-large-files
       - id: check-json
@@ -19,13 +19,13 @@ repos:
 #        args: [ --markdown-linebreak-ext=md ]
 
   - repo: https://github.com/asottile/pyupgrade
-    rev: v3.15.0
+    rev: v3.19.1
     hooks:
       - id: pyupgrade
         args: [ --py37-plus ]
 
   - repo: https://github.com/asottile/reorder-python-imports
-    rev: v3.12.0
+    rev: v3.14.0
     hooks:
     -   id: reorder-python-imports
         args: [
@@ -34,7 +34,7 @@ repos:
         ]
 
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.2.6
+    rev: v2.3.0
     hooks:
       - id: codespell
         args: [--write, --toml, pyproject.toml]
@@ -42,13 +42,13 @@ repos:
           - tomli
 
   - repo: https://github.com/psf/black
-    rev: 23.10.1
+    rev: 24.10.0
     hooks:
     - id: black
       language_version: python3
 
   - repo: https://github.com/pycqa/flake8
-    rev: 6.1.0
+    rev: 7.1.1
     hooks:
     - id: flake8
       language_version: python3
