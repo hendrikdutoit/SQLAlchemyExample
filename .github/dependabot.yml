@@ -7,4 +7,4 @@ updates:
   - package-ecosystem: github-actions
     directory: / # Check the repository's workflows under /.github/workflows/
     schedule:
-      interval: montly
+      interval: monthly
