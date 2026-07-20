@@ -25,7 +25,7 @@ repos:
         args: [ --py37-plus ]
 
   - repo: https://github.com/asottile/reorder-python-imports
-    rev: v3.16.0
+    rev: v3.17.0
     hooks:
     -   id: reorder-python-imports
         args: [
@@ -34,7 +34,7 @@ repos:
         ]
 
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.4.2
+    rev: v2.4.3
     hooks:
       - id: codespell
         args: [--write, --toml, pyproject.toml]
