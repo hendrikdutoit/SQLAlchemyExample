@@ -25,7 +25,7 @@ repos:
         args: [ --py37-plus ]
 
   - repo: https://github.com/asottile/reorder-python-imports
-    rev: v3.16.0
+    rev: v3.17.0
     hooks:
     -   id: reorder-python-imports
         args: [
@@ -34,7 +34,7 @@ repos:
         ]
 
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.4.2
+    rev: v2.4.3
     hooks:
       - id: codespell
         args: [--write, --toml, pyproject.toml]
@@ -42,13 +42,13 @@ repos:
           - tomli
 
   - repo: https://github.com/psf/black-pre-commit-mirror
-    rev: 26.5.1
+    rev: 26.10.0
     hooks:
     - id: black
       language_version: python3
 
   - repo: https://github.com/pycqa/flake8
-    rev: 7.3.0
+    rev: 7.4.1
     hooks:
     - id: flake8
       language_version: python3
